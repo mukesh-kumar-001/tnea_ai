@@ -1,0 +1,2684 @@
+[
+    {
+        "tnea_code": "2008",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 32150.0
+    },
+    {
+        "tnea_code": "2007",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 23100.0
+    },
+    {
+        "tnea_code": "2022",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 18700.0
+    },
+    {
+        "tnea_code": "2019",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10500.0
+    },
+    {
+        "tnea_code": "1013",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "1014",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "1015",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "1026",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7500.0
+    },
+    {
+        "tnea_code": "1101",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1106",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1107",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1110",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1112",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 11000.0
+    },
+    {
+        "tnea_code": "1113",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 11000.0
+    },
+    {
+        "tnea_code": "1114",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1116",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1118",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1120",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "1121",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1122",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1123",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1124",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6000.0
+    },
+    {
+        "tnea_code": "1127",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1128",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 11000.0
+    },
+    {
+        "tnea_code": "1133",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1137",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1140",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1149",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1150",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1500.0
+    },
+    {
+        "tnea_code": "1202",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1207",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1209",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "1210",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1211",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1212",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1213",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1216",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1217",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1500.0
+    },
+    {
+        "tnea_code": "1218",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1219",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1222",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1225",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1226",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1228",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1229",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "1230",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1233",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1237",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1238",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "1241",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1243",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1301",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1303",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 25000.0
+    },
+    {
+        "tnea_code": "1304",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7000.0
+    },
+    {
+        "tnea_code": "1306",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1307",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "1309",
+        "boys": true,
+        "girls": false,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1310",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3600.0
+    },
+    {
+        "tnea_code": "1311",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "1315",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1316",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1317",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1318",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1319",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1321",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1322",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1324",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "1325",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1335",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1399",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1401",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 500.0
+    },
+    {
+        "tnea_code": "1402",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6500.0
+    },
+    {
+        "tnea_code": "1405",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 30000.0
+    },
+    {
+        "tnea_code": "1407",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1500.0
+    },
+    {
+        "tnea_code": "1408",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1500.0
+    },
+    {
+        "tnea_code": "1409",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1411",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1412",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1413",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3500.0
+    },
+    {
+        "tnea_code": "1414",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1415",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1416",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1419",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "1420",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "1421",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1422",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7500.0
+    },
+    {
+        "tnea_code": "1423",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "1424",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1426",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1427",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1430",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "1431",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1432",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1434",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1436",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1437",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1438",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1441",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1442",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1444",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1445",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1449",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1450",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1452",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1501",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "1503",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1504",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1505",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8000.0
+    },
+    {
+        "tnea_code": "1507",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1509",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1510",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "1511",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1512",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1513",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1516",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6000.0
+    },
+    {
+        "tnea_code": "1517",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1518",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1519",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1520",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1523",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1524",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1525",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1526",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "1529",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1605",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2005",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2750.0
+    },
+    {
+        "tnea_code": "2006",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5350.0
+    },
+    {
+        "tnea_code": "2007",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 11000.0
+    },
+    {
+        "tnea_code": "2025",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "2302",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2314",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2327",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "2329",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2332",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2338",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2341",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2342",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2343",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "2346",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7500.0
+    },
+    {
+        "tnea_code": "2349",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2350",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2354",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 500.0
+    },
+    {
+        "tnea_code": "2356",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2357",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2360",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2367",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "2369",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2377",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2601",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 100.0
+    },
+    {
+        "tnea_code": "2602",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2603",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2750.0
+    },
+    {
+        "tnea_code": "2606",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2607",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8000.0
+    },
+    {
+        "tnea_code": "2608",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2609",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2610",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2611",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2612",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6000.0
+    },
+    {
+        "tnea_code": "2613",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8000.0
+    },
+    {
+        "tnea_code": "2614",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6000.0
+    },
+    {
+        "tnea_code": "2615",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2750.0
+    },
+    {
+        "tnea_code": "2616",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 500.0
+    },
+    {
+        "tnea_code": "2617",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "2620",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2622",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2623",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2624",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2625",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2627",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2628",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2630",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1200.0
+    },
+    {
+        "tnea_code": "2632",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2633",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4000.0
+    },
+    {
+        "tnea_code": "2634",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "2635",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2636",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2638",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2639",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2640",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2641",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2642",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2643",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 100.0
+    },
+    {
+        "tnea_code": "2646",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2647",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2648",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2650",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2651",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2653",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "2656",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2658",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1200.0
+    },
+    {
+        "tnea_code": "2661",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2665",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2673",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2683",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2704",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 750.0
+    },
+    {
+        "tnea_code": "2705",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4000.0
+    },
+    {
+        "tnea_code": "2706",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 20000.0
+    },
+    {
+        "tnea_code": "2707",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8500.0
+    },
+    {
+        "tnea_code": "2708",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2709",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2750.0
+    },
+    {
+        "tnea_code": "2710",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2711",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2712",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "2713",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2715",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2716",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2718",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "2719",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 12000.0
+    },
+    {
+        "tnea_code": "2721",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2722",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "2723",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 12500.0
+    },
+    {
+        "tnea_code": "2725",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1083.0
+    },
+    {
+        "tnea_code": "2726",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2727",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "2729",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2731",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2732",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2733",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2734",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2735",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2736",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2737",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2739",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2740",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2741",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 9000.0
+    },
+    {
+        "tnea_code": "2743",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2744",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "2745",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2747",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2748",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2749",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2750",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2751",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2752",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2753",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2755",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2758",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2761",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2762",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2763",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2764",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7000.0
+    },
+    {
+        "tnea_code": "2767",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "2768",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2769",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2770",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2772",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2776",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3016",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "3019",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "3403",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3410",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "3425",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3454",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3456",
+        "boys": false,
+        "girls": false,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3460",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3461",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3462",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 100.0
+    },
+    {
+        "tnea_code": "3464",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "3465",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6500.0
+    },
+    {
+        "tnea_code": "3466",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 500.0
+    },
+    {
+        "tnea_code": "3701",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3760",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3766",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "3782",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3786",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3795",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3801",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3500.0
+    },
+    {
+        "tnea_code": "3802",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "3803",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "3804",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3805",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "3806",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3807",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3808",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3810",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3700.0
+    },
+    {
+        "tnea_code": "3811",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "3812",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3813",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "3814",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3815",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3817",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "3819",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "3820",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 100.0
+    },
+    {
+        "tnea_code": "3821",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3822",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3825",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3826",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8000.0
+    },
+    {
+        "tnea_code": "3829",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3830",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3831",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3833",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4450.0
+    },
+    {
+        "tnea_code": "3841",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5250.0
+    },
+    {
+        "tnea_code": "3843",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3844",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3845",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "3846",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3849",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3850",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3852",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "3854",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3855",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3857",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "3859",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3860",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "3905",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3908",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "3918",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3920",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3500.0
+    },
+    {
+        "tnea_code": "3923",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3926",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4000.0
+    },
+    {
+        "tnea_code": "4020",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 16100.0
+    },
+    {
+        "tnea_code": "4023",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "4024",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 16100.0
+    },
+    {
+        "tnea_code": "4670",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4672",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 100.0
+    },
+    {
+        "tnea_code": "4675",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4676",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "4677",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "4678",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8000.0
+    },
+    {
+        "tnea_code": "4680",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4686",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4864",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4000.0
+    },
+    {
+        "tnea_code": "4917",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4927",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4928",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "4929",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "4931",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "4932",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "4933",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "4934",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6000.0
+    },
+    {
+        "tnea_code": "4938",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4941",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 500.0
+    },
+    {
+        "tnea_code": "4944",
+        "boys": false,
+        "girls": true,
+        "annual_fee": 20000.0
+    },
+    {
+        "tnea_code": "4946",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "4948",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4949",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4952",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7200.0
+    },
+    {
+        "tnea_code": "4953",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1500.0
+    },
+    {
+        "tnea_code": "4954",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10500.0
+    },
+    {
+        "tnea_code": "4955",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4956",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2700.0
+    },
+    {
+        "tnea_code": "4957",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "4959",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "4961",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4962",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 14000.0
+    },
+    {
+        "tnea_code": "4964",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4965",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7500.0
+    },
+    {
+        "tnea_code": "4966",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4500.0
+    },
+    {
+        "tnea_code": "4967",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 750.0
+    },
+    {
+        "tnea_code": "4968",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4969",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "4970",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4971",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7500.0
+    },
+    {
+        "tnea_code": "4972",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4974",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3750.0
+    },
+    {
+        "tnea_code": "4975",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "4976",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "4977",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4978",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "4980",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4981",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4982",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 750.0
+    },
+    {
+        "tnea_code": "4983",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "4984",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4989",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4992",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4993",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "4994",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4995",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7500.0
+    },
+    {
+        "tnea_code": "4996",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1250.0
+    },
+    {
+        "tnea_code": "4998",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "4999",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5008",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 22500.0
+    },
+    {
+        "tnea_code": "5009",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "5010",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "3000",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 19000.0
+    },
+    {
+        "tnea_code": "5017",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 16100.0
+    },
+    {
+        "tnea_code": "5502",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5530",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5532",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "5533",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8000.0
+    },
+    {
+        "tnea_code": "5536",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "5537",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5703",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5832",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5842",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 12000.0
+    },
+    {
+        "tnea_code": "5851",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5862",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "5865",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 7000.0
+    },
+    {
+        "tnea_code": "5901",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5350.0
+    },
+    {
+        "tnea_code": "5902",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5904",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4500.0
+    },
+    {
+        "tnea_code": "5907",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5910",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "5911",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5912",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "5913",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "5915",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "5919",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5921",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 12400.0
+    },
+    {
+        "tnea_code": "5924",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 500.0
+    },
+    {
+        "tnea_code": "5930",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5935",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5942",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 8000.0
+    },
+    {
+        "tnea_code": "5986",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5988",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5990",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3500",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3000",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1144",
+        "boys": false,
+        "girls": false,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1146",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1152",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "1400",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "1530",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "2344",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2348",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "2361",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 15000.0
+    },
+    {
+        "tnea_code": "2364",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 750.0
+    },
+    {
+        "tnea_code": "2900",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2376",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2667",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 4000.0
+    },
+    {
+        "tnea_code": "2728",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "2759",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "2779",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "3446",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1200.0
+    },
+    {
+        "tnea_code": "3467",
+        "boys": false,
+        "girls": false,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "3784",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5250.0
+    },
+    {
+        "tnea_code": "4671",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "5863",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2500.0
+    },
+    {
+        "tnea_code": "2372",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2022",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 32150.0
+    },
+    {
+        "tnea_code": "1398",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2328",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6500.0
+    },
+    {
+        "tnea_code": "4679",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "4979",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 3000.0
+    },
+    {
+        "tnea_code": "1428",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 2000.0
+    },
+    {
+        "tnea_code": "1514",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2345",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 5000.0
+    },
+    {
+        "tnea_code": "2621",
+        "boys": false,
+        "girls": false,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "2652",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "2702",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 6000.0
+    },
+    {
+        "tnea_code": "2717",
+        "boys": false,
+        "girls": false,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "3809",
+        "boys": false,
+        "girls": false,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4960",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 10000.0
+    },
+    {
+        "tnea_code": "5914",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    },
+    {
+        "tnea_code": "1126",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 0.0
+    },
+    {
+        "tnea_code": "4669",
+        "boys": true,
+        "girls": true,
+        "annual_fee": 1000.0
+    }
+]

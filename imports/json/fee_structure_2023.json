@@ -1,0 +1,4472 @@
+[
+    {
+        "tnea_code": "2008",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1200.0,
+        "establishment_fee": 32150.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2007",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 600.0,
+        "establishment_fee": 23100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2022",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 18700.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2019",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 10500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1013",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1100.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1014",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1015",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1026",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 7500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1101",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15100.0,
+        "transport_max_fee": 35100.0
+    },
+    {
+        "tnea_code": "1106",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 32500.0
+    },
+    {
+        "tnea_code": "1107",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1110",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1112",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 11000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15400.0,
+        "transport_max_fee": 35400.0
+    },
+    {
+        "tnea_code": "1113",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 11000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15400.0,
+        "transport_max_fee": 35400.0
+    },
+    {
+        "tnea_code": "1114",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 19000.0,
+        "transport_max_fee": 33000.0
+    },
+    {
+        "tnea_code": "1116",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1118",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18000.0,
+        "transport_max_fee": 37000.0
+    },
+    {
+        "tnea_code": "1120",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 8000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 41000.0,
+        "transport_max_fee": 41000.0
+    },
+    {
+        "tnea_code": "1121",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 21000.0,
+        "transport_max_fee": 8500.0
+    },
+    {
+        "tnea_code": "1122",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18000.0,
+        "transport_max_fee": 37000.0
+    },
+    {
+        "tnea_code": "1123",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1124",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 6000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1127",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18500.0,
+        "transport_max_fee": 18500.0
+    },
+    {
+        "tnea_code": "1128",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 11000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15400.0,
+        "transport_max_fee": 35400.0
+    },
+    {
+        "tnea_code": "1133",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "1137",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 13000.0,
+        "transport_max_fee": 26000.0
+    },
+    {
+        "tnea_code": "1140",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1149",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 50000.0
+    },
+    {
+        "tnea_code": "1150",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 43000.0
+    },
+    {
+        "tnea_code": "1202",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1207",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 35000.0,
+        "transport_max_fee": 50000.0
+    },
+    {
+        "tnea_code": "1209",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 5000.0
+    },
+    {
+        "tnea_code": "1210",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1211",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 60000.0,
+        "transport_max_fee": 60000.0
+    },
+    {
+        "tnea_code": "1212",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 50000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1213",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1216",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 42000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "1217",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 38000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1218",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1219",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 50000.0,
+        "transport_max_fee": 55000.0
+    },
+    {
+        "tnea_code": "1222",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1225",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1226",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 8000.0
+    },
+    {
+        "tnea_code": "1228",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 47000.0
+    },
+    {
+        "tnea_code": "1229",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1230",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1233",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1237",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 11132.0,
+        "transport_max_fee": 35794.0
+    },
+    {
+        "tnea_code": "1238",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 11500.0,
+        "transport_max_fee": 42000.0
+    },
+    {
+        "tnea_code": "1241",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1243",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "1301",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 46000.0
+    },
+    {
+        "tnea_code": "1303",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 25000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1304",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 7000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 45000.0,
+        "transport_max_fee": 50000.0
+    },
+    {
+        "tnea_code": "1306",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 50000.0
+    },
+    {
+        "tnea_code": "1307",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "1309",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1310",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 600.0,
+        "establishment_fee": 3600.0,
+        "hostel_fee": null,
+        "transport_min_fee": 21000.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "1311",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 800.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25500.0,
+        "transport_max_fee": 30500.0
+    },
+    {
+        "tnea_code": "1315",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 20000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 68000.0,
+        "transport_max_fee": 68000.0
+    },
+    {
+        "tnea_code": "1316",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1317",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 50000.0
+    },
+    {
+        "tnea_code": "1318",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 35000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "1319",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 35000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "1321",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1322",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 6000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1324",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 23000.0,
+        "transport_max_fee": 42500.0
+    },
+    {
+        "tnea_code": "1325",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1335",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1399",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 50000.0,
+        "transport_max_fee": 60000.0
+    },
+    {
+        "tnea_code": "1401",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 38000.0
+    },
+    {
+        "tnea_code": "1402",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 6500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1405",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 30000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "1407",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 23000.0
+    },
+    {
+        "tnea_code": "1408",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8500.0,
+        "transport_max_fee": 26300.0
+    },
+    {
+        "tnea_code": "1409",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 11550.0,
+        "transport_max_fee": 41500.0
+    },
+    {
+        "tnea_code": "1411",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1412",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 14000.0,
+        "transport_max_fee": 29000.0
+    },
+    {
+        "tnea_code": "1413",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 3500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1414",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 33000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1415",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7500.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "1416",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1419",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 23000.0,
+        "transport_max_fee": 42500.0
+    },
+    {
+        "tnea_code": "1420",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1421",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 16500.0
+    },
+    {
+        "tnea_code": "1422",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3500.0,
+        "establishment_fee": 7500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 60000.0,
+        "transport_max_fee": 60000.0
+    },
+    {
+        "tnea_code": "1423",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1424",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1426",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 16000.0,
+        "transport_max_fee": 32000.0
+    },
+    {
+        "tnea_code": "1427",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1430",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1431",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 16000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "1432",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 40000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1434",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6500.0,
+        "transport_max_fee": 10000.0
+    },
+    {
+        "tnea_code": "1436",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1437",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1438",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 75000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1500.0,
+        "transport_max_fee": 3000.0
+    },
+    {
+        "tnea_code": "1441",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1442",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 33000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "1444",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1445",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 19000.0
+    },
+    {
+        "tnea_code": "1449",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1000.0,
+        "transport_max_fee": 3000.0
+    },
+    {
+        "tnea_code": "1450",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1452",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 50000.0
+    },
+    {
+        "tnea_code": "1501",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1503",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 40000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1000.0,
+        "transport_max_fee": 2000.0
+    },
+    {
+        "tnea_code": "1504",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18000.0,
+        "transport_max_fee": 27000.0
+    },
+    {
+        "tnea_code": "1505",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 600.0,
+        "establishment_fee": 8000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "1507",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 25250.0
+    },
+    {
+        "tnea_code": "1509",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 11000.0,
+        "transport_max_fee": 32000.0
+    },
+    {
+        "tnea_code": "1510",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "1511",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "1512",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1513",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1516",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 6000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1517",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "1518",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "1519",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 24500.0
+    },
+    {
+        "tnea_code": "1520",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7490.0,
+        "transport_max_fee": 32860.0
+    },
+    {
+        "tnea_code": "1523",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 10000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 28800.0
+    },
+    {
+        "tnea_code": "1524",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "1525",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5500.0,
+        "transport_max_fee": 14000.0
+    },
+    {
+        "tnea_code": "1526",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "1529",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 7000.0
+    },
+    {
+        "tnea_code": "1605",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7600.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2005",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 2750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2006",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5350.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2007",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 550.0,
+        "establishment_fee": 11000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2025",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2302",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2314",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1250.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 19000.0
+    },
+    {
+        "tnea_code": "2327",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "2329",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 16000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2332",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 18000.0
+    },
+    {
+        "tnea_code": "2338",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2341",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2342",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 25500.0
+    },
+    {
+        "tnea_code": "2343",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 100.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2346",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 7500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "2349",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2350",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "2354",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "2356",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 14500.0
+    },
+    {
+        "tnea_code": "2357",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2360",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1500.0,
+        "transport_max_fee": 4000.0
+    },
+    {
+        "tnea_code": "2367",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "2369",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5050.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2377",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 43700.0
+    },
+    {
+        "tnea_code": "2601",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 50.0,
+        "establishment_fee": 100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2602",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 10000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2603",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 2750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1000.0,
+        "transport_max_fee": 6250.0
+    },
+    {
+        "tnea_code": "2606",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2607",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 8000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 40000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "2608",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8400.0,
+        "transport_max_fee": 38000.0
+    },
+    {
+        "tnea_code": "2609",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2610",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1250.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 19000.0
+    },
+    {
+        "tnea_code": "2611",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3840.0,
+        "transport_max_fee": 33600.0
+    },
+    {
+        "tnea_code": "2612",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5500.0,
+        "establishment_fee": 6000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2613",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 8000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 40000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "2614",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1100.0,
+        "establishment_fee": 6000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 10000.0
+    },
+    {
+        "tnea_code": "2615",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 2750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2616",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2617",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2620",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2622",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "2623",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2624",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 5000.0
+    },
+    {
+        "tnea_code": "2625",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7500.0,
+        "transport_max_fee": 22500.0
+    },
+    {
+        "tnea_code": "2627",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2628",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3840.0,
+        "transport_max_fee": 33600.0
+    },
+    {
+        "tnea_code": "2630",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1200.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 18000.0
+    },
+    {
+        "tnea_code": "2632",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2633",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 4000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2500.0,
+        "transport_max_fee": 8000.0
+    },
+    {
+        "tnea_code": "2634",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "2635",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 9000.0
+    },
+    {
+        "tnea_code": "2636",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2500.0,
+        "transport_max_fee": 18000.0
+    },
+    {
+        "tnea_code": "2638",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2639",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18000.0,
+        "transport_max_fee": 36000.0
+    },
+    {
+        "tnea_code": "2640",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2641",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2642",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6240.0,
+        "transport_max_fee": 23920.0
+    },
+    {
+        "tnea_code": "2643",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4800.0,
+        "transport_max_fee": 27600.0
+    },
+    {
+        "tnea_code": "2646",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 17000.0
+    },
+    {
+        "tnea_code": "2647",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 5000.0
+    },
+    {
+        "tnea_code": "2648",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 14000.0
+    },
+    {
+        "tnea_code": "2650",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 40000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2651",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "2653",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 26000.0
+    },
+    {
+        "tnea_code": "2656",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "2658",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 8000.0,
+        "establishment_fee": 1200.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2400.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "2661",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2665",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2673",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 19000.0,
+        "transport_max_fee": 38000.0
+    },
+    {
+        "tnea_code": "2683",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "2704",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2705",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 4000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 27000.0
+    },
+    {
+        "tnea_code": "2706",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 20000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "2707",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 8500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4700.0,
+        "transport_max_fee": 26500.0
+    },
+    {
+        "tnea_code": "2708",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "2709",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 2750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3500.0,
+        "transport_max_fee": 7000.0
+    },
+    {
+        "tnea_code": "2710",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2711",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 31100.0
+    },
+    {
+        "tnea_code": "2712",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 38000.0
+    },
+    {
+        "tnea_code": "2713",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3800.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2715",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2716",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2718",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 60000.0,
+        "transport_max_fee": 70000.0
+    },
+    {
+        "tnea_code": "2719",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 12000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 22000.0,
+        "transport_max_fee": 49000.0
+    },
+    {
+        "tnea_code": "2721",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2722",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 70000.0
+    },
+    {
+        "tnea_code": "2723",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 12500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5500.0,
+        "transport_max_fee": 16200.0
+    },
+    {
+        "tnea_code": "2725",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 1083.0,
+        "hostel_fee": null,
+        "transport_min_fee": 23000.0,
+        "transport_max_fee": 49000.0
+    },
+    {
+        "tnea_code": "2726",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 16000.0,
+        "transport_max_fee": 39500.0
+    },
+    {
+        "tnea_code": "2727",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9500.0,
+        "transport_max_fee": 33000.0
+    },
+    {
+        "tnea_code": "2729",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "2731",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2732",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2733",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "2734",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 16000.0,
+        "transport_max_fee": 39500.0
+    },
+    {
+        "tnea_code": "2735",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2736",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10150.0,
+        "transport_max_fee": 50150.0
+    },
+    {
+        "tnea_code": "2737",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2739",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 38000.0
+    },
+    {
+        "tnea_code": "2740",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "2741",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 9000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 27000.0
+    },
+    {
+        "tnea_code": "2743",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "2744",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2745",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 26000.0
+    },
+    {
+        "tnea_code": "2747",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5500.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2748",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "2749",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 17000.0,
+        "transport_max_fee": 37000.0
+    },
+    {
+        "tnea_code": "2750",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2751",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 22000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "2752",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2753",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2755",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "2758",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 100.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2761",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2762",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "2763",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 32000.0
+    },
+    {
+        "tnea_code": "2764",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 7000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 42000.0
+    },
+    {
+        "tnea_code": "2767",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "2768",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2769",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "2770",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "2772",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "2776",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 11000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "3016",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1100.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "3019",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "3403",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 10000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 36000.0
+    },
+    {
+        "tnea_code": "3410",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 100.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "3425",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3454",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3456",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 100.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 8000.0
+    },
+    {
+        "tnea_code": "3460",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "3461",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4500.0,
+        "transport_max_fee": 14500.0
+    },
+    {
+        "tnea_code": "3462",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 300.0,
+        "establishment_fee": 100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3464",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "3465",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 6500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "3466",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2000.0,
+        "transport_max_fee": 8500.0
+    },
+    {
+        "tnea_code": "3701",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6600.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "3760",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "3766",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 23000.0
+    },
+    {
+        "tnea_code": "3782",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2500.0,
+        "transport_max_fee": 12500.0
+    },
+    {
+        "tnea_code": "3786",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 13000.0,
+        "transport_max_fee": 16000.0
+    },
+    {
+        "tnea_code": "3795",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 16000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "3801",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 100.0,
+        "establishment_fee": 3500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6200.0,
+        "transport_max_fee": 20800.0
+    },
+    {
+        "tnea_code": "3802",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "3803",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 100.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "3804",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "3805",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 37500.0
+    },
+    {
+        "tnea_code": "3806",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2800.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "3807",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3808",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 600.0,
+        "transport_max_fee": 1800.0
+    },
+    {
+        "tnea_code": "3810",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 700.0,
+        "establishment_fee": 3700.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "3811",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5600.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "3812",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3813",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2000.0,
+        "transport_max_fee": 7000.0
+    },
+    {
+        "tnea_code": "3814",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 14000.0
+    },
+    {
+        "tnea_code": "3815",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "3817",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3819",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "3820",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 18000.0
+    },
+    {
+        "tnea_code": "3821",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6500.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "3822",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3825",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3826",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 8000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3829",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 18000.0
+    },
+    {
+        "tnea_code": "3830",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6600.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "3831",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 10000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3833",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 4450.0,
+        "hostel_fee": null,
+        "transport_min_fee": 14000.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "3841",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 5250.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3843",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 6000.0
+    },
+    {
+        "tnea_code": "3844",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "3845",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 14000.0
+    },
+    {
+        "tnea_code": "3846",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3849",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4500.0,
+        "transport_max_fee": 12500.0
+    },
+    {
+        "tnea_code": "3850",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2000.0,
+        "transport_max_fee": 6000.0
+    },
+    {
+        "tnea_code": "3852",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7700.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "3854",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3855",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1500.0,
+        "transport_max_fee": 6250.0
+    },
+    {
+        "tnea_code": "3857",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3300.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3859",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 150.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 10000.0
+    },
+    {
+        "tnea_code": "3860",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3500.0,
+        "transport_max_fee": 23500.0
+    },
+    {
+        "tnea_code": "3905",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 26000.0
+    },
+    {
+        "tnea_code": "3908",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "3918",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "3920",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 3500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6800.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "3923",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 40000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2500.0,
+        "transport_max_fee": 8000.0
+    },
+    {
+        "tnea_code": "3926",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 4000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 16000.0
+    },
+    {
+        "tnea_code": "4020",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 16100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "4023",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 600.0,
+        "transport_max_fee": 800.0
+    },
+    {
+        "tnea_code": "4024",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 16100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 18000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "4670",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 750.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10800.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "4672",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4675",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4676",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "4677",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 300.0,
+        "transport_max_fee": 3000.0
+    },
+    {
+        "tnea_code": "4678",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 8000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 14000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "4680",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 24850.0
+    },
+    {
+        "tnea_code": "4686",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "4864",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 4000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8500.0,
+        "transport_max_fee": 33800.0
+    },
+    {
+        "tnea_code": "4917",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 47000.0
+    },
+    {
+        "tnea_code": "4927",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7800.0,
+        "transport_max_fee": 11500.0
+    },
+    {
+        "tnea_code": "4928",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 32000.0
+    },
+    {
+        "tnea_code": "4929",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "4931",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "4932",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4933",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "4934",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 6000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "4938",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5400.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "4941",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "4944",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 10000.0,
+        "establishment_fee": 20000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 11500.0,
+        "transport_max_fee": 48000.0
+    },
+    {
+        "tnea_code": "4946",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 27000.0
+    },
+    {
+        "tnea_code": "4948",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "4949",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "4952",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 7200.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4953",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 18000.0
+    },
+    {
+        "tnea_code": "4954",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 10500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5165.0,
+        "transport_max_fee": 22518.0
+    },
+    {
+        "tnea_code": "4955",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 14000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "4956",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 300.0,
+        "establishment_fee": 2700.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6195.0,
+        "transport_max_fee": 10374.0
+    },
+    {
+        "tnea_code": "4957",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4959",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 16000.0,
+        "transport_max_fee": 42000.0
+    },
+    {
+        "tnea_code": "4961",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1000.0,
+        "transport_max_fee": 2600.0
+    },
+    {
+        "tnea_code": "4962",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 14000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "4964",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 32500.0
+    },
+    {
+        "tnea_code": "4965",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 7500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4966",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 4500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5335.0,
+        "transport_max_fee": 36300.0
+    },
+    {
+        "tnea_code": "4967",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5500.0,
+        "transport_max_fee": 27225.0
+    },
+    {
+        "tnea_code": "4968",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 7500.0
+    },
+    {
+        "tnea_code": "4969",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "4970",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 26000.0
+    },
+    {
+        "tnea_code": "4971",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 7500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "4972",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3500.0,
+        "transport_max_fee": 48000.0
+    },
+    {
+        "tnea_code": "4974",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3700.0,
+        "establishment_fee": 3750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 5760.0
+    },
+    {
+        "tnea_code": "4975",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "4976",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 14000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "4977",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 23000.0
+    },
+    {
+        "tnea_code": "4978",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 38000.0
+    },
+    {
+        "tnea_code": "4980",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "4981",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9900.0,
+        "transport_max_fee": 36000.0
+    },
+    {
+        "tnea_code": "4982",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 600.0,
+        "establishment_fee": 750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 19000.0
+    },
+    {
+        "tnea_code": "4983",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 23000.0
+    },
+    {
+        "tnea_code": "4984",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "4989",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "4992",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 750.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "4993",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "4994",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "4995",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 7500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4996",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 750.0,
+        "establishment_fee": 1250.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12500.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "4998",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "4999",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3150.0,
+        "transport_max_fee": 23000.0
+    },
+    {
+        "tnea_code": "5008",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 22500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 21000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "5009",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "5010",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1100.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "3000",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 19000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "5017",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 16100.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "5502",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 600.0,
+        "transport_max_fee": 2000.0
+    },
+    {
+        "tnea_code": "5530",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 23000.0
+    },
+    {
+        "tnea_code": "5532",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "5533",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2250.0,
+        "establishment_fee": 8000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "5536",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 10000.0
+    },
+    {
+        "tnea_code": "5537",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6000.0,
+        "transport_max_fee": 16000.0
+    },
+    {
+        "tnea_code": "5703",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 300.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "5832",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 14000.0,
+        "transport_max_fee": 22000.0
+    },
+    {
+        "tnea_code": "5842",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 12000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "5851",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "5862",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 38500.0,
+        "transport_max_fee": 9500.0
+    },
+    {
+        "tnea_code": "5865",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 300.0,
+        "establishment_fee": 7000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8360.0,
+        "transport_max_fee": 25080.0
+    },
+    {
+        "tnea_code": "5901",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 200.0,
+        "establishment_fee": 5350.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "5902",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 4500.0
+    },
+    {
+        "tnea_code": "5904",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 4500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 17000.0,
+        "transport_max_fee": 24000.0
+    },
+    {
+        "tnea_code": "5907",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "5910",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9500.0,
+        "transport_max_fee": 35400.0
+    },
+    {
+        "tnea_code": "5911",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "5912",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12500.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "5913",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "5915",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 17500.0
+    },
+    {
+        "tnea_code": "5919",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 29050.0
+    },
+    {
+        "tnea_code": "5921",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 12400.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9700.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "5924",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 15000.0
+    },
+    {
+        "tnea_code": "5930",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "5935",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12500.0,
+        "transport_max_fee": 21500.0
+    },
+    {
+        "tnea_code": "5942",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 8000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "5986",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "5988",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "5990",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "3500",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "3000",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15100.0,
+        "transport_max_fee": 35100.0
+    },
+    {
+        "tnea_code": "1144",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 9500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 25000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "1146",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 21000.0,
+        "transport_max_fee": 21000.0
+    },
+    {
+        "tnea_code": "1152",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 60000.0
+    },
+    {
+        "tnea_code": "1400",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 30000.0,
+        "transport_max_fee": 48000.0
+    },
+    {
+        "tnea_code": "1530",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 25000.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 20000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "2344",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 31100.0
+    },
+    {
+        "tnea_code": "2348",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 10000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 3500.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2361",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 15000.0,
+        "establishment_fee": 15000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "2364",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 250.0,
+        "establishment_fee": 750.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2900",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1500.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 28000.0
+    },
+    {
+        "tnea_code": "2376",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 16000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2667",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 4000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 4500.0,
+        "transport_max_fee": 12000.0
+    },
+    {
+        "tnea_code": "2728",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "2759",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2779",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "3446",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1200.0,
+        "hostel_fee": null,
+        "transport_min_fee": 6600.0,
+        "transport_max_fee": 27000.0
+    },
+    {
+        "tnea_code": "3467",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 10000.0
+    },
+    {
+        "tnea_code": "3784",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 5250.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2500.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "4671",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5280.0,
+        "transport_max_fee": 14850.0
+    },
+    {
+        "tnea_code": "5863",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 2500.0,
+        "establishment_fee": 2500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 38500.0,
+        "transport_max_fee": 9500.0
+    },
+    {
+        "tnea_code": "2372",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "2022",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1200.0,
+        "establishment_fee": 32150.0,
+        "hostel_fee": null,
+        "transport_min_fee": 0.0,
+        "transport_max_fee": 0.0
+    },
+    {
+        "tnea_code": "1398",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 50000.0,
+        "transport_max_fee": 60000.0
+    },
+    {
+        "tnea_code": "2328",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3750.0,
+        "establishment_fee": 6500.0,
+        "hostel_fee": null,
+        "transport_min_fee": 40000.0,
+        "transport_max_fee": 40000.0
+    },
+    {
+        "tnea_code": "4679",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "4979",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 3000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 5000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1428",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 1000.0,
+        "establishment_fee": 2000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 2000.0,
+        "transport_max_fee": 30000.0
+    },
+    {
+        "tnea_code": "1514",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 1250.0,
+        "transport_max_fee": 1700.0
+    },
+    {
+        "tnea_code": "2345",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 5000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 15000.0,
+        "transport_max_fee": 25000.0
+    },
+    {
+        "tnea_code": "2621",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": null,
+        "transport_max_fee": null
+    },
+    {
+        "tnea_code": "2652",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 7000.0,
+        "transport_max_fee": 18000.0
+    },
+    {
+        "tnea_code": "2702",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 6000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 8000.0,
+        "transport_max_fee": 45000.0
+    },
+    {
+        "tnea_code": "2717",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": null,
+        "transport_max_fee": null
+    },
+    {
+        "tnea_code": "3809",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": null,
+        "transport_max_fee": null
+    },
+    {
+        "tnea_code": "4960",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 5000.0,
+        "establishment_fee": 10000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 12000.0,
+        "transport_max_fee": 28500.0
+    },
+    {
+        "tnea_code": "5914",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 500.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 20000.0
+    },
+    {
+        "tnea_code": "1126",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 0.0,
+        "establishment_fee": 0.0,
+        "hostel_fee": null,
+        "transport_min_fee": 9000.0,
+        "transport_max_fee": 35000.0
+    },
+    {
+        "tnea_code": "4669",
+        "year": 2023,
+        "tuition_fee": null,
+        "admission_fee": 3000.0,
+        "establishment_fee": 1000.0,
+        "hostel_fee": null,
+        "transport_min_fee": 10000.0,
+        "transport_max_fee": 25000.0
+    }
+]

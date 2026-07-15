@@ -1,0 +1,1790 @@
+[
+    {
+        "tnea_code": "2008",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2007",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2022",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2019",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1013",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1014",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1015",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1026",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1101",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1106",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1107",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1110",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1112",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1113",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1114",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1116",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1118",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1120",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1121",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1122",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1123",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1124",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1127",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1128",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1133",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1137",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1140",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1149",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1150",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1202",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1207",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1209",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1210",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1211",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1212",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1213",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1216",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1217",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1218",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1219",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1222",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1225",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1226",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1228",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1229",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1230",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1233",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1237",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1238",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1241",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1243",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1301",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1303",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1304",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1306",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1307",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1309",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1310",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1311",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1315",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1316",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1317",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1318",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1319",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1321",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1322",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1324",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1325",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1335",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1399",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1401",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1402",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1405",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1407",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1408",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1409",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1411",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1412",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1413",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1414",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1415",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1416",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1419",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1420",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1421",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1422",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1423",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1424",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1426",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1427",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1430",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1431",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1432",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1434",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1436",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1437",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1438",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1441",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1442",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1444",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1445",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1449",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1450",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1452",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1501",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1503",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1504",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1505",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1507",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1509",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1510",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1511",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1512",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1513",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1516",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1517",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1518",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1519",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1520",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1523",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1524",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1525",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1526",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1529",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1605",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2005",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2006",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2007",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2025",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2302",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2314",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2327",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2329",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2332",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2338",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2341",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2342",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2343",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2346",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2349",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2350",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2354",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2356",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2357",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2360",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2367",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2369",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2377",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2601",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2602",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2603",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2606",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2607",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2608",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2609",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2610",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2611",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2612",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2613",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2614",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2615",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2616",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2617",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2620",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2622",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2623",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2624",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2625",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2627",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2628",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2630",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2632",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2633",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2634",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2635",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2636",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2638",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2639",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2640",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2641",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2642",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2643",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2646",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2647",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2648",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2650",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2651",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2653",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2656",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2658",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2661",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2665",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2673",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2683",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2704",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2705",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2706",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2707",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2708",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2709",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2710",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2711",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2712",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2713",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2715",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2716",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2718",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2719",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2721",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2722",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2723",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2725",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2726",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2727",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2729",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2731",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2732",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2733",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2734",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2735",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2736",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2737",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2739",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2740",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2741",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2743",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2744",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2745",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2747",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2748",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2749",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2750",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2751",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2752",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2753",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2755",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2758",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2761",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2762",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2763",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2764",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2767",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2768",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2769",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2770",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2772",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2776",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3016",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "3019",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "3403",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3410",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3425",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3454",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3456",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3460",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3461",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3462",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3464",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "3465",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "3466",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3701",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3760",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3766",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3782",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3786",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3795",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3801",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3802",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3803",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3804",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3805",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3806",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3807",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3808",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3810",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3811",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3812",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3813",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3814",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3815",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3817",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3819",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3820",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3821",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3822",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3825",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3826",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3829",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3830",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3831",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3833",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3841",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3843",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3844",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3845",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3846",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3849",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3850",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3852",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3854",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3855",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3857",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3859",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3860",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3905",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3908",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3918",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3920",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3923",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3926",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4020",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "4023",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4024",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4670",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4672",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4675",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4676",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4677",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4678",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4680",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4686",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4864",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4917",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4927",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4928",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4929",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4931",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4932",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4933",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4934",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4938",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4941",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4944",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4946",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4948",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4949",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4952",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4953",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4954",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4955",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4956",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4957",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4959",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4961",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4962",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4964",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4965",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4966",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4967",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4968",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4969",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4970",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4971",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4972",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4974",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4975",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4976",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4977",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4978",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4980",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4981",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4982",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4983",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4984",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4989",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4992",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4993",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4994",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4995",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4996",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4998",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4999",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5008",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5009",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "5010",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "3000",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "5017",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "5502",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5530",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5532",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5533",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5536",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5537",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5703",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5832",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5842",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5851",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5862",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5865",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5901",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "5902",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5904",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5907",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5910",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5911",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5912",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5913",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5915",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5919",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5921",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5924",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5930",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5935",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5942",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5986",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5988",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5990",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3500",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3000",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1144",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1146",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1152",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1400",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1530",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2344",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2348",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2361",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2364",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2900",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2376",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2667",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2728",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2759",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2779",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3446",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3467",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "3784",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4671",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5863",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2372",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2022",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "1398",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2328",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4679",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4979",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1428",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1514",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2345",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2621",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "2652",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2702",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "2717",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "3809",
+        "has_transport": false
+    },
+    {
+        "tnea_code": "4960",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "5914",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "1126",
+        "has_transport": true
+    },
+    {
+        "tnea_code": "4669",
+        "has_transport": true
+    }
+]
