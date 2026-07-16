@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { AppShell } from "@/components/app-shell";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -9,11 +9,17 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
-import { Sparkles, Loader2, ChevronRight, Trophy, Target, Shield } from "lucide-react";
+import { Sparkles, Loader2, ChevronRight, Trophy, Target, Shield, Activity, Fingerprint, MapPin, Building2, Wallet } from "lucide-react";
 import { COMMUNITIES, DISTRICTS, type Community } from "@/lib/mock-data";
 import { useAllColleges, useBranches, fetchRecommendations } from "@/lib/api";
 import { toast } from "sonner";
 import { useMutation } from "@tanstack/react-query";
+import { motion, AnimatePresence } from "motion/react";
+import { AnimatedSection } from "@/components/animated-section";
+import { EngineeringBg, CoordinateMarker, EngineeringDivider } from "@/components/engineering-bg";
+
+// Lazy load the easter egg
+const EasterEgg = lazy(() => import("@/components/easter-egg"));
 
 export const Route = createFileRoute("/counselling")({
   head: () => ({
@@ -39,7 +45,7 @@ function Counselling() {
   const { data: colleges = [] } = useAllColleges();
   const { data: branches = [] } = useBranches();
 
-  const [community, setCommunity] = useState<Community>("BC");
+  const [community, setCommunity] = useState<Community | "any">("BC");
   const [gender, setGender] = useState("Female");
   const [genRank, setGenRank] = useState("2500");
   const [commRank, setCommRank] = useState("1400");
@@ -50,6 +56,7 @@ function Counselling() {
   const [hostel, setHostel] = useState(true);
 
   const [recos, setRecos] = useState<Reco[] | null>(null);
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
 
   const { mutate: generate, isPending: loading } = useMutation({
     mutationFn: async () => {
@@ -61,7 +68,7 @@ function Counselling() {
 
       const payload = {
         user_profile: {
-          community,
+          community: community === "any" ? "" : community,
           general_rank: parseInt(genRank),
           community_rank: parseInt(commRank)
         },
@@ -95,10 +102,11 @@ function Counselling() {
       mapCategory(data.target, "target");
       mapCategory(data.safe, "safe");
       setRecos(allRecos);
+
     },
     onError: (err) => {
       console.error(err);
-      toast.error("Could not generate recommendations. Please try again.");
+      toast.error("System Error: Could not generate recommendations.");
     }
   });
 
@@ -112,117 +120,212 @@ function Counselling() {
 
   return (
     <AppShell>
-      <section className="container-page py-12 md:py-14">
-        <div className="text-xs font-bold uppercase tracking-widest text-primary mb-2">AI Counselling</div>
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-balance">Get personalized college recommendations</h1>
-        <p className="mt-3 text-muted-foreground max-w-2xl text-pretty">Share your TNEA details and preferences. Our AI generates dream, target and safe college lists with reasoning.</p>
+      {showEasterEgg && (
+        <Suspense fallback={null}>
+          <EasterEgg onClose={() => setShowEasterEgg(false)} />
+        </Suspense>
+      )}
 
-        <div className="mt-10 grid lg:grid-cols-[380px_1fr] gap-8">
-          <Card className="p-6 rounded-2xl h-fit lg:sticky lg:top-20 gap-0">
-            <div className="space-y-5">
-              <div>
-                <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Your profile</h2>
-                <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-3">
+      <section className="relative border-b border-border/60 bg-surface-muted/40 overflow-hidden">
+        <EngineeringBg variant="grid" className="absolute inset-0 opacity-40 dark:opacity-20" />
+        <div className="container-page py-16 relative z-10">
+          <AnimatedSection className="max-w-3xl">
+            <CoordinateMarker label="AI.CN" className="mb-4" />
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Neural Recommendation Engine</h1>
+            <p className="mt-4 text-lg text-muted-foreground text-pretty">Input your TNEA parameters. Our system generates precise Dream, Target, and Safe probabilities based on historical allocation matrices.</p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <section className="container-page py-10">
+        <div className="grid lg:grid-cols-[400px_1fr] gap-8">
+          {/* Engineering Control Panel */}
+          <AnimatedSection direction="left" className="h-fit lg:sticky lg:top-20">
+            <Card className="p-6 rounded-2xl border-border/60 bg-card/80 backdrop-blur shadow-sm">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="size-2 rounded-full bg-primary animate-pulse" />
+                <span className="technical-label">Parameter Configuration</span>
+              </div>
+              
+              <div className="space-y-8 max-h-[65vh] overflow-y-auto pr-4 scrollbar-thin">
+                {/* Profile Data */}
+                <div>
+                  <div className="flex items-center gap-2 text-sm font-bold border-b border-border/60 pb-2 mb-4 text-foreground/80">
+                    <Fingerprint className="size-4" /> Demographics
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <Label>Community</Label>
-                      <Select value={community} onValueChange={(v) => setCommunity(v as Community)}>
-                        <SelectTrigger className="mt-1.5 w-full"><SelectValue /></SelectTrigger>
-                        <SelectContent>{COMMUNITIES.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
-                      </Select>
-                    </div>
-                    <div>
-                      <Label>Gender</Label>
-                      <Select value={gender} onValueChange={setGender}>
-                        <SelectTrigger className="mt-1.5 w-full"><SelectValue /></SelectTrigger>
+                      <Label className="technical-label block mb-2">Community</Label>
+                      <Select value={community} onValueChange={(v) => setCommunity(v as Community | "any")}>
+                        <SelectTrigger className="h-10 bg-background font-mono"><SelectValue /></SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Female">Female</SelectItem>
-                          <SelectItem value="Male">Male</SelectItem>
-                          <SelectItem value="Other">Other</SelectItem>
+                          <SelectItem value="any" className="font-mono">Any Community</SelectItem>
+                          {COMMUNITIES.map((c) => <SelectItem key={c} value={c} className="font-mono">{c}</SelectItem>)}
                         </SelectContent>
                       </Select>
                     </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div><Label>General Rank</Label><Input value={genRank} onChange={(e) => setGenRank(e.target.value)} className="mt-1.5" /></div>
-                    <div><Label>Community Rank</Label><Input value={commRank} onChange={(e) => setCommRank(e.target.value)} className="mt-1.5" /></div>
-                  </div>
-                  <div><Label>Cutoff (out of 200)</Label><Input value={cutoff} onChange={(e) => setCutoff(e.target.value)} className="mt-1.5" /></div>
-                </div>
-              </div>
-
-              <div className="border-t border-border/60 pt-5">
-                <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Preferences</h2>
-                <div className="space-y-4">
-                  <div>
-                    <Label>Preferred Branches</Label>
-                    <div className="mt-2 flex flex-wrap gap-1.5 max-h-40 overflow-y-auto">
-                      {branches.map((b) => (
-                        <Badge key={b.code} onClick={() => setPrefBranches(toggleFrom(prefBranches, b.name))}
-                          variant={prefBranches.includes(b.name) ? "default" : "outline"}
-                          className="cursor-pointer text-[11px] font-normal">
-                          {b.name}
-                        </Badge>
-                      ))}
+                    <div>
+                      <Label className="technical-label block mb-2">Gender</Label>
+                      <Select value={gender} onValueChange={setGender}>
+                        <SelectTrigger className="h-10 bg-background font-mono"><SelectValue /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Female" className="font-mono">Female</SelectItem>
+                          <SelectItem value="Male" className="font-mono">Male</SelectItem>
+                          <SelectItem value="Other" className="font-mono">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Label className="technical-label block mb-2">Gen Rank</Label>
+                      <Input value={genRank} onChange={(e) => setGenRank(e.target.value)} className="h-10 font-mono" />
+                    </div>
+                    <div>
+                      <Label className="technical-label block mb-2">Comm Rank</Label>
+                      <Input value={commRank} onChange={(e) => setCommRank(e.target.value)} className="h-10 font-mono" />
+                    </div>
+                    <div className="col-span-2">
+                      <div className="flex justify-between items-center mb-3">
+                        <Label className="technical-label">Cutoff Mark (Max 200)</Label>
+                        <Input value={cutoff} onChange={(e) => setCutoff(e.target.value)} className="h-8 w-24 text-right font-mono bg-primary/5 border-primary/20 focus-visible:ring-primary" />
+                      </div>
+                      <Slider min={80} max={200} step={0.5} value={[parseFloat(cutoff) || 80]} onValueChange={(v) => setCutoff(v[0].toString())} className="mt-2" />
                     </div>
                   </div>
+                </div>
 
-                  <div>
-                    <Label>Preferred Districts</Label>
-                    <div className="mt-2 flex flex-wrap gap-1.5 max-h-32 overflow-y-auto">
-                      {DISTRICTS.map((d) => (
-                        <Badge key={d} onClick={() => setPrefDistricts(toggleFrom(prefDistricts, d))}
-                          variant={prefDistricts.includes(d) ? "default" : "outline"}
-                          className="cursor-pointer text-[11px] font-normal">
-                          {d}
-                        </Badge>
-                      ))}
+                {/* Preferences */}
+                <div>
+                  <div className="flex items-center gap-2 text-sm font-bold border-b border-border/60 pb-2 mb-4 text-foreground/80 mt-6">
+                    <Target className="size-4" /> Targeting Parameters
+                  </div>
+                  
+                  <div className="space-y-5">
+                    <div>
+                      <Label className="technical-label block mb-2">Target Branches</Label>
+                      <div className="flex flex-wrap gap-2 max-h-[140px] overflow-y-auto pr-2 scrollbar-thin">
+                        {branches.map((b) => (
+                          <Badge key={b.code} onClick={() => setPrefBranches(toggleFrom(prefBranches, b.name))}
+                            variant={prefBranches.includes(b.name) ? "default" : "outline"}
+                            className="cursor-pointer text-[10px] font-mono hover:bg-primary/20 hover:text-primary transition-colors">
+                            {b.name}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label className="technical-label block mb-2">Geographic Focus</Label>
+                      <Select value={prefDistricts.length === 0 ? "any" : prefDistricts[0]} onValueChange={(v) => setPrefDistricts(v === "any" ? [] : [v])}>
+                        <SelectTrigger className="h-10 bg-background font-mono"><SelectValue /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="any" className="font-mono">Any District</SelectItem>
+                          {DISTRICTS.map((d) => <SelectItem key={d} value={d} className="font-mono">{d}</SelectItem>)}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-center mb-3">
+                        <Label className="technical-label">Annual Budget Cap</Label>
+                        <span className="font-mono text-xs font-bold bg-muted px-2 py-1 rounded">₹{budget[0].toLocaleString("en-IN")}</span>
+                      </div>
+                      <Slider min={20000} max={200000} step={5000} value={budget} onValueChange={(v) => setBudget(v as [number])} />
+                    </div>
+
+                    <div className="flex items-center justify-between bg-muted/30 p-3 rounded-xl border border-border/60">
+                      <Label htmlFor="hostel-req" className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                        <Building2 className="size-3.5" /> Require Hostel
+                      </Label>
+                      <Switch id="hostel-req" checked={hostel} onCheckedChange={setHostel} />
                     </div>
                   </div>
-
-                  <div>
-                    <Label>Annual Budget: <span className="tabular-nums">₹{budget[0].toLocaleString("en-IN")}</span></Label>
-                    <Slider min={20000} max={200000} step={5000} value={budget} onValueChange={(v) => setBudget(v as [number])} className="mt-3" />
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <Label htmlFor="hostel-req">Hostel Required</Label>
-                    <Switch id="hostel-req" checked={hostel} onCheckedChange={setHostel} />
-                  </div>
                 </div>
-              </div>
 
-              <Button onClick={() => generate()} disabled={loading} className="w-full h-11 rounded-xl gap-2">
-                {loading ? <Loader2 className="size-4 animate-spin" /> : <Sparkles className="size-4" />}
-                {loading ? "Generating..." : "Generate Recommendations"}
-              </Button>
-            </div>
-          </Card>
-
-          <div>
-            {!recos && !loading && (
-              <Card className="p-12 rounded-2xl text-center border-dashed items-center">
-                <div className="grid size-14 place-items-center rounded-2xl bg-primary/8 text-primary mb-4">
-                  <Sparkles className="size-6" />
-                </div>
-                <div className="font-bold text-lg">Your recommendations will show up here</div>
-                <p className="text-sm text-muted-foreground mt-1.5 max-w-sm">Set your rank, cutoff and preferences on the left, then generate to see dream, target and safe picks.</p>
-              </Card>
-            )}
-            {loading && (
-              <Card className="p-12 rounded-2xl text-center items-center">
-                <Loader2 className="size-6 mx-auto text-primary animate-spin mb-4" />
-                <div className="font-bold text-lg">Analysing your profile</div>
-                <p className="text-sm text-muted-foreground mt-1.5">Matching against verified cutoffs and your preferences.</p>
-              </Card>
-            )}
-            {groups && (
-              <div className="space-y-8">
-                <Group icon={Trophy} title="Dream Colleges" description="Stretch goals — high value if you get in" list={groups.dream} tone="warning" />
-                <Group icon={Target} title="Target Colleges" description="Realistic fits at your rank" list={groups.target} tone="primary" />
-                <Group icon={Shield} title="Safe Colleges" description="Very likely admissions — good backups" list={groups.safe} tone="success" />
+                <Button onClick={() => {
+                  if (genRank === "8081" && community === "BC" && commRank === "4702" && gender === "Male" && parseFloat(cutoff) === 188.5) {
+                    setShowEasterEgg(true);
+                  } else {
+                    setShowEasterEgg(false);
+                  }
+                  generate();
+                }} disabled={loading} className="w-full h-12 rounded-xl gap-2 font-bold shadow-glow relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
+                  {loading ? <Loader2 className="size-4 animate-spin relative z-10" /> : <Activity className="size-4 relative z-10" />}
+                  <span className="relative z-10 tracking-wide uppercase text-xs">{loading ? "Processing Matrix..." : "Execute Simulation"}</span>
+                </Button>
               </div>
-            )}
+            </Card>
+          </AnimatedSection>
+
+          {/* Results Area */}
+          <div className="min-w-0">
+            <AnimatePresence mode="wait">
+              {!recos && !loading && (
+                <motion.div
+                  key="empty"
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Card className="p-16 rounded-2xl text-center border-dashed border-border/80 flex flex-col items-center justify-center min-h-[500px]">
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full" />
+                      <div className="grid size-20 place-items-center rounded-2xl bg-card border border-primary/20 text-primary shadow-sm relative z-10">
+                        <Activity className="size-8 opacity-80" />
+                      </div>
+                    </div>
+                    <div className="font-extrabold text-2xl tracking-tight">System Standby</div>
+                    <p className="text-muted-foreground mt-3 max-w-md text-sm leading-relaxed">
+                      Configure your parameters on the control panel and execute the simulation to generate targeted college allocations.
+                    </p>
+                  </Card>
+                </motion.div>
+              )}
+              
+              {loading && (
+                <motion.div
+                  key="loading"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="min-h-[500px] flex items-center justify-center"
+                >
+                  <Card className="p-12 rounded-2xl text-center border-border/60 bg-card/50 flex flex-col items-center w-full max-w-md mx-auto">
+                    <div className="relative size-16 mb-6">
+                      <svg className="animate-spin size-full text-primary/20" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      <Activity className="size-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary" />
+                    </div>
+                    <div className="font-bold text-lg font-mono">PROCESSING_MATRIX...</div>
+                    <div className="w-full bg-muted rounded-full h-1 mt-4 overflow-hidden">
+                      <motion.div 
+                        className="bg-primary h-full rounded-full"
+                        initial={{ width: "0%" }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+                      />
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-4 font-mono uppercase tracking-widest">Running allocation scenarios</p>
+                  </Card>
+                </motion.div>
+              )}
+              
+              {groups && !loading && (
+                <motion.div
+                  key="results"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="space-y-10"
+                >
+                  <Group icon={Trophy} title="Dream Allocation" description="Stretch probability — high value targets" list={groups.dream} tone="warning" delay={0} />
+                  <Group icon={Target} title="Target Allocation" description="High probability — realistic matches" list={groups.target} tone="primary" delay={0.2} />
+                  <Group icon={Shield} title="Safe Allocation" description="Near certainty — reliable fallbacks" list={groups.safe} tone="success" delay={0.4} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -231,65 +334,91 @@ function Counselling() {
 }
 
 function ProbabilityRing({ value, tone }: { value: number; tone: "warning" | "primary" | "success" }) {
-  const size = 44;
+  const size = 52;
   const stroke = 4;
   const r = (size - stroke) / 2;
   const circumference = 2 * Math.PI * r;
   const offset = circumference * (1 - value / 100);
   const strokeColor = tone === "warning" ? "var(--warning)" : tone === "success" ? "var(--success)" : "var(--primary)";
+  const glowColor = tone === "warning" ? "rgba(234, 179, 8, 0.4)" : tone === "success" ? "rgba(34, 197, 94, 0.4)" : "rgba(99, 102, 241, 0.4)";
+  
   return (
-    <div className="relative shrink-0" style={{ width: size, height: size }}>
-      <svg width={size} height={size} className="-rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--border)" strokeWidth={stroke} />
-        <circle
+    <div className="relative shrink-0 flex items-center justify-center" style={{ width: size, height: size }}>
+      <div className="absolute inset-0 rounded-full blur-md opacity-50" style={{ backgroundColor: glowColor, transform: 'scale(0.8)' }} />
+      <svg width={size} height={size} className="-rotate-90 relative z-10 drop-shadow-sm">
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--border)" strokeWidth={stroke} className="opacity-40" />
+        <motion.circle
           cx={size / 2} cy={size / 2} r={r} fill="none"
           stroke={strokeColor} strokeWidth={stroke} strokeLinecap="round"
-          strokeDasharray={circumference} strokeDashoffset={offset}
-          style={{ transition: "stroke-dashoffset 0.6s cubic-bezier(0.16,1,0.3,1)" }}
+          strokeDasharray={circumference} 
+          initial={{ strokeDashoffset: circumference }}
+          animate={{ strokeDashoffset: offset }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
         />
       </svg>
-      <div className="absolute inset-0 grid place-items-center text-[11px] font-bold tabular-nums">{value}%</div>
+      <div className="absolute inset-0 grid place-items-center text-[11px] font-bold tabular-nums z-10 font-mono">{value}%</div>
     </div>
   );
 }
 
-function Group({ icon: Icon, title, description, list, tone }: {
-  icon: any; title: string; description: string; list: Reco[]; tone: "warning" | "primary" | "success";
+function Group({ icon: Icon, title, description, list, tone, delay }: {
+  icon: any; title: string; description: string; list: Reco[]; tone: "warning" | "primary" | "success"; delay: number;
 }) {
   if (list.length === 0) return null;
-  const toneClass = tone === "warning" ? "text-warning bg-warning/10"
-    : tone === "success" ? "text-success bg-success/10"
-    : "text-primary bg-primary/10";
+  
+  const toneMap = {
+    warning: { bg: "bg-warning/10", text: "text-warning", border: "border-warning/30", label: "text-warning" },
+    success: { bg: "bg-success/10", text: "text-success", border: "border-success/30", label: "text-success" },
+    primary: { bg: "bg-primary/10", text: "text-primary", border: "border-primary/30", label: "text-primary" },
+  };
+  
+  const t = toneMap[tone];
+
   return (
-    <div>
-      <div className="flex items-center gap-3 mb-4">
-        <div className={`grid size-10 place-items-center rounded-xl ${toneClass}`}><Icon className="size-5" /></div>
+    <AnimatedSection delay={delay}>
+      <div className="flex items-center gap-4 mb-5">
+        <div className={`grid size-12 place-items-center rounded-xl ${t.bg} ${t.text} border ${t.border} shadow-sm`}>
+          <Icon className="size-5" />
+        </div>
         <div>
-          <h3 className="font-bold text-lg">{title}</h3>
-          <p className="text-xs text-muted-foreground">{description}</p>
+          <h3 className="font-extrabold text-xl tracking-tight uppercase">{title}</h3>
+          <p className="text-xs font-mono text-muted-foreground mt-1 uppercase tracking-wider">{description}</p>
         </div>
       </div>
-      <div className="grid gap-3">
+      
+      <div className="grid gap-4">
         {list.map((r) => (
-          <Card key={`${r.code}-${r.branch}`} className="p-5 rounded-xl hover:shadow-elegant hover:border-primary/25 transition-all">
-            <div className="flex items-start gap-4">
-              <ProbabilityRing value={r.probability} tone={tone} />
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-mono text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">Code {r.code}</span>
-                  <span className="font-bold">{r.name}</span>
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">{r.branch}</div>
-                {r.reasoning && <p className="text-sm mt-2 leading-relaxed">{r.reasoning}</p>}
-                <div className="mt-3 flex flex-wrap gap-3 text-xs text-muted-foreground">
-                  <span>Expected cutoff: <strong className="text-foreground font-mono tabular-nums">{r.expectedCutoff.toFixed(1)}</strong></span>
+          <div key={`${r.code}-${r.branch}`}>
+            <Card className="p-5 rounded-xl card-hover-lift border-border/60 bg-card group relative overflow-hidden">
+              <div className={`absolute top-0 left-0 w-1 h-full ${t.bg.replace('/10', '/40')}`} />
+              <div className="flex items-start gap-5 pl-2">
+                <ProbabilityRing value={r.probability} tone={tone} />
+                
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                    <Badge variant="secondary" className="font-mono text-[10px] bg-muted/60 border border-border/80">CD:{r.code}</Badge>
+                    <span className="font-bold text-base leading-tight group-hover:text-primary transition-colors line-clamp-1">{r.name}</span>
+                  </div>
+                  <div className="text-sm font-medium text-foreground/80 mt-1">{r.branch}</div>
+                  
+                  {r.reasoning && (
+                    <div className="mt-3 p-3 rounded-lg bg-muted/30 border border-border/40 text-sm leading-relaxed text-muted-foreground">
+                      {r.reasoning}
+                    </div>
+                  )}
+                  
+                  <div className="mt-4 flex flex-wrap gap-4 items-center">
+                    <div className="flex items-center gap-2 bg-background border border-border/60 px-2.5 py-1 rounded-md">
+                      <span className="technical-label">Exp. Cutoff Rank:</span>
+                      <strong className="text-foreground font-mono tabular-nums text-xs">{r.expectedCutoff.toLocaleString("en-IN")}</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <ChevronRight className="size-4 text-muted-foreground shrink-0 mt-1.5" />
-            </div>
-          </Card>
+            </Card>
+          </div>
         ))}
       </div>
-    </div>
+    </AnimatedSection>
   );
 }

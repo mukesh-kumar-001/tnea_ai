@@ -4,9 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useColleges, useBranches } from "@/lib/api";
 import { type College } from "@/lib/mock-data";
+import { motion } from "motion/react";
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
+import { StatCard, InlineStat } from "@/components/stat-card";
+import { EngineeringBg, CoordinateMarker, EngineeringDivider } from "@/components/engineering-bg";
 import {
   Sparkles, GraduationCap, TrendingUp, ListChecks, LineChart,
   Compass, ArrowRight, ShieldCheck, Database, BadgeCheck, MessageSquare,
+  Activity
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -39,149 +44,178 @@ function Home() {
   return (
     <AppShell>
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-[85vh] flex flex-col justify-center">
+        <EngineeringBg variant="grid" className="absolute inset-0 opacity-40 dark:opacity-20" />
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-primary/10 blur-3xl" />
+          <motion.div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] md:size-[800px] rounded-full bg-primary/10 blur-[100px]"
+            animate={{ 
+              scale: [1, 1.05, 1],
+              opacity: [0.5, 0.8, 0.5]
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          />
         </div>
-        <div className="container-page pt-16 pb-20 md:pt-24 md:pb-28 text-center animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex size-2 rounded-full bg-primary" />
-            </span>
-            Updated for the 2026 counselling window
-          </div>
-          <h1 className="mt-6 mx-auto max-w-4xl text-balance text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
-            AI-Powered <span className="text-primary">TNEA</span> Counselling Assistant
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground text-pretty">
-            Get personalized college and branch recommendations using verified TNEA data and AI analysis — so you file the right choices with confidence.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link to="/counselling">
-              <Button size="lg" className="rounded-xl shadow-glow px-6 h-12 gap-2">
-                <Sparkles className="size-4" /> Start Counselling
-              </Button>
-            </Link>
-            <Link to="/colleges">
-              <Button size="lg" variant="outline" className="rounded-xl h-12 px-6">
-                Explore Colleges
-              </Button>
-            </Link>
-          </div>
+        
+        <div className="container-page relative z-10 pt-20 pb-16 md:pt-32 md:pb-24">
+          <StaggerContainer className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <StaggerItem>
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-mono font-medium text-primary shadow-sm glass">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-primary" />
+                </span>
+                SYS.UPDATE // 2026 COUNSELLING WINDOW
+              </div>
+            </StaggerItem>
+            
+            <StaggerItem>
+              <h1 className="mt-8 text-balance text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight">
+                Precision <span className="text-primary relative inline-block">
+                  Engineering
+                  <motion.span 
+                    className="absolute -bottom-2 left-0 h-1 bg-primary w-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 0.8, duration: 0.8, ease: "circOut" }}
+                  />
+                </span> Counselling
+              </h1>
+            </StaggerItem>
+            
+            <StaggerItem>
+              <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground text-pretty font-medium">
+                Data-driven college and branch recommendations using verified TNEA parameters. Navigate admissions with mechanical precision.
+              </p>
+            </StaggerItem>
+            
+            <StaggerItem className="w-full">
+              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link to="/counselling">
+                  <Button size="lg" className="rounded-xl shadow-glow px-8 h-14 gap-2 text-base w-full sm:w-auto">
+                    <Activity className="size-5" /> Initialize System
+                  </Button>
+                </Link>
+                <Link to="/colleges">
+                  <Button size="lg" variant="outline" className="rounded-xl h-14 px-8 text-base bg-background/50 backdrop-blur border-border/80 w-full sm:w-auto">
+                    Explore Database
+                  </Button>
+                </Link>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
 
         {/* Stats */}
-        <div className="container-page pb-16 md:pb-24">
-          <div className="rounded-2xl border border-border/60 bg-card shadow-elegant">
-            <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-border/60 md:divide-y-0 md:divide-x">
-              {[
-                { label: "Colleges", value: `${totalColleges}+`, icon: GraduationCap },
-                { label: "Branches", value: `${totalBranches}+`, icon: BadgeCheck },
-                { label: "Years of Cutoffs", value: `5`, icon: Database },
-                { label: "AI Recommendations", value: `125k+`, icon: Sparkles },
-              ].map((s) => (
-                <div key={s.label} className="flex items-center gap-3 px-6 py-5">
-                  <div className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary/8 text-primary">
-                    <s.icon className="size-4" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-2xl font-extrabold tracking-tight tabular-nums leading-none">{s.value}</div>
-                    <div className="mt-1.5 text-xs text-muted-foreground font-medium truncate">{s.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <AnimatedSection delay={0.4} className="container-page pb-16 md:pb-24 z-10 relative mt-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StatCard label="Verified Colleges" value={totalColleges} suffix="+" icon={<GraduationCap className="size-5" />} countUp />
+            <StatCard label="Engineering Branches" value={totalBranches} suffix="+" icon={<BadgeCheck className="size-5" />} countUp />
+            <StatCard label="Cutoff History" value={5} suffix=" YRS" icon={<Database className="size-5" />} countUp />
+            <StatCard label="AI Scenarios Run" value={125} suffix="k+" icon={<Sparkles className="size-5" />} countUp />
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       {/* Feature grid */}
-      <section className="border-y border-border/60 bg-surface-muted/40">
-        <div className="container-page py-20">
-          <div className="max-w-2xl mb-12">
-            <div className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Toolset</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Everything you need in one place</h2>
-            <p className="mt-3 text-muted-foreground">Purpose-built modules for every stage of the TNEA journey — from exploration to final choice submission.</p>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <section className="relative border-y border-border/60 bg-surface-muted/40">
+        <CoordinateMarker label="01.SYS" className="absolute top-4 left-4" />
+        <div className="container-page py-24">
+          <AnimatedSection className="max-w-2xl mb-16">
+            <div className="technical-label mb-3">Core Modules</div>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">Everything you need</h2>
+            <p className="mt-4 text-lg text-muted-foreground">Purpose-built tools for every stage of the TNEA journey — from exploration to final choice submission.</p>
+          </AnimatedSection>
+          
+          <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
-              <Link key={f.title} to={f.to} className="group">
-                <Card className="p-6 rounded-2xl h-full border-border/60 hover:border-primary/30 hover:shadow-elegant transition-all">
-                  <div className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary mb-5">
-                    <f.icon className="size-5" />
-                  </div>
-                  <h3 className="text-lg font-bold">{f.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
-                  <div className="mt-5 text-sm font-semibold text-primary inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Open <ArrowRight className="size-3.5" />
-                  </div>
-                </Card>
-              </Link>
+              <StaggerItem key={f.title}>
+                <Link to={f.to} className="group block h-full">
+                  <Card className="relative p-6 rounded-2xl h-full border-border/60 bg-card/50 backdrop-blur-sm card-hover-lift overflow-hidden">
+                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                      <f.icon className="size-24" />
+                    </div>
+                    <div className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary mb-6 border border-primary/20">
+                      <f.icon className="size-5" />
+                    </div>
+                    <h3 className="text-xl font-bold tracking-tight">{f.title}</h3>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                    <div className="mt-6 text-sm font-semibold text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Execute <ArrowRight className="size-4" />
+                    </div>
+                  </Card>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Featured colleges */}
-      <section className="container-page py-20">
-        <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
+      <section className="relative container-page py-24">
+        <EngineeringBg variant="dots" className="absolute inset-0 opacity-30" />
+        <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 relative z-10">
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Featured</div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Top-tier institutions</h2>
+            <div className="technical-label mb-3">Database Sample</div>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">Top-tier institutions</h2>
           </div>
-          <Link to="/colleges" className="text-sm font-semibold text-primary hover:underline inline-flex items-center gap-1">
-            View all colleges <ArrowRight className="size-3.5" />
+          <Link to="/colleges" className="text-sm font-semibold text-primary hover:text-primary-glow inline-flex items-center gap-2 bg-primary/5 px-4 py-2 rounded-lg transition-colors border border-primary/20">
+            Access Full Database <ArrowRight className="size-4" />
           </Link>
-        </div>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        </AnimatedSection>
+        
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 relative z-10">
           {isLoadingColleges ? (
-            <div className="col-span-full py-10 text-center text-muted-foreground">Loading featured colleges...</div>
-          ) : topColleges.map((c: College) => (
-            <Link key={c.code} to="/colleges/$code" params={{ code: c.code }} className="group">
-              <Card className="p-6 rounded-2xl h-full border-border/60 hover:border-primary/30 hover:shadow-elegant transition-all">
-                <div className="flex items-start justify-between mb-3">
-                  <span className="rounded bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide font-mono">Code {c.code}</span>
-                  <span className="inline-flex items-center gap-1 text-[10px] font-bold text-success uppercase tracking-wide">
-                    <span className="size-2 rounded-full bg-success" /> NAAC {c.naac}
-                  </span>
-                </div>
-                <h3 className="text-base font-bold group-hover:text-primary transition-colors leading-tight">{c.name}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{c.district}, Tamil Nadu</p>
-                <div className="mt-5 grid grid-cols-2 gap-3 border-t border-border/60 pt-4">
-                  <div>
-                    <div className="text-[10px] font-bold uppercase text-muted-foreground tracking-wider">Placement</div>
-                    <div className="text-sm font-bold">{c.placementPercentage}%</div>
+            Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="h-64 rounded-2xl bg-muted/30 animate-shimmer border border-border/60" />
+            ))
+          ) : topColleges.map((c: College, i: number) => (
+            <AnimatedSection key={c.code} delay={i * 0.1}>
+              <Link to="/colleges/$code" params={{ code: c.code }} className="group block h-full">
+                <Card className="p-6 rounded-2xl h-full border-border/60 bg-card/60 backdrop-blur card-hover-lift">
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="rounded border border-primary/20 bg-primary/10 px-2 py-1 text-[10px] font-bold text-primary uppercase tracking-widest font-mono">
+                      CD:{c.code}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-success uppercase tracking-widest bg-success/10 px-2 py-1 rounded border border-success/20">
+                      <span className="size-1.5 rounded-full bg-success animate-pulse" /> NAAC {c.naac}
+                    </span>
                   </div>
-                  <div>
-                    <div className="text-[10px] font-bold uppercase text-muted-foreground tracking-wider">Avg Package</div>
-                    <div className="text-sm font-bold">₹{c.averagePackage} LPA</div>
+                  <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-tight line-clamp-2 min-h-[2.5rem]">{c.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-2 font-mono">{c.district}, TN</p>
+                  <EngineeringDivider className="my-5" />
+                  <div className="grid grid-cols-2 gap-4">
+                    <InlineStat label="Placement" value={`${c.placementPercentage}%`} />
+                    <InlineStat label="Avg Package" value={`₹${c.averagePackage}L`} />
                   </div>
-                </div>
-              </Card>
-            </Link>
+                </Card>
+              </Link>
+            </AnimatedSection>
           ))}
         </div>
       </section>
 
       {/* Trust strip */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="container-page py-16 grid md:grid-cols-3 gap-8">
-          {[
-            { icon: ShieldCheck, title: "Verified data", desc: "Cutoffs sourced from official TNEA seat allotment records." },
-            { icon: Sparkles, title: "AI recommendations", desc: "Trained on 10 years of counselling patterns and preferences." },
-            { icon: MessageSquare, title: "Always-on assistant", desc: "Ask anything about rules, seats, fees — get answers in seconds." },
-          ].map((f) => (
-            <div key={f.title} className="flex gap-4">
-              <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary-foreground/10">
-                <f.icon className="size-5" />
-              </div>
-              <div>
-                <div className="font-bold">{f.title}</div>
-                <div className="text-sm opacity-80 mt-1">{f.desc}</div>
-              </div>
-            </div>
-          ))}
+      <section className="relative border-t border-border/60 bg-surface">
+        <EngineeringBg variant="grid" className="absolute inset-0 opacity-20" />
+        <div className="container-page py-20 relative z-10">
+          <StaggerContainer className="grid md:grid-cols-3 gap-10">
+            {[
+              { icon: ShieldCheck, title: "Verified Protocols", desc: "Cutoffs sourced directly from official TNEA seat allotment records with high fidelity." },
+              { icon: Sparkles, title: "Neural Analysis", desc: "Recommendation engine trained on a decade of counselling patterns and shifting preferences." },
+              { icon: MessageSquare, title: "System Assistant", desc: "Always-on conversational agent for rules, seat matrices, and fee structures." },
+            ].map((f) => (
+              <StaggerItem key={f.title} className="flex gap-5">
+                <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-sm">
+                  <f.icon className="size-5" />
+                </div>
+                <div>
+                  <div className="text-base font-bold tracking-tight">{f.title}</div>
+                  <div className="text-sm text-muted-foreground mt-2 leading-relaxed">{f.desc}</div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
     </AppShell>

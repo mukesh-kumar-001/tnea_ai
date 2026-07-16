@@ -5,10 +5,15 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Building2, MapPin, Sparkles, GraduationCap, Home, Wallet, Award, Users, Star, AlertTriangle } from "lucide-react";
+import { Building2, MapPin, Sparkles, GraduationCap, Home, Wallet, Award, Users, Star, AlertTriangle, ArrowLeft } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts";
-import { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState } from "react";
 import { useAllColleges, useCutoffs } from "@/lib/api";
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
+import { StatCard, InlineStat } from "@/components/stat-card";
+import { EngineeringBg, CoordinateMarker, EngineeringDivider } from "@/components/engineering-bg";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/colleges/$code")({
   head: () => ({
@@ -29,10 +34,12 @@ interface BackendCollege {
 
 function Detail() {
   const { code } = Route.useParams();
+  const [community, setCommunity] = useState("");
+  const [branch, setBranch] = useState("");
   const { data: allColleges = [], isLoading: loadingColleges, error: fetchError } = useAllColleges();
-  const { data: cutoffsResponse, isLoading: loadingCutoffs } = useCutoffs({ college_code: code, category: "OC", per_page: 500 });
+  const { data: cutoffsResponse, isLoading: loadingCutoffs } = useCutoffs({ college_code: code, category: community || "OC", per_page: 500 });
 
-  const loading = loadingColleges || loadingCutoffs;
+  const loading = loadingColleges;
   const error = fetchError ? (fetchError instanceof Error ? fetchError.message : String(fetchError)) : null;
 
   const college = useMemo(() => {
@@ -40,12 +47,12 @@ function Detail() {
     const c = allColleges.find((x) => x.code === code);
     if (!c) return null;
 
-    // Inject live cutoffs into the mock structure
+    // Inject live cutoffs into the mock structure, filtering out invalid cutoffs > 200
     const liveCutoffs = (cutoffsResponse?.data || []).map((ct) => ({
       year: ct.year,
       branch: ct.branch_name,
       community: ct.category,
-      cutoff: ct.cutoff_mark || 0
+      cutoff: (ct.cutoff_mark && ct.cutoff_mark <= 200) ? ct.cutoff_mark : null
     }));
 
     // Generate branches list from cutoffs if missing
@@ -63,18 +70,21 @@ function Detail() {
   if (loading) {
     return (
       <AppShell>
-        <div className="container-page py-8" aria-busy="true" aria-label="Loading college profile">
+        <div className="container-page py-12 w-full overflow-hidden" aria-busy="true" aria-label="Loading college profile">
           <Skeleton className="h-4 w-48 mb-8" />
-          <div className="flex flex-col md:flex-row md:items-start gap-6">
-            <Skeleton className="size-20 rounded-2xl shrink-0" />
-            <div className="flex-1 space-y-3 pt-1">
-              <Skeleton className="h-4 w-56" />
-              <Skeleton className="h-7 w-2/3" />
-              <Skeleton className="h-4 w-40" />
+          <div className="flex flex-col md:flex-row md:items-start gap-8">
+            <Skeleton className="size-24 rounded-2xl shrink-0" />
+            <div className="flex-1 space-y-4 pt-2">
+              <div className="flex gap-2">
+                <Skeleton className="h-5 w-16" />
+                <Skeleton className="h-5 w-24" />
+              </div>
+              <Skeleton className="h-8 w-3/4" />
+              <Skeleton className="h-4 w-48" />
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
-            {Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-20 rounded-xl" />)}
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-24 rounded-xl" />)}
           </div>
         </div>
       </AppShell>
@@ -84,15 +94,17 @@ function Detail() {
   if (error || !college) {
     return (
       <AppShell>
-        <div className="container-page py-24 text-center flex flex-col items-center">
-          <div className="grid size-12 place-items-center rounded-xl bg-destructive/10 text-destructive mb-4">
-            <AlertTriangle className="size-5" />
-          </div>
-          <h1 className="text-xl font-bold">We couldn't load this college</h1>
-          <p className="mt-2 text-muted-foreground max-w-sm">{error || "That college code doesn't match anything in our records."}</p>
-          <Link to="/colleges" className="inline-block mt-5 text-sm text-primary font-semibold hover:underline">
-            ← Back to College Explorer
-          </Link>
+        <div className="container-page py-24 text-center flex flex-col items-center w-full overflow-hidden">
+          <AnimatedSection>
+            <div className="grid size-16 place-items-center rounded-2xl bg-destructive/10 text-destructive mb-6 border border-destructive/20 shadow-sm">
+              <AlertTriangle className="size-6" />
+            </div>
+            <h1 className="text-2xl font-bold tracking-tight">System Error: College Not Found</h1>
+            <p className="mt-3 text-muted-foreground max-w-sm">The requested college code [{code}] does not match any entry in the active database.</p>
+            <Link to="/colleges" className="inline-flex items-center gap-2 mt-8 text-sm font-semibold hover:text-primary transition-colors bg-muted/50 px-4 py-2 rounded-lg border border-border/80">
+              <ArrowLeft className="size-4" /> Back to Database
+            </Link>
+          </AnimatedSection>
         </div>
       </AppShell>
     );
@@ -101,227 +113,375 @@ function Detail() {
   return (
     <AppShell>
       {/* Header Profile Section */}
-      <section className="border-b border-border/60 bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="container-page py-8">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem><BreadcrumbLink asChild><Link to="/">Home</Link></BreadcrumbLink></BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem><BreadcrumbLink asChild><Link to="/colleges">Colleges</Link></BreadcrumbLink></BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem><BreadcrumbPage>{college.shortName}</BreadcrumbPage></BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+      <section className="relative border-b border-border/60 bg-surface overflow-hidden w-full">
+        <EngineeringBg variant="grid" className="absolute inset-0 opacity-40 dark:opacity-20" />
+        <div className="container-page py-10 relative z-10">
+          <AnimatedSection direction="none">
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem><BreadcrumbLink asChild><Link to="/" className="font-mono text-xs uppercase">SYS.ROOT</Link></BreadcrumbLink></BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem><BreadcrumbLink asChild><Link to="/colleges" className="font-mono text-xs uppercase">DB.COLLEGES</Link></BreadcrumbLink></BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem><BreadcrumbPage className="font-mono text-xs uppercase text-primary font-bold">CD:{college.shortName}</BreadcrumbPage></BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </AnimatedSection>
 
-          <div className="mt-6 flex flex-col md:flex-row md:items-start gap-6">
-            <div className="grid size-20 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-elegant shrink-0">
-              <Building2 className="size-9" />
-            </div>
-            <div className="flex-1">
-              <div className="flex flex-wrap items-center gap-2 mb-2">
-                <Badge variant="secondary" className="font-mono">Code {college.code}</Badge>
-                <Badge className="bg-success/15 text-success hover:bg-success/15 border-0">NAAC {college.naac}</Badge>
-                {college.nba && <Badge variant="outline">NBA Accredited</Badge>}
-                <Badge variant="outline">{college.type}</Badge>
-              </div>
-              <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">{college.name}</h1>
-              <div className="flex items-center gap-2 mt-2 text-muted-foreground text-sm">
-                <MapPin className="size-4" /> {college.address}
+          <AnimatedSection className="mt-8 flex flex-col md:flex-row md:items-start gap-6 lg:gap-8">
+            <div className="relative group shrink-0">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-b from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur" />
+              <div className="relative grid size-20 md:size-24 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-elegant border border-primary-foreground/10">
+                <Building2 className="size-10 md:size-12" />
               </div>
             </div>
-          </div>
+            
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-2.5 mb-3">
+                <Badge variant="secondary" className="font-mono text-[10px] bg-background/80 border-border/80">CD:{college.code}</Badge>
+                <Badge className="bg-success/15 text-success hover:bg-success/15 border border-success/20 text-[10px] font-bold">NAAC {college.naac}</Badge>
+                {college.nba && <Badge variant="outline" className="text-[10px] font-medium border-border/80">NBA Accredited</Badge>}
+                <Badge variant="outline" className="text-[10px] font-medium border-border/80">{college.type}</Badge>
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">{college.name}</h1>
+              <div className="flex items-center gap-2 mt-3 text-muted-foreground text-sm font-mono">
+                <MapPin className="size-4 shrink-0" /> <span className="truncate">{college.address}</span>
+              </div>
+            </div>
+          </AnimatedSection>
 
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
-            <MiniStat icon={GraduationCap} label="Placement" value={`${college.placementPercentage}%`} />
-            <MiniStat icon={Award} label="Highest Pkg" value={`₹${college.highestPackage} LPA`} />
-            <MiniStat icon={Star} label="Avg Pkg" value={`₹${college.averagePackage} LPA`} />
-            <MiniStat icon={Wallet} label="Fees/Yr" value={`₹${(college.fees / 1000).toFixed(0)}k`} />
-          </div>
+          <AnimatedSection delay={0.2} className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StatCard icon={<GraduationCap className="size-5" />} label="Placement" value={college.placementPercentage} suffix="%" countUp />
+            <StatCard icon={<Award className="size-5" />} label="Highest Package" value={`₹${college.highestPackage}L`} countUp={false} />
+            <StatCard icon={<Star className="size-5" />} label="Avg Package" value={`₹${college.averagePackage}L`} countUp={false} />
+            <StatCard icon={<Wallet className="size-5" />} label="Fees / Yr" value={`₹${(college.fees / 1000).toFixed(0)}k`} countUp={false} />
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Main Tab Interfaces */}
-      <section className="container-page py-10">
-        <Tabs defaultValue="overview">
-          <TabsList className="flex-wrap h-auto">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="courses">Courses</TabsTrigger>
-            <TabsTrigger value="cutoffs">Cutoffs</TabsTrigger>
-            <TabsTrigger value="placements">Placements</TabsTrigger>
-            <TabsTrigger value="fees">Fees & Hostel</TabsTrigger>
-            <TabsTrigger value="scholarships">Scholarships</TabsTrigger>
-            <TabsTrigger value="facilities">Facilities</TabsTrigger>
-            <TabsTrigger value="recruiters">Recruiters</TabsTrigger>
-            <TabsTrigger value="ai">AI Summary</TabsTrigger>
-          </TabsList>
+      <section className="container-page py-12 w-full overflow-hidden">
+        <Tabs defaultValue="overview" className="w-full max-w-full overflow-hidden">
+          <AnimatedSection delay={0.3}>
+            <div className="relative overflow-x-auto pb-2 scrollbar-none mb-8">
+              <TabsList className="h-auto p-1 bg-muted/30 border border-border/60 rounded-xl inline-flex min-w-max md:min-w-0 flex-nowrap">
+                <TabsTrigger value="overview" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Overview</TabsTrigger>
+                <TabsTrigger value="courses" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Courses</TabsTrigger>
+                <TabsTrigger value="cutoffs" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Cutoffs</TabsTrigger>
+                <TabsTrigger value="placements" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Placements</TabsTrigger>
+                <TabsTrigger value="fees" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Fees</TabsTrigger>
+                <TabsTrigger value="scholarships" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Scholarships</TabsTrigger>
+                <TabsTrigger value="facilities" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Facilities</TabsTrigger>
+                <TabsTrigger value="recruiters" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Recruiters</TabsTrigger>
+                <TabsTrigger value="ai" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide text-primary">AI Summary</TabsTrigger>
+              </TabsList>
+            </div>
+          </AnimatedSection>
 
-          <TabsContent value="overview" className="mt-6">
-            <Card className="p-6 rounded-2xl">
-              <h2 className="text-lg font-bold mb-3">About</h2>
-              <p className="text-muted-foreground leading-relaxed">{college.summary}</p>
-              <div className="mt-6 grid sm:grid-cols-2 gap-4">
-                <Info label="Established" value={String(college.established)} />
-                <Info label="Type" value={college.type} />
-                <Info label="District" value={college.district} />
-                <Info label="Accreditation" value={`NAAC ${college.naac}${college.nba ? " · NBA" : ""}`} />
-              </div>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="courses" className="mt-6">
-            <Card className="p-6 rounded-2xl">
-              <h2 className="text-lg font-bold mb-4">Courses Offered</h2>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {college.branches.map((b: string) => (
-                  <div key={b} className="p-4 border border-border rounded-xl hover:border-primary/30 hover:bg-muted/40 transition-colors">
-                    <div className="font-semibold text-sm">{b}</div>
-                    <div className="text-xs text-muted-foreground mt-1">B.E. / B.Tech · 4 years</div>
+          <div className="min-h-[400px]">
+            <TabsContent value="overview" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
+                  <CoordinateMarker label="INF.01" className="mb-4" />
+                  <h2 className="text-xl font-bold mb-4">Institution Profile</h2>
+                  <p className="text-muted-foreground leading-relaxed text-base">{college.summary}</p>
+                  
+                  <EngineeringDivider className="my-8" />
+                  
+                  <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <InfoBlock label="Established" value={String(college.established)} mono />
+                    <InfoBlock label="Category" value={college.type} />
+                    <InfoBlock label="Location" value={college.district} />
+                    <InfoBlock label="Accreditation" value={`NAAC ${college.naac}${college.nba ? " · NBA" : ""}`} />
                   </div>
-                ))}
-              </div>
-            </Card>
-          </TabsContent>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
 
-          <TabsContent value="cutoffs" className="mt-6">
-            <CutoffTab college={college} />
-          </TabsContent>
+            <TabsContent value="courses" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
+                  <CoordinateMarker label="CRS.02" className="mb-4" />
+                  <h2 className="text-xl font-bold mb-6">Program Offerings</h2>
+                  <StaggerContainer className="grid sm:grid-cols-2 gap-4">
+                    {college.branches.map((b: string) => (
+                      <StaggerItem key={b}>
+                        <div className="p-4 border border-border/60 rounded-xl hover:border-primary/40 hover:bg-muted/30 transition-all group card-hover-lift bg-card">
+                          <div className="font-bold text-sm text-foreground group-hover:text-primary transition-colors">{b}</div>
+                          <div className="text-[11px] font-mono text-muted-foreground mt-2 uppercase tracking-wide">B.E. / B.Tech · 4 Years</div>
+                        </div>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
 
-          <TabsContent value="placements" className="mt-6">
-            <Card className="p-6 rounded-2xl grid md:grid-cols-3 gap-6">
-              <BigStat label="Placement %" value={`${college.placementPercentage}%`} />
-              <BigStat label="Highest Package" value={`₹${college.highestPackage} LPA`} />
-              <BigStat label="Average Package" value={`₹${college.averagePackage} LPA`} />
-            </Card>
-          </TabsContent>
+            <TabsContent value="cutoffs" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <CutoffTab college={college} community={community} setCommunity={setCommunity} branch={branch} setBranch={setBranch} />
+              </AnimatedSection>
+            </TabsContent>
 
-          <TabsContent value="fees" className="mt-6">
-            <Card className="p-6 rounded-2xl grid md:grid-cols-2 gap-6">
-              <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Annual Tuition Fees</div>
-                <div className="mt-2 text-3xl font-extrabold">₹{college.fees.toLocaleString("en-IN")}</div>
-              </div>
-              <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1"><Home className="size-3.5" /> Hostel</div>
-                <div className="mt-2 text-3xl font-extrabold">{college.hostel ? `₹${(college.hostelFees ?? 0).toLocaleString("en-IN")}` : "Not available"}</div>
-                {college.hostel && <div className="text-sm text-muted-foreground mt-1">per year, mess extra</div>}
-              </div>
-            </Card>
-          </TabsContent>
+            <TabsContent value="placements" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
+                  <CoordinateMarker label="PLC.04" className="mb-4" />
+                  <h2 className="text-xl font-bold mb-8">Placement Statistics</h2>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <StatCard icon={<GraduationCap className="size-6" />} label="Total Placement Rate" value={college.placementPercentage} suffix="%" countUp className="h-full" />
+                    <StatCard icon={<Award className="size-6" />} label="Highest Package Offered" value={`₹${college.highestPackage}LPA`} className="h-full" countUp={false} />
+                    <StatCard icon={<Star className="size-6" />} label="Average Package" value={`₹${college.averagePackage}LPA`} className="h-full" countUp={false} />
+                  </div>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
 
-          <TabsContent value="scholarships" className="mt-6">
-            <Card className="p-6 rounded-2xl">
-              <h2 className="text-lg font-bold mb-4">Available Scholarships</h2>
-              <ul className="grid sm:grid-cols-2 gap-3">
-                {college.scholarships.map((s: string) => (
-                  <li key={s} className="p-4 border border-border rounded-xl text-sm hover:border-primary/30 hover:bg-muted/40 transition-colors">{s}</li>
-                ))}
-              </ul>
-            </Card>
-          </TabsContent>
+            <TabsContent value="fees" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
+                  <CoordinateMarker label="FEE.05" className="mb-4" />
+                  <h2 className="text-xl font-bold mb-8">Fee Structure</h2>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-6 rounded-xl border border-border/60 bg-card relative overflow-hidden group">
+                      <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity"><Wallet className="size-20" /></div>
+                      <div className="technical-label mb-2">Annual Tuition Fees</div>
+                      <div className="text-4xl font-extrabold tracking-tight font-mono">₹{college.fees.toLocaleString("en-IN")}</div>
+                      <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-widest">Base fee structure</div>
+                    </div>
+                    
+                    <div className="p-6 rounded-xl border border-border/60 bg-card relative overflow-hidden group">
+                      <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity"><Home className="size-20" /></div>
+                      <div className="technical-label mb-2 flex items-center gap-1.5"><Home className="size-3.5" /> Hostel Accommodation</div>
+                      <div className="text-4xl font-extrabold tracking-tight font-mono">{college.hostel ? `₹${(college.hostelFees ?? 0).toLocaleString("en-IN")}` : "N/A"}</div>
+                      <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-widest">{college.hostel ? "Per year (mess charges extra)" : "Hostel facility not available"}</div>
+                    </div>
+                  </div>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
 
-          <TabsContent value="facilities" className="mt-6">
-            <Card className="p-6 rounded-2xl">
-              <div className="flex flex-wrap gap-2">
-                {college.facilities.map((f: string) => <Badge key={f} variant="secondary" className="py-1.5 px-3">{f}</Badge>)}
-              </div>
-            </Card>
-          </TabsContent>
+            <TabsContent value="scholarships" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
+                  <CoordinateMarker label="SCH.06" className="mb-4" />
+                  <h2 className="text-xl font-bold mb-6">Financial Assistance & Scholarships</h2>
+                  <StaggerContainer className="grid sm:grid-cols-2 gap-4">
+                    {college.scholarships.map((s: string) => (
+                      <StaggerItem key={s}>
+                        <div className="p-4 border border-border/60 rounded-xl text-sm hover:border-primary/40 hover:bg-muted/30 transition-colors bg-card font-medium flex items-center gap-3">
+                          <div className="size-1.5 rounded-full bg-primary/60 shrink-0" /> {s}
+                        </div>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
 
-          <TabsContent value="recruiters" className="mt-6">
-            <Card className="p-6 rounded-2xl">
-              <h2 className="text-lg font-bold mb-4 flex items-center gap-2"><Users className="size-5 text-primary" /> Top Recruiters</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                {college.recruiters.map((r: string) => (
-                  <div key={r} className="p-4 border border-border rounded-xl text-center font-semibold text-sm hover:border-primary/30 hover:bg-muted/40 transition-colors">{r}</div>
-                ))}
-              </div>
-            </Card>
-          </TabsContent>
+            <TabsContent value="facilities" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
+                  <CoordinateMarker label="FAC.07" className="mb-4" />
+                  <h2 className="text-xl font-bold mb-6">Campus Infrastructure</h2>
+                  <StaggerContainer className="flex flex-wrap gap-2.5">
+                    {college.facilities.map((f: string) => (
+                      <StaggerItem key={f}>
+                        <Badge variant="secondary" className="py-2 px-4 text-sm bg-muted/50 border border-border/60 hover:bg-muted font-medium">{f}</Badge>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
 
-          <TabsContent value="ai" className="mt-6">
-            <Card className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-transparent border-primary/20">
-              <div className="flex items-center gap-2 text-primary font-bold mb-3">
-                <Sparkles className="size-5" /> AI Summary
-              </div>
-              <p className="leading-relaxed">
-                {college.shortName} is a <strong>{college.type.toLowerCase()}</strong> institution in <strong>{college.district}</strong> with a{" "}
-                <strong>NAAC {college.naac}</strong> grade. It reports a <strong>{college.placementPercentage}% placement rate</strong>{" "}
-                with an average package of <strong>₹{college.averagePackage} LPA</strong> and a highest of <strong>₹{college.highestPackage} LPA</strong>.
-                Fees are around <strong>₹{(college.fees / 1000).toFixed(0)}k per year</strong>{college.hostel ? " with hostel facilities" : ""}.
-                Its top branches include <strong>{college.branches.slice(0, 3).join(", ")}</strong>. This college is a{" "}
-                <strong>{college.placementPercentage >= 95 ? "Dream" : college.placementPercentage >= 88 ? "Target" : "Safe"}</strong>{" "}
-                option for aspirants with matching cutoff ranges.
-              </p>
-            </Card>
-          </TabsContent>
+            <TabsContent value="recruiters" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
+                  <CoordinateMarker label="REC.08" className="mb-4" />
+                  <h2 className="text-xl font-bold mb-6 flex items-center gap-2"><Users className="size-5 text-primary" /> Corporate Partners</h2>
+                  <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    {college.recruiters.map((r: string) => (
+                      <StaggerItem key={r}>
+                        <div className="p-4 h-full border border-border/60 rounded-xl flex items-center justify-center text-center font-bold text-sm hover:border-primary/40 hover:bg-muted/30 transition-colors bg-card card-hover-lift">
+                          {r}
+                        </div>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
+
+            <TabsContent value="ai" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+              <AnimatedSection direction="none">
+                <Card className="p-6 md:p-8 rounded-2xl border-primary/30 bg-gradient-to-br from-primary/10 via-background to-background relative overflow-hidden shadow-glow">
+                  <EngineeringBg variant="dots" className="absolute inset-0 opacity-40 mix-blend-overlay" />
+                  <div className="relative z-10">
+                    <CoordinateMarker label="AI.GEN" className="mb-4" />
+                    <div className="flex items-center gap-2 text-primary font-bold mb-6 text-xl">
+                      <Sparkles className="size-5" /> AI Synthesis Report
+                    </div>
+                    <p className="leading-relaxed text-base text-foreground/90 font-medium max-w-4xl">
+                      {college.shortName} is a <strong className="text-foreground">{college.type.toLowerCase()}</strong> institution in <strong className="text-foreground">{college.district}</strong> with a{" "}
+                      <strong className="text-foreground">NAAC {college.naac}</strong> grade. It reports a <strong className="text-foreground">{college.placementPercentage}% placement rate</strong>{" "}
+                      with an average package of <strong className="text-foreground font-mono">₹{college.averagePackage} LPA</strong> and a highest of <strong className="text-foreground font-mono">₹{college.highestPackage} LPA</strong>.
+                      Fees are around <strong className="text-foreground font-mono">₹{(college.fees / 1000).toFixed(0)}k per year</strong>{college.hostel ? " with hostel facilities" : ""}.
+                      Its top branches include <strong className="text-foreground">{college.branches.slice(0, 3).join(", ")}</strong>. This college is a{" "}
+                      <strong className={
+                        college.placementPercentage >= 95 ? "text-amber-500" : college.placementPercentage >= 88 ? "text-primary" : "text-emerald-500"
+                      }>
+                        {college.placementPercentage >= 95 ? "Dream" : college.placementPercentage >= 88 ? "Target" : "Safe"}
+                      </strong>{" "}
+                      option for aspirants with matching cutoff ranges.
+                    </p>
+                  </div>
+                </Card>
+              </AnimatedSection>
+            </TabsContent>
+          </div>
         </Tabs>
       </section>
     </AppShell>
   );
 }
 
-function CutoffTab({ college }: { college: any }) {
-  const branches = useMemo(() => Array.from(new Set(college.cutoffs.map((c: any) => c.branch))), [college]);
+const CutoffTab = React.memo(({ college, community, setCommunity, branch, setBranch }: { college: any, community: string, setCommunity: (c: string) => void, branch: string, setBranch: (b: string) => void }) => {
+  const allBranches = useMemo(() => {
+    if (college.branches && college.branches.length > 0) return college.branches;
+    return Array.from(new Set((college.cutoffs || []).map((c: any) => c.branch)));
+  }, [college]);
+  const displayBranches = useMemo(() => branch === "any" ? allBranches : [branch], [branch, allBranches]);
+  
   const chartData = useMemo(() => {
-    const years = Array.from(new Set(college.cutoffs.map((c: any) => c.year))).sort() as number[];
+    const years = Array.from(new Set((college.cutoffs || []).map((c: any) => c.year))).sort() as number[];
     return years.map((year) => {
       const row: Record<string, number | string> = { year };
-      for (const b of branches) {
-        const c = college.cutoffs.find((x: any) => x.year === year && x.branch === b && x.community === "OC");
+      for (const b of displayBranches) {
+        const c = (college.cutoffs || []).find((x: any) => x.year === year && x.branch === b && x.community === community);
         if (c) row[b as string] = c.cutoff;
       }
       return row;
     });
-  }, [college, branches]);
+  }, [college, displayBranches, community]);
 
-  const colors = ["hsl(220 90% 55%)", "hsl(180 70% 45%)", "hsl(150 60% 45%)", "hsl(30 90% 55%)", "hsl(340 80% 55%)"];
+  const colors = [
+    "var(--color-primary)",
+    "var(--color-success)",
+    "var(--color-warning)",
+    "var(--color-destructive)",
+    "var(--color-chart-5)"
+  ];
+
+  // Calculate dynamic domain based on data
+  const yDomain = useMemo(() => {
+    let min = 200;
+    let max = 0;
+    chartData.forEach(row => {
+      displayBranches.forEach(b => {
+        const val = row[b as string];
+        if (typeof val === 'number') {
+          if (val < min) min = val;
+          if (val > max) max = val;
+        }
+      });
+    });
+    // Add 1 point padding
+    return [Math.max(0, Math.floor(min) - 1), Math.min(200, Math.ceil(max) + 1)];
+  }, [chartData, displayBranches]);
 
   return (
-    <Card className="p-6 rounded-2xl">
-      <h2 className="text-lg font-bold mb-1">Cutoff History (OC Community)</h2>
-      <p className="text-sm text-muted-foreground mb-6">Historical closing cutoffs across branches over the last 5 years.</p>
-      <div className="h-72 -ml-2">
-        <ResponsiveContainer>
-          <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-            <XAxis dataKey="year" stroke="hsl(var(--muted-foreground))" fontSize={12} />
-            <YAxis domain={[190, 200]} stroke="hsl(var(--muted-foreground))" fontSize={12} />
-            <Tooltip contentStyle={{ borderRadius: 12, border: "1px solid hsl(var(--border))" }} />
-            <Legend wrapperStyle={{ fontSize: 12 }} />
-            {branches.map((b: any, i) => (
-              <Line key={b} type="monotone" dataKey={b} stroke={colors[i % colors.length]} strokeWidth={2.5} dot={{ r: 3 }} />
-            ))}
-          </LineChart>
-        </ResponsiveContainer>
+    <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur w-full overflow-hidden">
+      <CoordinateMarker label="CTF.03" className="mb-4" />
+
+      <div className="grid md:grid-cols-2 gap-6 mb-8 bg-muted/20 p-4 rounded-xl border border-border/40">
+        <div>
+          <Label className="technical-label block mb-2">Community Category</Label>
+          <Select value={community} onValueChange={setCommunity}>
+            <SelectTrigger className="h-10 bg-background font-mono"><SelectValue placeholder="Select Community" /></SelectTrigger>
+            <SelectContent>
+              {["OC", "BC", "BCM", "MBC", "SC", "SCA", "ST"].map(c => (
+                <SelectItem key={c} value={c} className="font-mono">{c}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <Label className="technical-label block mb-2">Program Branch</Label>
+          <Select value={branch} onValueChange={setBranch}>
+            <SelectTrigger className="h-10 bg-background font-mono"><SelectValue placeholder="Select Branch" /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="any" className="font-mono">Compare All Branches</SelectItem>
+              {allBranches.map((b: any) => (
+                <SelectItem key={b} value={b} className="font-mono">{b}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
       </div>
+
+      {!community || !branch ? (
+        <div className="h-[400px] flex items-center justify-center border border-dashed border-border/60 rounded-xl bg-muted/20 text-muted-foreground text-sm font-medium">
+          Please select both a Community Category and a Program Branch to view the cutoff trajectory.
+        </div>
+      ) : (
+        <>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+              <h2 className="text-xl font-bold">Cutoff Trajectory ({community})</h2>
+              <p className="text-sm text-muted-foreground mt-1">Historical closing cutoffs across selected branches.</p>
+            </div>
+            <div className="flex items-center gap-3 bg-muted/40 p-2 rounded-lg border border-border/60">
+              <div className="technical-label">Y-Axis Range:</div>
+              <div className="font-mono text-xs font-bold bg-background px-2 py-1 rounded border border-border/60">{yDomain[0]} — {yDomain[1]}</div>
+            </div>
+          </div>
+          
+          <div className="h-[400px] w-full font-mono text-xs overflow-hidden">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="4 4" stroke="var(--engineering-grid-color)" opacity={0.4} vertical={false} />
+                <XAxis dataKey="year" stroke="var(--color-muted-foreground)" axisLine={false} tickLine={false} dy={10} />
+                <YAxis domain={yDomain} stroke="var(--color-muted-foreground)" axisLine={false} tickLine={false} dx={-10} tickFormatter={(val) => val.toFixed(1)} />
+                <Tooltip 
+                  contentStyle={{ 
+                    borderRadius: '12px', 
+                    border: '1px solid var(--color-border)', 
+                    backgroundColor: 'var(--color-card)',
+                    boxShadow: 'var(--shadow-md)',
+                    fontFamily: 'var(--font-mono)'
+                  }}
+                  itemStyle={{ fontSize: '13px', fontWeight: 600 }}
+                  labelStyle={{ color: 'var(--color-muted-foreground)', marginBottom: '8px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                />
+                <Legend wrapperStyle={{ paddingTop: '20px', fontSize: '12px', fontFamily: 'var(--font-sans)' }} iconType="circle" />
+                {displayBranches.map((b: any, i) => (
+                  <Line 
+                    key={b} 
+                    type="monotone" 
+                    dataKey={b} 
+                    stroke={colors[i % colors.length]} 
+                    strokeWidth={3} 
+                    dot={{ r: 4, strokeWidth: 2, fill: 'var(--color-background)' }} 
+                    activeDot={{ r: 6, strokeWidth: 0 }}
+                    animationDuration={1500}
+                    animationEasing="ease-out"
+                  />
+                ))}
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </>
+      )}
     </Card>
   );
-}
+});
 
-function MiniStat({ icon: Icon, label, value }: { icon: any; label: string; value: string }) {
+function InfoBlock({ label, value, mono = false }: { label: string; value: string; mono?: boolean }) {
   return (
-    <Card className="p-4 rounded-xl hover:shadow-elegant transition-shadow">
-      <Icon className="size-4 text-primary mb-2" />
-      <div className="text-[11px] text-muted-foreground uppercase font-semibold tracking-wider">{label}</div>
-      <div className="text-lg font-bold mt-0.5 tabular-nums">{value}</div>
-    </Card>
-  );
-}
-
-function Info({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="p-4 rounded-xl bg-muted/50">
-      <div className="text-[11px] text-muted-foreground uppercase font-semibold tracking-wider">{label}</div>
-      <div className="text-sm font-semibold mt-1">{value}</div>
-    </div>
-  );
-}
-
-function BigStat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="p-4">
-      <div className="text-[11px] text-muted-foreground uppercase font-semibold tracking-wider">{label}</div>
-      <div className="text-3xl font-extrabold mt-2 text-primary tabular-nums">{value}</div>
+    <div className="p-4 rounded-xl bg-muted/40 border border-border/40 hover:bg-muted/60 transition-colors w-full overflow-hidden">
+      <div className="technical-label">{label}</div>
+      <div className={`text-sm font-semibold mt-1.5 truncate ${mono ? "font-mono" : ""}`}>{value}</div>
     </div>
   );
 }

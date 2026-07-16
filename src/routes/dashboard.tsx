@@ -2,8 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/app-shell";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Bookmark, History, Heart, Sparkles, Download, Loader2 } from "lucide-react";
+import { Bookmark, History, Heart, Sparkles, Download, ArrowRight, LayoutDashboard } from "lucide-react";
 import { useAllColleges, useBranches } from "@/lib/api";
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
+import { EngineeringBg, CoordinateMarker, EngineeringDivider } from "@/components/engineering-bg";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
@@ -29,55 +31,140 @@ function Dashboard() {
 
   return (
     <AppShell>
-      <section className="container-page py-12 md:py-14">
-        <div className="text-xs font-bold uppercase tracking-widest text-primary mb-2">Dashboard</div>
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-balance">Your workspace</h1>
-        <p className="mt-3 text-muted-foreground text-pretty">Everything you've saved, searched and generated in one place.</p>
+      <section className="relative border-b border-border/60 bg-surface overflow-hidden">
+        <EngineeringBg variant="grid" className="absolute inset-0 opacity-40 dark:opacity-20" />
+        <div className="container-page py-12 md:py-16 relative z-10">
+          <AnimatedSection className="max-w-3xl">
+            <CoordinateMarker label="USR.DASH" className="mb-4" />
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Command Center</h1>
+            <p className="mt-4 text-lg text-muted-foreground text-pretty">Your personalized workspace for managing saved institutions, tracking query history, and reviewing generated allocation matrices.</p>
+          </AnimatedSection>
+        </div>
+      </section>
 
-        <div className="mt-10 grid lg:grid-cols-3 gap-6">
-          <Card className="p-6 rounded-2xl lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-5"><div className="grid size-9 place-items-center rounded-lg bg-primary/10 text-primary"><Bookmark className="size-4" /></div><h2 className="font-bold">Saved Colleges</h2></div>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {saved.map((c) => (
-                <Link key={c.code} to="/colleges/$code" params={{ code: c.code }}>
-                  <Card className="p-4 rounded-xl hover:shadow-elegant hover:border-primary/30 transition-all">
-                    <Badge variant="secondary" className="font-mono text-[10px]">Code {c.code}</Badge>
-                    <div className="font-bold mt-2">{c.shortName}</div>
-                    <div className="text-xs text-muted-foreground mt-1">{c.district}</div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </Card>
-
-          <Card className="p-6 rounded-2xl">
-            <div className="flex items-center gap-2.5 mb-5"><div className="grid size-9 place-items-center rounded-lg bg-primary/10 text-primary"><History className="size-4" /></div><h2 className="font-bold">Recent Searches</h2></div>
-            <ul className="space-y-2">
-              {searches.map((s) => <li key={s} className="text-sm py-2.5 border-b border-border last:border-0 hover:text-primary transition-colors cursor-default">{s}</li>)}
-            </ul>
-          </Card>
-
-          <Card className="p-6 rounded-2xl">
-            <div className="flex items-center gap-2.5 mb-5"><div className="grid size-9 place-items-center rounded-lg bg-primary/10 text-primary"><Heart className="size-4" /></div><h2 className="font-bold">Favourite Branches</h2></div>
-            <div className="flex flex-wrap gap-2">{favBranches.map((b) => <Badge key={b.code} variant="secondary">{b.name}</Badge>)}</div>
-          </Card>
-
-          <Card className="p-6 rounded-2xl lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-5"><div className="grid size-9 place-items-center rounded-lg bg-primary/10 text-primary"><Sparkles className="size-4" /></div><h2 className="font-bold">Recommendation History</h2></div>
-            <div className="space-y-3">
-              {recos.map((r) => (
-                <div key={r.title} className="p-4 border border-border rounded-xl flex items-center justify-between gap-3 hover:border-primary/25 hover:bg-muted/40 transition-colors">
-                  <div className="min-w-0">
-                    <div className="font-semibold text-sm">{r.title}</div>
-                    <div className="text-xs text-muted-foreground mt-0.5">{r.meta}</div>
-                  </div>
-                  <button className="shrink-0 text-primary text-sm font-semibold inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 hover:bg-primary/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                    <Download className="size-3.5" /> Download
-                  </button>
+      <section className="container-page py-10">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+          <AnimatedSection direction="up" delay={0.1} className="lg:col-span-2">
+            <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/80 backdrop-blur shadow-sm h-full flex flex-col">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="grid size-10 place-items-center rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-sm">
+                  <Bookmark className="size-5" />
                 </div>
-              ))}
-            </div>
-          </Card>
+                <div>
+                  <h2 className="font-bold text-lg tracking-tight">Saved Institutions</h2>
+                  <div className="text-xs text-muted-foreground font-mono uppercase tracking-wider">Monitored Profiles</div>
+                </div>
+              </div>
+              
+              <EngineeringDivider className="mb-6" />
+              
+              <div className="grid sm:grid-cols-2 gap-4 flex-1">
+                <StaggerContainer>
+                  {saved.map((c) => (
+                    <StaggerItem key={c.code} className="h-full">
+                      <Link to="/colleges/$code" params={{ code: c.code }} className="block h-full">
+                        <Card className="p-5 h-full rounded-xl border border-border/60 bg-card hover:border-primary/40 hover:bg-primary/5 transition-all card-hover-lift group flex flex-col">
+                          <Badge variant="secondary" className="w-fit font-mono text-[10px] bg-background border-border/80 mb-3">CD:{c.code}</Badge>
+                          <div className="font-bold leading-tight group-hover:text-primary transition-colors flex-1">{c.shortName}</div>
+                          <div className="text-xs font-mono text-muted-foreground mt-3 pt-3 border-t border-border/40 flex items-center justify-between">
+                            {c.district}
+                            <ArrowRight className="size-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
+                          </div>
+                        </Card>
+                      </Link>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
+              </div>
+            </Card>
+          </AnimatedSection>
+
+          <div className="space-y-6 lg:space-y-8 flex flex-col">
+            <AnimatedSection direction="left" delay={0.2} className="flex-1">
+              <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="grid size-10 place-items-center rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-sm">
+                    <History className="size-5" />
+                  </div>
+                  <h2 className="font-bold text-lg tracking-tight">Query Logs</h2>
+                </div>
+                
+                <EngineeringDivider className="mb-4" />
+                
+                <ul className="space-y-1">
+                  <StaggerContainer staggerDelay={0.1}>
+                    {searches.map((s, i) => (
+                      <StaggerItem key={s}>
+                        <li className="text-sm py-3 px-3 rounded-lg border border-transparent hover:border-border/60 hover:bg-muted/40 transition-colors cursor-default font-medium flex items-center gap-3 group">
+                          <span className="font-mono text-[10px] text-muted-foreground group-hover:text-primary/70 transition-colors">0{i+1}</span>
+                          {s}
+                        </li>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </ul>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection direction="left" delay={0.3} className="flex-1">
+              <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="grid size-10 place-items-center rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-sm">
+                    <Heart className="size-5" />
+                  </div>
+                  <h2 className="font-bold text-lg tracking-tight">Target Programs</h2>
+                </div>
+                
+                <EngineeringDivider className="mb-6" />
+                
+                <div className="flex flex-wrap gap-2.5">
+                  <StaggerContainer>
+                    {favBranches.map((b) => (
+                      <StaggerItem key={b.code}>
+                        <Badge variant="secondary" className="bg-muted/60 hover:bg-muted border border-border/60 px-3 py-1.5 font-medium">{b.name}</Badge>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </div>
+              </Card>
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection direction="up" delay={0.4} className="lg:col-span-3">
+            <Card className="p-6 md:p-8 rounded-2xl border-primary/20 bg-gradient-to-br from-primary/5 via-background to-background relative overflow-hidden shadow-sm">
+              <EngineeringBg variant="dots" className="absolute inset-0 opacity-40 mix-blend-overlay" />
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="grid size-10 place-items-center rounded-xl bg-primary text-primary-foreground shadow-glow">
+                    <Sparkles className="size-5" />
+                  </div>
+                  <div>
+                    <h2 className="font-bold text-lg tracking-tight">Generated Matrices</h2>
+                    <div className="text-xs text-muted-foreground font-mono uppercase tracking-wider">AI Report Archive</div>
+                  </div>
+                </div>
+                
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <StaggerContainer staggerDelay={0.15}>
+                    {recos.map((r, i) => (
+                      <StaggerItem key={r.title}>
+                        <div className="p-5 border border-border/60 bg-card/60 backdrop-blur rounded-xl flex items-center justify-between gap-4 hover:border-primary/40 hover:shadow-elegant transition-all group">
+                          <div className="min-w-0">
+                            <div className="font-bold text-base group-hover:text-primary transition-colors">{r.title}</div>
+                            <div className="text-xs font-mono text-muted-foreground mt-1.5">{r.meta}</div>
+                          </div>
+                          <button className="shrink-0 text-primary bg-primary/10 border border-primary/20 text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center size-10 rounded-xl hover:bg-primary hover:text-primary-foreground transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" aria-label="Download Report">
+                            <Download className="size-4" />
+                          </button>
+                        </div>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </div>
+              </div>
+            </Card>
+          </AnimatedSection>
         </div>
       </section>
     </AppShell>

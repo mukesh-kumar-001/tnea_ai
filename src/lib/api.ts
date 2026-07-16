@@ -23,35 +23,44 @@ export interface ApiCutoffResponse {
   year: number;
 }
 
-const mapBackendToMockCollege = (c: ApiCollegeResponse): MockCollege => {
+const titleCase = (str: string) => str ? str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()) : "Unknown";
+
+const mapBackendToMockCollege = (c: any): MockCollege => {
   return {
     id: c.id,
     code: c.tnea_code,
     name: c.name,
     autonomous: c.autonomous,
     shortName: c.name.split(" ").slice(0, 3).join(" "), // Simple derived shortName
-    district: c.district || "Unknown",
-    address: c.district ? `${c.district}, Tamil Nadu` : "Tamil Nadu",
+    district: titleCase(c.district),
+    address: c.district ? `${titleCase(c.district)}, Tamil Nadu` : "Tamil Nadu",
     type: (c.type || "Self-Financing") as any,
     naac: "Not Accredited",
     nba: false,
     established: c.established_year || 2000,
-    fees: 0,
-    hostel: false,
-    placementPercentage: 0,
-    highestPackage: 0,
-    averagePackage: 0,
-    branches: [],
-    recruiters: [],
-    facilities: [],
-    scholarships: [],
+    fees: c.fees && c.fees.length > 0 ? c.fees[0].tuition_fee + (c.fees[0].other_fees || 0) : 0,
+    hostel: c.hostel ? (c.hostel.boys_hostel_available || c.hostel.girls_hostel_available) : false,
+    hostelFees: c.hostel?.annual_fee || 0,
+    placementPercentage: c.placements?.placement_percentage || 0,
+    highestPackage: c.placements?.highest_package || 0,
+    averagePackage: c.placements?.average_package || 0,
+    branches: c.branches ? c.branches.map((b: any) => b.name) : [],
+    recruiters: [], // Still mock or empty if not in DB
+    facilities: c.facilities ? [
+      ...(c.facilities.has_library ? ["Central Library"] : []),
+      ...(c.facilities.has_sports ? ["Sports Complex"] : []),
+      ...(c.facilities.has_transport ? ["Transport"] : [])
+    ] : [],
+    scholarships: [], // Still mock or empty if not in DB
     cutoffs: [],
     summary: c.name
   };
 };
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+
 export const fetchColleges = async (page = 1, perPage = 20) => {
-  const res = await fetch(`/api/colleges/?page=${page}&per_page=${perPage}`);
+  const res = await fetch(`${API_BASE}/api/colleges/?page=${page}&per_page=${perPage}`);
   if (!res.ok) throw new Error("Failed to fetch colleges");
   const data = await res.json();
   return {
@@ -61,21 +70,21 @@ export const fetchColleges = async (page = 1, perPage = 20) => {
 };
 
 export const fetchAllCollegesList = async () => {
-  const res = await fetch(`/api/colleges/?page=1&per_page=1000`);
+  const res = await fetch(`${API_BASE}/api/colleges/?page=1&per_page=1000`);
   if (!res.ok) throw new Error("Failed to fetch all colleges");
   const data = await res.json();
   return data.colleges.map(mapBackendToMockCollege) as MockCollege[];
 };
 
 export const fetchCollegeById = async (id: number) => {
-  const res = await fetch(`/api/colleges/${id}`);
+  const res = await fetch(`${API_BASE}/api/colleges/${id}`);
   if (!res.ok) throw new Error("Failed to fetch college");
   const data = await res.json();
   return mapBackendToMockCollege(data);
 };
 
 export const fetchAllBranches = async () => {
-  const res = await fetch(`/api/branches/`);
+  const res = await fetch(`${API_BASE}/api/branches/`);
   if (!res.ok) throw new Error("Failed to fetch branches");
   const data = await res.json();
   return data.branches as { code: string; name: string }[];
@@ -86,13 +95,13 @@ export const fetchCutoffs = async (filters: { college_code?: string; branch_code
   Object.entries(filters).forEach(([k, v]) => {
     if (v) params.append(k, String(v));
   });
-  const res = await fetch(`/api/cutoffs/?${params.toString()}`);
+  const res = await fetch(`${API_BASE}/api/cutoffs/?${params.toString()}`);
   if (!res.ok) throw new Error("Failed to fetch cutoffs");
   return await res.json() as { data: ApiCutoffResponse[]; total: number; pages: number; current_page: number };
 };
 
 export const fetchRecommendations = async (payload: any) => {
-  const res = await fetch(`/api/recommendations/`, {
+  const res = await fetch(`${API_BASE}/api/recommendations/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)

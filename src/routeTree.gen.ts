@@ -14,6 +14,7 @@ import { Route as RankPredictorRouteImport } from './routes/rank-predictor'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CutoffsRouteImport } from './routes/cutoffs'
 import { Route as CounsellingRouteImport } from './routes/counselling'
+import { Route as CompareRouteImport } from './routes/compare'
 import { Route as CollegesRouteImport } from './routes/colleges'
 import { Route as ChoiceFillingRouteImport } from './routes/choice-filling'
 import { Route as AiChatRouteImport } from './routes/ai-chat'
@@ -47,6 +48,11 @@ const CutoffsRoute = CutoffsRouteImport.update({
 const CounsellingRoute = CounsellingRouteImport.update({
   id: '/counselling',
   path: '/counselling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CollegesRoute = CollegesRouteImport.update({
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/ai-chat': typeof AiChatRoute
   '/choice-filling': typeof ChoiceFillingRoute
   '/colleges': typeof CollegesRouteWithChildren
+  '/compare': typeof CompareRoute
   '/counselling': typeof CounsellingRoute
   '/cutoffs': typeof CutoffsRoute
   '/dashboard': typeof DashboardRoute
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ai-chat': typeof AiChatRoute
   '/choice-filling': typeof ChoiceFillingRoute
+  '/compare': typeof CompareRoute
   '/counselling': typeof CounsellingRoute
   '/cutoffs': typeof CutoffsRoute
   '/dashboard': typeof DashboardRoute
@@ -133,6 +141,7 @@ export interface FileRoutesById {
   '/ai-chat': typeof AiChatRoute
   '/choice-filling': typeof ChoiceFillingRoute
   '/colleges': typeof CollegesRouteWithChildren
+  '/compare': typeof CompareRoute
   '/counselling': typeof CounsellingRoute
   '/cutoffs': typeof CutoffsRoute
   '/dashboard': typeof DashboardRoute
@@ -151,6 +160,7 @@ export interface FileRouteTypes {
     | '/ai-chat'
     | '/choice-filling'
     | '/colleges'
+    | '/compare'
     | '/counselling'
     | '/cutoffs'
     | '/dashboard'
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-chat'
     | '/choice-filling'
+    | '/compare'
     | '/counselling'
     | '/cutoffs'
     | '/dashboard'
@@ -182,6 +193,7 @@ export interface FileRouteTypes {
     | '/ai-chat'
     | '/choice-filling'
     | '/colleges'
+    | '/compare'
     | '/counselling'
     | '/cutoffs'
     | '/dashboard'
@@ -199,6 +211,7 @@ export interface RootRouteChildren {
   AiChatRoute: typeof AiChatRoute
   ChoiceFillingRoute: typeof ChoiceFillingRoute
   CollegesRoute: typeof CollegesRouteWithChildren
+  CompareRoute: typeof CompareRoute
   CounsellingRoute: typeof CounsellingRoute
   CutoffsRoute: typeof CutoffsRoute
   DashboardRoute: typeof DashboardRoute
@@ -243,6 +256,13 @@ declare module '@tanstack/react-router' {
       path: '/counselling'
       fullPath: '/counselling'
       preLoaderRoute: typeof CounsellingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/colleges': {
@@ -331,6 +351,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiChatRoute: AiChatRoute,
   ChoiceFillingRoute: ChoiceFillingRoute,
   CollegesRoute: CollegesRouteWithChildren,
+  CompareRoute: CompareRoute,
   CounsellingRoute: CounsellingRoute,
   CutoffsRoute: CutoffsRoute,
   DashboardRoute: DashboardRoute,

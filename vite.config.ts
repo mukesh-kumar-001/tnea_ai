@@ -12,16 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Added the standard Vite proxy settings inside this 'vite' block:
+  // Vite proxy settings (removed for production API deployment compatibility)
+  // In production, the React app uses VITE_API_BASE_URL to communicate with the backend.
+  // In development, you can still use proxy if needed, but direct CORS allows flexibility.
   vite: {
-    server: {
-      proxy: {
-        '/api': {
-          target: 'http://127.0.0.1:5000',
-          changeOrigin: true,
-          secure: false,
-        },
-      },
-    },
+    // Other Vite configurations can go here
   },
 });
