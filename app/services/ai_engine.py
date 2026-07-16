@@ -15,15 +15,16 @@ class AIEngine:
         if not rank:
             return {"error": "Rank is required for recommendations"}
             
-        query = YearlyCutoff.query.filter_by(category=community).join(CollegeBranch)
+        # Only load the most recent year's cutoffs to keep the query fast
+        query = YearlyCutoff.query.filter_by(category=community, year=2025).join(CollegeBranch)
         
         branches = preferences.get('preferred_branches', [])
         if branches:
             query = query.join(Branch).filter(Branch.code.in_(branches))
             
-        # Order the query by year descending so we evaluate the most recent cutoffs first
-        query = query.order_by(YearlyCutoff.year.desc())
-        results = query.all()
+        # Order by most competitive (lowest cutoff rank first so dream colleges surface first)
+        query = query.order_by(YearlyCutoff.general_rank.asc())
+        results = query.limit(500).all()
         
         dream, target, safe = [], [], []
         seen = set()
