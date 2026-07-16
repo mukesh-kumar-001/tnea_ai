@@ -4,15 +4,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from app import create_app
 from app.extensions import db
-from app.models.college import College
+from app.models.college import College, Facility, HostelInformation
 from app.models.branch import Branch, CollegeBranch
-from app.models.cutoff import YearlyCutoff
-from app.models.placement import Placement
-from app.models.facility import Facility
-from app.models.scholarship import Scholarship
+from app.models.cutoff import YearlyCutoff, SeatMatrix
+from app.models.fee_placement import FeeStructure, PlacementStatistic
 from app.models.user import User
-from app.models.choice import ChoiceList, ChoiceItem
-from app.models.recommendation import RecommendationHistory
+from app.models.system import ChoiceList, RecommendationHistory
 
 def migrate():
     postgres_url = os.environ.get("POSTGRES_URL")
@@ -43,8 +40,8 @@ def migrate():
 
     models = [
         User, College, Branch, CollegeBranch, 
-        Facility, Scholarship, Placement, YearlyCutoff,
-        ChoiceList, ChoiceItem, RecommendationHistory
+        Facility, HostelInformation, FeeStructure, PlacementStatistic, YearlyCutoff, SeatMatrix,
+        ChoiceList, RecommendationHistory
     ]
 
     for model in models:
