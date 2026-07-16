@@ -20,6 +20,19 @@ class ProductionConfig(Config):
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     if SQLALCHEMY_DATABASE_URI:
+        # Automatically fix unencoded @ in password
+        import urllib.parse
+        parts = SQLALCHEMY_DATABASE_URI.split('@')
+        if len(parts) > 2:
+            host_part = parts[-1]
+            credentials = '@'.join(parts[:-1])
+            if "://" in credentials:
+                protocol, rest = credentials.split("://", 1)
+                if ":" in rest:
+                    username, password = rest.split(":", 1)
+                    encoded_password = urllib.parse.quote(password, safe="")
+                    SQLALCHEMY_DATABASE_URI = f"{protocol}://{username}:{encoded_password}@{host_part}"
+        
         if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
             SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql+pg8000://", 1)
         elif SQLALCHEMY_DATABASE_URI.startswith("postgresql://"):
