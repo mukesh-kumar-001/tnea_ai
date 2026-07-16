@@ -55,14 +55,14 @@ export function AppShell({ children }: { children: ReactNode }) {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col overflow-x-hidden">
       {/* ── Header ── */}
       <header
         className={cn(
           "sticky top-0 z-40 border-b transition-all duration-200 print:hidden",
           scrolled
             ? "border-border/60 glass shadow-xs"
-            : "border-transparent bg-background/60 backdrop-blur-sm"
+            : "border-transparent bg-background/60 backdrop-blur-md"
         )}
       >
         <div className="container-page flex h-14 items-center justify-between gap-4">

@@ -23,7 +23,7 @@ function About() {
         <div className="container-page py-16 md:py-24 relative z-10 max-w-5xl">
           <AnimatedSection>
             <CoordinateMarker label="SYS.INF" className="mb-4" />
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-balance">System Manifesto</h1>
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-balance">System Manifesto</h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-3xl">
               TNEA.ai is an independent, high-precision counselling engine engineered for Tamil Nadu aspirants. We synthesize verified historical data matrices with advanced neural models to compute optimal allocation trajectories for every profile.
             </p>

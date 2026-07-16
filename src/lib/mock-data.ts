@@ -46,12 +46,12 @@ export interface College {
   naac: string;
   nba: boolean;
   established: number;
-  fees: number;
-  hostel: boolean;
-  hostelFees?: number;
-  placementPercentage: number;
-  averagePackage: number;
-  highestPackage: number;
+  fees: number | null;
+  hostel: boolean | null;
+  hostelFees?: number | null;
+  placementPercentage: number | null;
+  averagePackage: number | null;
+  highestPackage: number | null;
   branches: string[];
   cutoffs: CutoffRow[];
   summary: string;

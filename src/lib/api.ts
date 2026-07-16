@@ -38,12 +38,12 @@ const mapBackendToMockCollege = (c: any): MockCollege => {
     naac: "Not Accredited",
     nba: false,
     established: c.established_year || 2000,
-    fees: c.fees && c.fees.length > 0 ? c.fees[0].tuition_fee + (c.fees[0].other_fees || 0) : 0,
-    hostel: c.hostel ? (c.hostel.boys_hostel_available || c.hostel.girls_hostel_available) : false,
-    hostelFees: c.hostel?.annual_fee || 0,
-    placementPercentage: c.placements?.placement_percentage || 0,
-    highestPackage: c.placements?.highest_package || 0,
-    averagePackage: c.placements?.average_package || 0,
+    fees: c.fees && c.fees.length > 0 && c.fees[0].tuition_fee !== null ? c.fees[0].tuition_fee + (c.fees[0].other_fees || 0) : null,
+    hostel: c.hostel ? (c.hostel.boys_hostel_available || c.hostel.girls_hostel_available) : null,
+    hostelFees: c.hostel?.annual_fee || null,
+    placementPercentage: c.placements?.placement_percentage || null,
+    highestPackage: c.placements?.highest_package || null,
+    averagePackage: c.placements?.average_package || null,
     branches: c.branches ? c.branches.map((b: any) => b.name) : [],
     recruiters: [], // Still mock or empty if not in DB
     facilities: c.facilities ? [

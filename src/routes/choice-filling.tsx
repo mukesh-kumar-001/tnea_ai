@@ -4,7 +4,7 @@ import { AppShell } from "@/components/app-shell";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { SearchableSelect } from "@/components/ui/searchable-select";
 import { useCascadingFilters } from "@/hooks/use-cascading-filters";
 import { useAllColleges, useBranches } from "@/lib/api";
 import { GripVertical, Trash2, Plus, Sparkles, Download, ListChecks, ChevronUp, ChevronDown, Layers, Terminal, AlertCircle, FileSpreadsheet } from "lucide-react";
@@ -163,23 +163,31 @@ function ChoiceFilling() {
               <div className="space-y-5">
                 <div>
                   <label className="technical-label block mb-2">Target Institution</label>
-                  <Select value={collegeCode || "any"} onValueChange={(v) => setCollegeCode(v === "any" ? "" : v)} disabled={loadingColleges}>
-                    <SelectTrigger className="h-11 bg-background font-medium"><SelectValue placeholder="Select college" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="any" className="font-medium">Any College</SelectItem>
-                      {filteredColleges.map((c) => <SelectItem key={c.code} value={c.code} className="font-medium">[{c.code}] {c.name}</SelectItem>)}
-                    </SelectContent>
-                  </Select>
+                  <SearchableSelect 
+                    value={collegeCode || "any"} 
+                    onValueChange={(v) => setCollegeCode(v === "any" ? "" : v)} 
+                    disabled={loadingColleges}
+                    options={[
+                      { value: "any", label: "Any College" },
+                      ...filteredColleges.map((c) => ({ value: c.code, label: `[${c.code}] ${c.name}` }))
+                    ]}
+                    placeholder="Select college"
+                    searchPlaceholder="Search colleges..."
+                  />
                 </div>
                 <div>
                   <label className="technical-label block mb-2">Target Program Branch</label>
-                  <Select value={branchCode || "any"} onValueChange={(v) => setBranchCode(v === "any" ? "" : v)} disabled={loadingBranches}>
-                    <SelectTrigger className="h-11 bg-background font-medium"><SelectValue placeholder="Select branch" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="any" className="font-medium">Any Branch</SelectItem>
-                      {filteredBranches.map((b) => <SelectItem key={b.code} value={b.code} className="font-medium">{b.name}</SelectItem>)}
-                    </SelectContent>
-                  </Select>
+                  <SearchableSelect 
+                    value={branchCode || "any"} 
+                    onValueChange={(v) => setBranchCode(v === "any" ? "" : v)} 
+                    disabled={loadingBranches}
+                    options={[
+                      { value: "any", label: "Any Course" },
+                      ...filteredBranches.map((b) => ({ value: b.code, label: b.name }))
+                    ]}
+                    placeholder="Select course"
+                    searchPlaceholder="Search courses..."
+                  />
                 </div>
                 
                 <Button onClick={add} disabled={!collegeCode || collegeCode === "any" || !branchCode || branchCode === "any"} className="w-full rounded-xl gap-2 h-12 mt-2 font-bold group shadow-glow relative overflow-hidden">
@@ -239,7 +247,7 @@ function ChoiceFilling() {
                           exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
                           transition={{ type: "spring", stiffness: 350, damping: 25 }}
                         >
-                          <Card className="p-4 print:p-2 print:border-b print:border-gray-200 print:shadow-none print:rounded-none rounded-xl flex items-center gap-4 hover:shadow-elegant hover:border-primary/30 transition-all border-border/60 bg-card group relative overflow-hidden card-hover-lift">
+                          <Card className="p-4 print:p-2 print:border-b print:border-gray-200 print:shadow-none print:rounded-none rounded-xl flex items-center gap-3 sm:gap-4 hover:shadow-elegant hover:border-primary/30 transition-all border-border/60 bg-card group relative overflow-hidden card-hover-lift">
                             <div className="absolute top-0 left-0 h-full w-1 bg-primary/20 group-hover:bg-primary transition-colors print:hidden" />
                             
                             <button className="text-muted-foreground hover:text-foreground cursor-grab active:cursor-grabbing ml-2 transition-colors print:hidden" aria-label="Drag">
@@ -258,7 +266,7 @@ function ChoiceFilling() {
                               <div className="text-xs font-medium text-muted-foreground mt-0.5 print:text-gray-700">{c.branch}</div>
                             </div>
                             
-                            <div className="flex gap-1 pr-2 opacity-80 group-hover:opacity-100 transition-opacity print:hidden">
+                            <div className="flex gap-1 pr-2 opacity-80 group-hover:opacity-100 transition-opacity shrink-0 print:hidden">
                               <Button size="icon" variant="ghost" onClick={() => move(i, i - 1)} disabled={i === 0} className="size-8 bg-background border-border shadow-sm disabled:opacity-30" aria-label="Move up">
                                 <ChevronUp className="size-4" />
                               </Button>

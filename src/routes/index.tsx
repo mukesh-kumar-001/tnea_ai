@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 const FEATURES = [
   { icon: Compass, title: "College Explorer", desc: "Filter 460+ colleges by district, NAAC grade, fees, placement and branch.", to: "/colleges" as const },
   { icon: TrendingUp, title: "Rank Predictor", desc: "Estimate general and community rank instantly from your TNEA cutoff.", to: "/rank-predictor" as const },
-  { icon: Sparkles, title: "AI Counselling", desc: "Dream, target and safe college lists tailored to your rank and preferences.", to: "/counselling" as const },
+  { icon: Sparkles, title: "College Suggestions", desc: "Dream, target and safe college lists tailored to your rank and preferences.", to: "/counselling" as const },
   { icon: ListChecks, title: "Choice Filling", desc: "Drag-and-drop preference list with AI-driven order suggestions.", to: "/choice-filling" as const },
   { icon: LineChart, title: "Cutoff Explorer", desc: "Interactive cutoff history charts across colleges, branches and communities.", to: "/cutoffs" as const },
   { icon: MessageSquare, title: "AI Assistant", desc: "Ask anything about counselling rules, seat matrix, hostels or placements.", to: "/ai-chat" as const },
@@ -70,7 +70,7 @@ function Home() {
             </StaggerItem>
             
             <StaggerItem>
-              <h1 className="mt-8 text-balance text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight">
+              <h1 className="mt-8 text-balance text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
                 Precision <span className="text-primary relative inline-block">
                   Engineering
                   <motion.span 
@@ -127,7 +127,7 @@ function Home() {
             <p className="mt-4 text-lg text-muted-foreground">Purpose-built tools for every stage of the TNEA journey — from exploration to final choice submission.</p>
           </AnimatedSection>
           
-          <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
               <StaggerItem key={f.title}>
                 <Link to={f.to} className="group block h-full">
@@ -202,7 +202,7 @@ function Home() {
           <StaggerContainer className="grid md:grid-cols-3 gap-10">
             {[
               { icon: ShieldCheck, title: "Verified Protocols", desc: "Cutoffs sourced directly from official TNEA seat allotment records with high fidelity." },
-              { icon: Sparkles, title: "Neural Analysis", desc: "Recommendation engine trained on a decade of counselling patterns and shifting preferences." },
+              { icon: Sparkles, title: "Smart Analysis", desc: "Suggestion engine trained on a decade of admission patterns and shifting preferences." },
               { icon: MessageSquare, title: "System Assistant", desc: "Always-on conversational agent for rules, seat matrices, and fee structures." },
             ].map((f) => (
               <StaggerItem key={f.title} className="flex gap-5">

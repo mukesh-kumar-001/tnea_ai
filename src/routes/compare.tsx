@@ -4,7 +4,7 @@ import { AppShell } from "@/components/app-shell";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { SearchableSelect } from "@/components/ui/searchable-select";
 import { useAllColleges } from "@/lib/api";
 import { type MockCollege } from "@/lib/mock-data";
 import { Plus, X, ArrowRightLeft, Download, Check, Minus, Printer, Share2 } from "lucide-react";
@@ -106,15 +106,16 @@ function CompareColleges() {
           <Card className="p-6 mb-8 rounded-2xl border-border/60 bg-card/80 backdrop-blur shadow-sm print:hidden">
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <div className="flex-1 w-full">
-                <Select value={collegeToAdd} onValueChange={setCollegeToAdd}>
-                  <SelectTrigger className="h-12 bg-background font-medium">
-                    <SelectValue placeholder="Select an institution to add to comparison..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Any" className="font-medium">Any College</SelectItem>
-                    {colleges.map((c) => <SelectItem key={c.code} value={c.code} className="font-medium">[{c.code}] {c.name}</SelectItem>)}
-                  </SelectContent>
-                </Select>
+                <SearchableSelect 
+                  value={collegeToAdd} 
+                  onValueChange={setCollegeToAdd}
+                  options={[
+                    { value: "Any", label: "Any College" },
+                    ...colleges.map((c) => ({ value: c.code, label: `[${c.code}] ${c.name}` }))
+                  ]}
+                  placeholder="Select an institution to add to comparison..."
+                  searchPlaceholder="Search institutions..."
+                />
               </div>
               <Button onClick={addCollege} disabled={!collegeToAdd || collegeToAdd === "Any" || selectedIds.length >= 4} className="h-12 rounded-xl gap-2 shadow-glow font-bold w-full sm:w-auto shrink-0">
                 <Plus className="size-4" /> Add to Matrix

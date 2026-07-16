@@ -306,6 +306,15 @@
   }
 }
 
+/* Hide scrollbar for clean UI elements */
+@utility no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    Animation Keyframes
    ═══════════════════════════════════════════════════════════════ */
@@ -406,3 +415,31 @@
 @utility stagger-6 { animation-delay: 300ms; }
 @utility stagger-7 { animation-delay: 350ms; }
 @utility stagger-8 { animation-delay: 400ms; }
+
+/* ---------------------------------------------------------------
+   Print Media Styles
+   --------------------------------------------------------------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .print\:block {
+    display: block !important;
+  }
+  
+  .print\:page-break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

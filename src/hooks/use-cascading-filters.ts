@@ -48,7 +48,7 @@ export function useCascadingFilters({
     
     const uniqueNames = new Set<string>();
     return allBranches.filter((branch) => {
-      if (!college.branches.includes(branch.name)) return false;
+      if (!college.branches || !college.branches.includes(branch.name)) return false;
       if (uniqueNames.has(branch.name)) return false;
       uniqueNames.add(branch.name);
       return true;

@@ -56,8 +56,8 @@ function RankPredictor() {
         <div className="container-page py-16 relative z-10 max-w-5xl">
           <AnimatedSection>
             <CoordinateMarker label="STAT.PREDICT" className="mb-4" />
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Rank Prediction Engine</h1>
-            <p className="mt-4 text-lg text-muted-foreground text-pretty max-w-2xl">Input your aggregate marks. Our statistical model interpolates historical distribution curves to project your general and community allocation ranking.</p>
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Rank Predictor</h1>
+            <p className="mt-4 text-lg text-muted-foreground text-pretty">Input your academic scores to estimate your general and community ranks.</p>
           </AnimatedSection>
         </div>
       </section>
@@ -104,7 +104,7 @@ function RankPredictor() {
                 <Button onClick={submit} className="w-full h-12 rounded-xl gap-2 mt-4 shadow-glow group relative overflow-hidden font-bold">
                   <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
                   <TrendingUp className="size-4 relative z-10" /> 
-                  <span className="relative z-10 uppercase tracking-widest text-xs">Execute Projection</span>
+                  <span className="relative z-10 uppercase tracking-widest text-xs">Execute Prediction</span>
                 </Button>
               </div>
             </Card>
@@ -117,7 +117,7 @@ function RankPredictor() {
               <div className="relative z-10">
                 <div className="flex items-center gap-2 text-primary font-bold mb-8">
                   <Sparkles className="size-5" /> 
-                  <span className="uppercase tracking-widest text-sm">Projection Results</span>
+                  <span className="uppercase tracking-widest text-sm">Prediction Results</span>
                 </div>
                 
                 <AnimatePresence mode="wait">
@@ -147,14 +147,14 @@ function RankPredictor() {
                       
                       <div>
                         <div className="flex items-center justify-between mb-3">
-                          <span className="technical-label">Model Confidence</span>
+                          <span className="technical-label">Confidence Score</span>
                           <span className="text-sm font-bold font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">{result.confidence}%</span>
                         </div>
                         <Progress value={result.confidence} className="h-2 bg-muted/60" indicatorClassName="bg-primary shadow-glow" />
                       </div>
                       
                       <p className="text-xs text-muted-foreground font-mono leading-relaxed opacity-70">
-                        <span className="text-warning">NOTICE:</span> Projections utilize polynomial interpolation of historical allocation vectors. Variance is inherent. Official DoTE rank prevails.
+                        <span className="text-warning">NOTICE:</span> Projections utilize statistical modeling. Variance is expected. Official authority ranks prevail.
                       </p>
                     </motion.div>
                   ) : (
@@ -171,9 +171,9 @@ function RankPredictor() {
                           <TrendingUp className="size-6 opacity-80" />
                         </div>
                       </div>
-                      <div className="font-extrabold text-2xl tracking-tight">Awaiting Parameters</div>
-                      <p className="text-sm text-muted-foreground max-w-xs mt-3 leading-relaxed">
-                        Input your aggregate cutoff and community parameters on the left to execute the prediction model.
+                      <div className="font-extrabold text-2xl tracking-tight">System Standby</div>
+                      <p className="text-muted-foreground mt-3 max-w-sm text-sm leading-relaxed">
+                        Input your cutoff and community on the left to estimate your rank.
                       </p>
                     </motion.div>
                   )}

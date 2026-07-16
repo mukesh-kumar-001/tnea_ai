@@ -12,7 +12,7 @@ import { useAllColleges, useCutoffs } from "@/lib/api";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section";
 import { StatCard, InlineStat } from "@/components/stat-card";
 import { EngineeringBg, CoordinateMarker, EngineeringDivider } from "@/components/engineering-bg";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { SearchableSelect } from "@/components/ui/searchable-select";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/colleges/$code")({
@@ -163,8 +163,8 @@ function Detail() {
       <section className="container-page py-12 w-full overflow-hidden">
         <Tabs defaultValue="overview" className="w-full max-w-full overflow-hidden">
           <AnimatedSection delay={0.3}>
-            <div className="relative overflow-x-auto pb-2 scrollbar-none mb-8">
-              <TabsList className="h-auto p-1 bg-muted/30 border border-border/60 rounded-xl inline-flex min-w-max md:min-w-0 flex-nowrap">
+            <div className="relative overflow-x-auto pb-2 no-scrollbar mb-8">
+              <TabsList className="h-auto p-1 bg-muted/30 border border-border/60 rounded-xl inline-flex min-w-max md:min-w-0 flex-nowrap whitespace-nowrap">
                 <TabsTrigger value="overview" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Overview</TabsTrigger>
                 <TabsTrigger value="courses" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Courses</TabsTrigger>
                 <TabsTrigger value="cutoffs" className="rounded-lg text-xs font-semibold px-4 py-2 uppercase tracking-wide">Cutoffs</TabsTrigger>
@@ -397,26 +397,30 @@ const CutoffTab = React.memo(({ college, community, setCommunity, branch, setBra
       <div className="grid md:grid-cols-2 gap-6 mb-8 bg-muted/20 p-4 rounded-xl border border-border/40">
         <div>
           <Label className="technical-label block mb-2">Community Category</Label>
-          <Select value={community} onValueChange={setCommunity}>
-            <SelectTrigger className="h-10 bg-background font-mono"><SelectValue placeholder="Select Community" /></SelectTrigger>
-            <SelectContent>
-              {["OC", "BC", "BCM", "MBC", "SC", "SCA", "ST"].map(c => (
-                <SelectItem key={c} value={c} className="font-mono">{c}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <SearchableSelect 
+            value={community} 
+            onValueChange={setCommunity}
+            options={[
+              ...["OC", "BC", "BCM", "MBC", "SC", "SCA", "ST"].map(c => ({ value: c, label: c }))
+            ]}
+            placeholder="Select Community"
+            searchPlaceholder="Search community..."
+            className="font-mono"
+          />
         </div>
         <div>
           <Label className="technical-label block mb-2">Program Branch</Label>
-          <Select value={branch} onValueChange={setBranch}>
-            <SelectTrigger className="h-10 bg-background font-mono"><SelectValue placeholder="Select Branch" /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="any" className="font-mono">Compare All Branches</SelectItem>
-              {allBranches.map((b: any) => (
-                <SelectItem key={b} value={b} className="font-mono">{b}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <SearchableSelect 
+            value={branch} 
+            onValueChange={setBranch}
+            options={[
+              { value: "any", label: "Compare All Branches" },
+              ...allBranches.map((b: any) => ({ value: b, label: b }))
+            ]}
+            placeholder="Select Branch"
+            searchPlaceholder="Search branches..."
+            className="font-mono"
+          />
         </div>
       </div>
 

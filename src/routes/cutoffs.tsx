@@ -3,7 +3,7 @@ import { useMemo, useState, useEffect } from "react";
 import { AppShell } from "@/components/app-shell";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { SearchableSelect } from "@/components/ui/searchable-select";
 import { useCascadingFilters } from "@/hooks/use-cascading-filters";
 import { COMMUNITIES, type Community } from "@/lib/mock-data";
 import { useAllColleges, useBranches, useCutoffs } from "@/lib/api";
@@ -150,41 +150,47 @@ function Cutoffs() {
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <Label className="technical-label block mb-2">Institution</Label>
-                <Select value={collegeCode} onValueChange={setCollegeCode} disabled={loadingColleges}>
-                  <SelectTrigger className="h-11 bg-background shadow-sm font-medium">
-                    <SelectValue placeholder="Select college" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Any" className="font-medium">Any College</SelectItem>
-                    {filteredColleges.map((c) => <SelectItem key={c.code} value={c.code} className="font-medium">[{c.code}] {c.name}</SelectItem>)}
-                  </SelectContent>
-                </Select>
+                <SearchableSelect 
+                  value={collegeCode} 
+                  onValueChange={setCollegeCode} 
+                  disabled={loadingColleges}
+                  options={[
+                    { value: "Any", label: "Any College" },
+                    ...filteredColleges.map((c) => ({ value: c.code, label: `[${c.code}] ${c.name}` }))
+                  ]}
+                  placeholder="Select college"
+                  searchPlaceholder="Search colleges..."
+                />
               </div>
               
               <div>
                 <Label className="technical-label block mb-2">Program Branch</Label>
-                <Select value={branchCode} onValueChange={setBranchCode} disabled={loadingBranches}>
-                  <SelectTrigger className="h-11 bg-background shadow-sm font-medium">
-                    <SelectValue placeholder="Select branch" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Any" className="font-medium">Any Branch</SelectItem>
-                    {filteredBranches.map((br) => <SelectItem key={br.code} value={br.code} className="font-medium">{br.name}</SelectItem>)}
-                  </SelectContent>
-                </Select>
+                <SearchableSelect 
+                  value={branchCode} 
+                  onValueChange={setBranchCode} 
+                  disabled={loadingBranches}
+                  options={[
+                    { value: "Any", label: "Any Course" },
+                    ...filteredBranches.map((br) => ({ value: br.code, label: br.name }))
+                  ]}
+                  placeholder="Select course"
+                  searchPlaceholder="Search courses..."
+                />
               </div>
               
               <div>
                 <Label className="technical-label block mb-2">Community Category</Label>
-                <Select value={community} onValueChange={setCommunity}>
-                  <SelectTrigger className="h-11 bg-background shadow-sm font-mono">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Any" className="font-mono">Any Community</SelectItem>
-                    {COMMUNITIES.map((c) => <SelectItem key={c} value={c} className="font-mono">{c}</SelectItem>)}
-                  </SelectContent>
-                </Select>
+                <SearchableSelect 
+                  value={community} 
+                  onValueChange={setCommunity}
+                  options={[
+                    { value: "Any", label: "Any Community" },
+                    ...COMMUNITIES.map((c) => ({ value: c, label: c }))
+                  ]}
+                  placeholder="Select community"
+                  searchPlaceholder="Search community..."
+                  className="font-mono"
+                />
               </div>
             </div>
           </Card>
@@ -245,11 +251,13 @@ function Cutoffs() {
                         borderRadius: '12px', 
                         border: '1px solid var(--color-border)', 
                         backgroundColor: 'var(--color-card)',
+                        color: 'var(--color-foreground)',
+                        padding: '12px 16px',
                         boxShadow: 'var(--shadow-md)',
                         fontFamily: 'var(--font-mono)'
                       }}
-                      itemStyle={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-primary)' }}
-                      labelStyle={{ color: 'var(--color-muted-foreground)', marginBottom: '8px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                      itemStyle={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-primary)', paddingBottom: '4px' }}
+                      labelStyle={{ color: 'var(--color-foreground)', marginBottom: '8px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}
                     />
                     <Legend wrapperStyle={{ paddingTop: '20px', fontSize: '12px', fontFamily: 'var(--font-sans)' }} iconType="circle" />
                     <Line 

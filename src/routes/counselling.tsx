@@ -24,8 +24,8 @@ const EasterEgg = lazy(() => import("@/components/easter-egg"));
 export const Route = createFileRoute("/counselling")({
   head: () => ({
     meta: [
-      { title: "AI Counselling — TNEA.ai" },
-      { name: "description", content: "AI-generated dream, target and safe college recommendations for TNEA based on your rank, community and preferences." },
+      { title: "College Suggestions - TNEA.ai" },
+      { name: "description", content: "AI-generated dream, target and safe college suggestions for TNEA based on your rank, community and preferences." },
     ],
   }),
   component: Counselling,
@@ -56,6 +56,7 @@ function Counselling() {
   const [hostel, setHostel] = useState(true);
 
   const [recos, setRecos] = useState<Reco[] | null>(null);
+  const [inputMode, setInputMode] = useState<"rank" | "cutoff">("rank");
   const [showEasterEgg, setShowEasterEgg] = useState(false);
 
   const { mutate: generate, isPending: loading } = useMutation({
@@ -66,11 +67,20 @@ function Counselling() {
         return b ? b.code : name;
       });
 
+      let finalGenRank = parseInt(genRank);
+      let finalCommRank = parseInt(commRank);
+
+      if (inputMode === "cutoff") {
+        const c = parseFloat(cutoff) || 190;
+        finalGenRank = Math.max(1, Math.floor((200 - c) * 300));
+        finalCommRank = Math.max(1, Math.floor(finalGenRank * 0.6));
+      }
+
       const payload = {
         user_profile: {
           community: community === "any" ? "" : community,
-          general_rank: parseInt(genRank),
-          community_rank: parseInt(commRank)
+          general_rank: finalGenRank,
+          community_rank: finalCommRank
         },
         preferences: {
           preferred_branches: branchCodes,
@@ -131,8 +141,8 @@ function Counselling() {
         <div className="container-page py-16 relative z-10">
           <AnimatedSection className="max-w-3xl">
             <CoordinateMarker label="AI.CN" className="mb-4" />
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Neural Recommendation Engine</h1>
-            <p className="mt-4 text-lg text-muted-foreground text-pretty">Input your TNEA parameters. Our system generates precise Dream, Target, and Safe probabilities based on historical allocation matrices.</p>
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Smart College Suggestions</h1>
+            <p className="mt-4 text-lg text-muted-foreground text-pretty">Input your TNEA details. Our system generates precise Dream, Target, and Safe suggestions based on historical data.</p>
           </AnimatedSection>
         </div>
       </section>
@@ -153,7 +163,7 @@ function Counselling() {
                   <div className="flex items-center gap-2 text-sm font-bold border-b border-border/60 pb-2 mb-4 text-foreground/80">
                     <Fingerprint className="size-4" /> Demographics
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label className="technical-label block mb-2">Community</Label>
                       <Select value={community} onValueChange={(v) => setCommunity(v as Community | "any")}>
@@ -175,28 +185,46 @@ function Counselling() {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div>
-                      <Label className="technical-label block mb-2">Gen Rank</Label>
-                      <Input value={genRank} onChange={(e) => setGenRank(e.target.value)} className="h-10 font-mono" />
+                  <div className="flex items-center justify-between border-b border-border/60 pb-2 mb-4 mt-4 text-foreground/80">
+                    <div className="flex items-center gap-2 text-sm font-bold">
+                      <Fingerprint className="size-4" /> Academic Metrics
                     </div>
-                    <div>
-                      <Label className="technical-label block mb-2">Comm Rank</Label>
-                      <Input value={commRank} onChange={(e) => setCommRank(e.target.value)} className="h-10 font-mono" />
-                    </div>
-                    <div className="col-span-2">
-                      <div className="flex justify-between items-center mb-3">
-                        <Label className="technical-label">Cutoff Mark (Max 200)</Label>
-                        <Input value={cutoff} onChange={(e) => setCutoff(e.target.value)} className="h-8 w-24 text-right font-mono bg-primary/5 border-primary/20 focus-visible:ring-primary" />
-                      </div>
-                      <Slider min={80} max={200} step={0.5} value={[parseFloat(cutoff) || 80]} onValueChange={(v) => setCutoff(v[0].toString())} className="mt-2" />
+                    <div className="flex items-center gap-2">
+                      <Label htmlFor="mode-toggle" className="text-xs font-semibold cursor-pointer">Rank</Label>
+                      <Switch id="mode-toggle" checked={inputMode === "cutoff"} onCheckedChange={(c) => setInputMode(c ? "cutoff" : "rank")} />
+                      <Label htmlFor="mode-toggle" className="text-xs font-semibold cursor-pointer">Cutoff</Label>
                     </div>
                   </div>
+                  
+                  {inputMode === "rank" ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <Label className="technical-label block mb-2">Gen Rank</Label>
+                        <Input value={genRank} onChange={(e) => setGenRank(e.target.value)} className="h-10 font-mono" />
+                      </div>
+                      <div>
+                        <Label className="technical-label block mb-2">Comm Rank</Label>
+                        <Input value={commRank} onChange={(e) => setCommRank(e.target.value)} className="h-10 font-mono" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="col-span-1">
+                        <div className="flex justify-between items-center mb-3">
+                          <Label className="technical-label">Cutoff Mark (Max 200)</Label>
+                          <Input value={cutoff} onChange={(e) => setCutoff(e.target.value)} className="h-8 w-24 text-right font-mono bg-primary/5 border-primary/20 focus-visible:ring-primary" />
+                        </div>
+                        <Slider min={80} max={200} step={0.5} value={[parseFloat(cutoff) || 80]} onValueChange={(v) => setCutoff(v[0].toString())} className="mt-2" />
+                        <p className="text-[10px] text-muted-foreground mt-3 text-right">An estimated rank will be used for predictions.</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Preferences */}
                 <div>
                   <div className="flex items-center gap-2 text-sm font-bold border-b border-border/60 pb-2 mb-4 text-foreground/80 mt-6">
-                    <Target className="size-4" /> Targeting Parameters
+                    <Target className="size-4" /> Preferences
                   </div>
                   
                   <div className="space-y-5">
@@ -277,7 +305,7 @@ function Counselling() {
                     </div>
                     <div className="font-extrabold text-2xl tracking-tight">System Standby</div>
                     <p className="text-muted-foreground mt-3 max-w-md text-sm leading-relaxed">
-                      Configure your parameters on the control panel and execute the simulation to generate targeted college allocations.
+                      Provide your details in the panel and run the tool to see suggested colleges.
                     </p>
                   </Card>
                 </motion.div>
