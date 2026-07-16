@@ -12,7 +12,7 @@ class College(db.Model):
     established_year = db.Column(db.Integer, nullable=True)
     autonomous = db.Column(db.Boolean, default=False)
     
-    branches = db.relationship('CollegeBranch', back_populates='college', lazy='dynamic')
+    branches = db.relationship('CollegeBranch', back_populates='college', lazy='select')
     facilities = db.relationship('Facility', backref='college', uselist=False)
     hostel = db.relationship('HostelInformation', backref='college', uselist=False)
     fees = db.relationship('FeeStructure', backref='college', lazy='select')

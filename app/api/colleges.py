@@ -3,7 +3,7 @@ from . import colleges_bp
 from app.models.college import College
 from app.models.fee_placement import FeeStructure, PlacementStatistic
 from app.extensions import db
-from sqlalchemy.orm import joinedload
+from sqlalchemy.orm import joinedload, selectinload
 
 def serialize_college_light(c):
     """Lightweight serializer using pre-loaded relationships (no extra queries)."""
@@ -44,7 +44,7 @@ def serialize_college_light(c):
     # Branches
     branches_data = []
     if c.branches:
-        branches_data = [{"code": cb.branch.code, "name": cb.branch.name} for cb in c.branches.all()]
+        branches_data = [{"code": cb.branch.code, "name": cb.branch.name} for cb in c.branches]
 
     return {
         "id": c.id,
@@ -73,10 +73,11 @@ def list_colleges():
 
     # Use joinedload to load all relationships in a single query (no N+1)
     query = College.query.options(
-        joinedload(College.fees),
-        joinedload(College.placements),
+        selectinload(College.fees),
+        selectinload(College.placements),
         joinedload(College.facilities),
         joinedload(College.hostel),
+        selectinload(College.branches).joinedload(CollegeBranch.branch)
     )
 
     if district:
@@ -98,9 +99,10 @@ def list_colleges():
 @colleges_bp.route('/<int:id>', methods=['GET'])
 def get_college(id):
     c = College.query.options(
-        joinedload(College.fees),
-        joinedload(College.placements),
+        selectinload(College.fees),
+        selectinload(College.placements),
         joinedload(College.facilities),
         joinedload(College.hostel),
+        selectinload(College.branches).joinedload(CollegeBranch.branch)
     ).get_or_404(id)
     return jsonify(serialize_college_light(c))
