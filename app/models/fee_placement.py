@@ -7,9 +7,12 @@ class FeeStructure(db.Model):
     college_id = db.Column(db.Integer, db.ForeignKey('colleges.id'), nullable=False)
     year = db.Column(db.Integer, nullable=False)
     
-    category = db.Column(db.String(50), nullable=True) # Govt Quota, Management, etc.
     tuition_fee = db.Column(db.Float, nullable=True)
-    other_fees = db.Column(db.Float, nullable=True)
+    admission_fee = db.Column(db.Float, nullable=True)
+    establishment_fee = db.Column(db.Float, nullable=True)
+    hostel_fee = db.Column(db.Float, nullable=True)
+    transport_min_fee = db.Column(db.Float, nullable=True)
+    transport_max_fee = db.Column(db.Float, nullable=True)
 
 class PlacementStatistic(db.Model):
     __tablename__ = 'placement_statistics'

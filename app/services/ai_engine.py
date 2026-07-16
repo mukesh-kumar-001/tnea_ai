@@ -6,9 +6,11 @@ class AIEngine:
     @staticmethod
     def generate_recommendations(user_profile, preferences):
         community = user_profile.get('community', 'OC')
-        rank = user_profile.get('general_rank')
-        if community != 'OC' and user_profile.get('community_rank'):
-            rank = user_profile.get('community_rank')
+        general_rank = user_profile.get('general_rank')
+        community_rank = user_profile.get('community_rank')
+
+        use_community_rank = (community != 'OC' and community_rank is not None)
+        rank = community_rank if use_community_rank else general_rank
             
         if not rank:
             return {"error": "Rank is required for recommendations"}
@@ -19,20 +21,35 @@ class AIEngine:
         if branches:
             query = query.join(Branch).filter(Branch.code.in_(branches))
             
+        # Order the query by year descending so we evaluate the most recent cutoffs first
+        query = query.order_by(YearlyCutoff.year.desc())
         results = query.all()
         
         dream, target, safe = [], [], []
+        seen = set()
         
         for record in results:
             cb = record.college_branch
             college = cb.college
             
-            districts = preferences.get('preferred_districts', [])
-            if districts and college.district not in districts:
+            # Create a unique key for the college + branch combo
+            combo_key = f"{college.id}-{cb.branch.name}"
+            if combo_key in seen:
+                continue
+            
+            districts = [d.lower() for d in preferences.get('preferred_districts', [])]
+            if districts and (not college.district or college.district.lower() not in districts):
                 continue
                 
-            cutoff_rank = record.community_rank if record.community_rank else record.general_rank
-            if not cutoff_rank: continue
+            if use_community_rank and record.community_rank is not None:
+                cutoff_rank = record.community_rank
+            else:
+                if record.general_rank is None:
+                    continue
+                # The database only contains the general rank of the last admitted student for the community quota.
+                # Therefore, we MUST fall back to comparing the user's general rank against it.
+                cutoff_rank = record.general_rank
+                rank = general_rank # Ensure we compare general against general
                 
             diff = cutoff_rank - rank
             
@@ -47,12 +64,15 @@ class AIEngine:
             if diff < -5000:
                 college_info['explanation'] = "Highly competitive based on historical trends."
                 dream.append(college_info)
+                seen.add(combo_key)
             elif -5000 <= diff <= 2000:
                 college_info['explanation'] = "Good chance of admission based on recent cutoffs."
                 target.append(college_info)
+                seen.add(combo_key)
             elif diff > 2000:
                 college_info['explanation'] = "Safe option as your rank is well within the historical cutoff."
                 safe.append(college_info)
+                seen.add(combo_key)
                 
         dream.sort(key=lambda x: x['probability'], reverse=True)
         target.sort(key=lambda x: x['probability'], reverse=True)
