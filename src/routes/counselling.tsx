@@ -185,6 +185,8 @@ function Counselling() {
                         </SelectContent>
                       </Select>
                     </div>
+                  </div>
+
                   <div className="flex items-center justify-between border-b border-border/60 pb-2 mb-4 mt-4 text-foreground/80">
                     <div className="flex items-center gap-2 text-sm font-bold">
                       <Fingerprint className="size-4" /> Academic Metrics
