@@ -23,7 +23,7 @@ class AIEngine:
             query = query.join(Branch).filter(Branch.code.in_(branches))
             
         # Order by most competitive (lowest cutoff rank first so dream colleges surface first)
-        query = query.order_by(YearlyCutoff.general_rank.asc())
+        query = query.filter(YearlyCutoff.general_rank.isnot(None)).order_by(YearlyCutoff.general_rank.asc())
         results = query.limit(500).all()
         
         dream, target, safe = [], [], []

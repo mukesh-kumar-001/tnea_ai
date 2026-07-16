@@ -9,7 +9,7 @@ def serialize_college_light(c):
     """Lightweight serializer using pre-loaded relationships (no extra queries)."""
     # Fees - already loaded via joinedload
     fees_data = []
-    if hasattr(c, '_fees_loaded'):
+    if c.fees:
         fees_data = [{"year": f.year, "tuition_fee": f.tuition_fee, "other_fees": (f.admission_fee or 0) + (f.establishment_fee or 0)} for f in c.fees]
 
     # Placements - already loaded
@@ -41,6 +41,11 @@ def serialize_college_light(c):
             "annual_fee": c.hostel.annual_fee
         }
 
+    # Branches
+    branches_data = []
+    if c.branches:
+        branches_data = [{"code": cb.branch.code, "name": cb.branch.name} for cb in c.branches.all()]
+
     return {
         "id": c.id,
         "tnea_code": c.tnea_code,
@@ -53,13 +58,14 @@ def serialize_college_light(c):
         "placements": placement_data,
         "facilities": facilities_data,
         "hostel": hostel_data,
+        "branches": branches_data,
     }
 
 @colleges_bp.route('/', methods=['GET'])
 def list_colleges():
     # Pagination
     page = request.args.get('page', 1, type=int)
-    per_page = min(request.args.get('per_page', 20, type=int), 50)
+    per_page = min(request.args.get('per_page', 1000, type=int), 2000)
 
     # Filtering
     district = request.args.get('district')
