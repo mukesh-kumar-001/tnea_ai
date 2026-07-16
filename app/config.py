@@ -3,9 +3,33 @@ from datetime import timedelta
 
 basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
+def get_database_url():
+    url = os.environ.get('DATABASE_URL')
+    if url:
+        # Automatically fix unencoded @ in password
+        import urllib.parse
+        parts = url.split('@')
+        if len(parts) > 2:
+            host_part = parts[-1]
+            credentials = '@'.join(parts[:-1])
+            if "://" in credentials:
+                protocol, rest = credentials.split("://", 1)
+                if ":" in rest:
+                    username, password = rest.split(":", 1)
+                    encoded_password = urllib.parse.quote(password, safe="")
+                    url = f"{protocol}://{username}:{encoded_password}@{host_part}"
+        
+        if url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql+pg8000://", 1)
+        elif url.startswith("postgresql://"):
+            url = url.replace("postgresql://", "postgresql+pg8000://", 1)
+    else:
+        url = f"sqlite:///{os.path.join(basedir, 'app.db')}"
+    return url
+
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-key-for-tnea-platform')
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', f"sqlite:///{os.path.join(basedir, 'app.db')}")
+    SQLALCHEMY_DATABASE_URI = get_database_url()
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'jwt-secret-for-tnea-platform')
@@ -18,25 +42,6 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
-    if SQLALCHEMY_DATABASE_URI:
-        # Automatically fix unencoded @ in password
-        import urllib.parse
-        parts = SQLALCHEMY_DATABASE_URI.split('@')
-        if len(parts) > 2:
-            host_part = parts[-1]
-            credentials = '@'.join(parts[:-1])
-            if "://" in credentials:
-                protocol, rest = credentials.split("://", 1)
-                if ":" in rest:
-                    username, password = rest.split(":", 1)
-                    encoded_password = urllib.parse.quote(password, safe="")
-                    SQLALCHEMY_DATABASE_URI = f"{protocol}://{username}:{encoded_password}@{host_part}"
-        
-        if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
-            SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql+pg8000://", 1)
-        elif SQLALCHEMY_DATABASE_URI.startswith("postgresql://"):
-            SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgresql://", "postgresql+pg8000://", 1)
 
 class TestingConfig(Config):
     TESTING = True
