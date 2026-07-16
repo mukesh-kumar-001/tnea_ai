@@ -1,4 +1,5 @@
 from app.extensions import db
+from sqlalchemy.orm import relationship
 
 class College(db.Model):
     __tablename__ = 'colleges'
@@ -14,6 +15,8 @@ class College(db.Model):
     branches = db.relationship('CollegeBranch', back_populates='college', lazy='dynamic')
     facilities = db.relationship('Facility', backref='college', uselist=False)
     hostel = db.relationship('HostelInformation', backref='college', uselist=False)
+    fees = db.relationship('FeeStructure', backref='college', lazy='select')
+    placements = db.relationship('PlacementStatistic', backref='college', lazy='select')
 
 class Facility(db.Model):
     __tablename__ = 'facilities'
