@@ -320,9 +320,20 @@ function Counselling() {
                   animate={{ opacity: 1, y: 0 }}
                   className="space-y-10"
                 >
-                  <Group icon={Trophy} title="Dream Allocation" description="Stretch probability — high value targets" list={groups.dream} tone="warning" delay={0} />
-                  <Group icon={Target} title="Target Allocation" description="High probability — realistic matches" list={groups.target} tone="primary" delay={0.2} />
-                  <Group icon={Shield} title="Safe Allocation" description="Near certainty — reliable fallbacks" list={groups.safe} tone="success" delay={0.4} />
+                  {groups.dream.length === 0 && groups.target.length === 0 && groups.safe.length === 0 ? (
+                    <Card className="p-16 rounded-2xl text-center border-dashed border-border/80 flex flex-col items-center justify-center min-h-[300px]">
+                      <div className="font-extrabold text-2xl tracking-tight">No Results Found</div>
+                      <p className="text-muted-foreground mt-3 max-w-md text-sm leading-relaxed">
+                        No colleges matched your current parameters. Try adjusting your rank, community, or removing district/branch filters.
+                      </p>
+                    </Card>
+                  ) : (
+                    <>
+                      <Group icon={Trophy} title="Dream Allocation" description="Stretch probability — high value targets" list={groups.dream} tone="warning" delay={0} />
+                      <Group icon={Target} title="Target Allocation" description="High probability — realistic matches" list={groups.target} tone="primary" delay={0.2} />
+                      <Group icon={Shield} title="Safe Allocation" description="Near certainty — reliable fallbacks" list={groups.safe} tone="success" delay={0.4} />
+                    </>
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>
