@@ -6,6 +6,7 @@ basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 def get_database_url():
     url = os.environ.get('DATABASE_URL')
     if url:
+        url = url.strip()
         # Automatically fix unencoded @ in password
         import urllib.parse
         parts = url.split('@')
