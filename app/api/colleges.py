@@ -2,6 +2,7 @@ from flask import request, jsonify
 from . import colleges_bp
 from app.models.college import College
 from app.models.fee_placement import FeeStructure, PlacementStatistic
+from app.models.branch import CollegeBranch
 from app.extensions import db
 from sqlalchemy.orm import joinedload, selectinload
 
@@ -75,8 +76,8 @@ def list_colleges():
     query = College.query.options(
         selectinload(College.fees),
         selectinload(College.placements),
-        joinedload(College.facilities),
-        joinedload(College.hostel),
+        selectinload(College.facilities),
+        selectinload(College.hostel),
         selectinload(College.branches).joinedload(CollegeBranch.branch)
     )
 
@@ -101,8 +102,8 @@ def get_college(id):
     c = College.query.options(
         selectinload(College.fees),
         selectinload(College.placements),
-        joinedload(College.facilities),
-        joinedload(College.hostel),
+        selectinload(College.facilities),
+        selectinload(College.hostel),
         selectinload(College.branches).joinedload(CollegeBranch.branch)
     ).get_or_404(id)
     return jsonify(serialize_college_light(c))

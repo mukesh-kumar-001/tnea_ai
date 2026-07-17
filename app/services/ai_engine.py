@@ -1,93 +1,145 @@
 from app.models.cutoff import YearlyCutoff
-from app.models.college import College
-from app.models.branch import Branch, CollegeBranch
+from app.models.branch import Branch
+
 
 class AIEngine:
+
     @staticmethod
     def generate_recommendations(user_profile, preferences):
-        community = user_profile.get('community', 'OC')
-        general_rank = user_profile.get('general_rank')
-        community_rank = user_profile.get('community_rank')
 
-        use_community_rank = (community != 'OC' and community_rank is not None)
-        rank = community_rank if use_community_rank else general_rank
-            
-        if not rank:
-            return {"error": "Rank is required for recommendations"}
-            
-        # Only load the most recent year's cutoffs to keep the query fast
-        query = YearlyCutoff.query.filter_by(category=community, year=2025).join(CollegeBranch)
-        
-        branches = preferences.get('preferred_branches', [])
-        if branches:
-            query = query.join(Branch).filter(Branch.code.in_(branches))
-            
-        # Order by most competitive (lowest cutoff rank first so dream colleges surface first)
-        query = query.filter(YearlyCutoff.general_rank.isnot(None)).order_by(YearlyCutoff.general_rank.asc())
-        results = query.limit(500).all()
-        
-        dream, target, safe = [], [], []
+        community = user_profile.get("community", "OC")
+        general_rank = user_profile.get("general_rank")
+
+        if general_rank is None:
+            return {"error": "General Rank is required"}
+
+        try:
+            general_rank = int(general_rank)
+        except Exception:
+            return {"error": "Invalid General Rank"}
+
+        query = (
+            YearlyCutoff.query
+            .filter(
+                YearlyCutoff.year == 2025,
+                YearlyCutoff.category == community,
+                YearlyCutoff.general_rank.isnot(None)
+            )
+        )
+
+        preferred_branches = preferences.get("preferred_branches", [])
+
+        if preferred_branches:
+            query = (
+                query.join(YearlyCutoff.college_branch)
+                .join(Branch)
+                .filter(Branch.code.in_(preferred_branches))
+            )
+
+        results = query.all()
+
+        dream = []
+        target = []
+        safe = []
+
         seen = set()
-        
+
+        preferred_districts = [
+            d.lower()
+            for d in preferences.get("preferred_districts", [])
+            if d
+        ]
+
         for record in results:
+
+            if not record.college_branch:
+                continue
+
             cb = record.college_branch
+
+            if not cb.college or not cb.branch:
+                continue
+
             college = cb.college
-            
-            # Create a unique key for the college + branch combo
-            combo_key = f"{college.id}-{cb.branch.name}"
-            if combo_key in seen:
-                continue
-            
-            districts = [d.lower() for d in preferences.get('preferred_districts', [])]
-            if districts and (not college.district or college.district.lower() not in districts):
-                continue
-                
-            if use_community_rank and record.community_rank is not None:
-                cutoff_rank = record.community_rank
-            else:
-                if record.general_rank is None:
+            branch = cb.branch
+
+            if preferred_districts:
+                if (
+                    not college.district
+                    or college.district.lower() not in preferred_districts
+                ):
                     continue
-                # The database only contains the general rank of the last admitted student for the community quota.
-                # Therefore, we MUST fall back to comparing the user's general rank against it.
-                cutoff_rank = record.general_rank
-                rank = general_rank # Ensure we compare general against general
-                
-            diff = cutoff_rank - rank
-            
-            college_info = {
+
+            key = (college.id, branch.id)
+
+            if key in seen:
+                continue
+
+            cutoff_rank = record.general_rank
+
+            diff = cutoff_rank - general_rank
+
+            item = {
                 "college_id": college.id,
                 "name": college.name,
-                "branch": cb.branch.name,
+                "branch": branch.name,
+                "college_code": college.tnea_code,
                 "historical_cutoff_rank": cutoff_rank,
                 "probability": AIEngine._calculate_probability(diff)
             }
-            
+
             if diff < -5000:
-                college_info['explanation'] = "Highly competitive based on historical trends."
-                dream.append(college_info)
-                seen.add(combo_key)
-            elif -5000 <= diff <= 2000:
-                college_info['explanation'] = "Good chance of admission based on recent cutoffs."
-                target.append(college_info)
-                seen.add(combo_key)
-            elif diff > 2000:
-                college_info['explanation'] = "Safe option as your rank is well within the historical cutoff."
-                safe.append(college_info)
-                seen.add(combo_key)
-                
-        dream.sort(key=lambda x: x['probability'], reverse=True)
-        target.sort(key=lambda x: x['probability'], reverse=True)
-        safe.sort(key=lambda x: x['probability'], reverse=True)
-        
+                item["explanation"] = (
+                    "This college is historically more competitive."
+                )
+                dream.append(item)
+
+            elif diff <= 2000:
+                item["explanation"] = (
+                    "You have a good chance based on previous cutoffs."
+                )
+                target.append(item)
+
+            else:
+                item["explanation"] = (
+                    "This is a safe option based on previous cutoffs."
+                )
+                safe.append(item)
+
+            seen.add(key)
+
+        dream.sort(key=lambda x: x["probability"], reverse=True)
+        target.sort(key=lambda x: x["probability"], reverse=True)
+        safe.sort(key=lambda x: x["probability"], reverse=True)
+
         return {
             "dream": dream[:10],
             "target": target[:10],
             "safe": safe[:10]
         }
-        
+
     @staticmethod
-    def _calculate_probability(rank_diff):
-        if rank_diff > 5000: return 0.95
-        if rank_diff > 0: return 0.70 + (0.25 * (rank_diff / 5000))
-        if rank_diff > -5000: return 0.30 + (0.40 * ((5000 + rank_diff) / 5000))
-        return 0.10
+    def _calculate_probability(diff):
+
+        if diff >= 15000:
+            return 99
+
+        if diff >= 10000:
+            return 95
+
+        if diff >= 5000:
+            return 90
+
+        if diff >= 2000:
+            return 80
+
+        if diff >= 0:
+            return 70
+
+        if diff >= -3000:
+            return 50
+
+        if diff >= -8000:
+            return 30
+
+        return 10

@@ -18,7 +18,7 @@ def get_recommendations():
         user_profile = {
             "community": user.community,
             "general_rank": user.general_rank,
-            "community_rank": user.community_rank
+           
         }
         
     result = AIEngine.generate_recommendations(user_profile, preferences)
