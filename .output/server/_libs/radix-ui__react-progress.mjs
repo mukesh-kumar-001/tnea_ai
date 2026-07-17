@@ -1,6 +1,6 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "./@floating-ui/react-dom+[...].mjs";
-import { n as Primitive, s as require_jsx_runtime } from "./@radix-ui/react-arrow+[...].mjs";
+import { c as require_jsx_runtime, n as Primitive } from "./@radix-ui/react-arrow+[...].mjs";
 import { n as createContextScope } from "./@radix-ui/react-collection+[...].mjs";
 //#region node_modules/@radix-ui/react-progress/dist/index.mjs
 var import_react = /* @__PURE__ */ __toESM(require_react(), 1);

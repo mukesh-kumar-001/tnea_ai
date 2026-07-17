@@ -230,7 +230,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   to="/colleges"
                   className="transition-colors hover:text-primary"
                 >
-                  College Explorer
+                  Search Colleges
                 </Link>
               </li>
               <li>
@@ -246,7 +246,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   to="/cutoffs"
                   className="transition-colors hover:text-primary"
                 >
-                  Cutoff Explorer
+                  Cutoffs
                 </Link>
               </li>
               <li>

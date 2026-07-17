@@ -65,13 +65,13 @@ function Home() {
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
                   <span className="relative inline-flex size-2 rounded-full bg-primary" />
                 </span>
-                SYS.UPDATE // 2026 COUNSELLING WINDOW
+                LATEST // 2026 ADMISSIONS WINDOW
               </div>
             </StaggerItem>
             
             <StaggerItem>
               <h1 className="mt-8 text-balance text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                Precision <span className="text-primary relative inline-block">
+                Smart <span className="text-primary relative inline-block">
                   Engineering
                   <motion.span 
                     className="absolute -bottom-2 left-0 h-1 bg-primary w-full"
@@ -79,13 +79,13 @@ function Home() {
                     animate={{ scaleX: 1 }}
                     transition={{ delay: 0.8, duration: 0.8, ease: "circOut" }}
                   />
-                </span> Counselling
+                </span> Admissions
               </h1>
             </StaggerItem>
             
             <StaggerItem>
               <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground text-pretty font-medium">
-                Data-driven college and branch recommendations using verified TNEA parameters. Navigate admissions with mechanical precision.
+                Data-driven college and branch recommendations using verified TNEA parameters. Make confident decisions with our smart insights.
               </p>
             </StaggerItem>
             
@@ -93,12 +93,12 @@ function Home() {
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/counselling">
                   <Button size="lg" className="rounded-xl shadow-glow px-8 h-14 gap-2 text-base w-full sm:w-auto">
-                    <Activity className="size-5" /> Initialize System
+                    <Activity className="size-5" /> Start Smart Predictor
                   </Button>
                 </Link>
                 <Link to="/colleges">
                   <Button size="lg" variant="outline" className="rounded-xl h-14 px-8 text-base bg-background/50 backdrop-blur border-border/80 w-full sm:w-auto">
-                    Explore Database
+                    Explore Colleges
                   </Button>
                 </Link>
               </div>
@@ -122,7 +122,7 @@ function Home() {
         <CoordinateMarker label="01.SYS" className="absolute top-4 left-4" />
         <div className="container-page py-24">
           <AnimatedSection className="max-w-2xl mb-16">
-            <div className="technical-label mb-3">Core Modules</div>
+            <div className="technical-label mb-3">Key Features</div>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">Everything you need</h2>
             <p className="mt-4 text-lg text-muted-foreground">Purpose-built tools for every stage of the TNEA journey — from exploration to final choice submission.</p>
           </AnimatedSection>
@@ -141,7 +141,7 @@ function Home() {
                     <h3 className="text-xl font-bold tracking-tight">{f.title}</h3>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
                     <div className="mt-6 text-sm font-semibold text-primary inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                      Execute <ArrowRight className="size-4" />
+                      Go to Tool <ArrowRight className="size-4" />
                     </div>
                   </Card>
                 </Link>
@@ -156,11 +156,11 @@ function Home() {
         <EngineeringBg variant="dots" className="absolute inset-0 opacity-30" />
         <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 relative z-10">
           <div>
-            <div className="technical-label mb-3">Database Sample</div>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">Top-tier institutions</h2>
+            <div className="technical-label mb-3">College Directory</div>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">Top-tier colleges</h2>
           </div>
           <Link to="/colleges" className="text-sm font-semibold text-primary hover:text-primary-glow inline-flex items-center gap-2 bg-primary/5 px-4 py-2 rounded-lg transition-colors border border-primary/20">
-            Access Full Database <ArrowRight className="size-4" />
+            View All Colleges <ArrowRight className="size-4" />
           </Link>
         </AnimatedSection>
         
@@ -201,9 +201,9 @@ function Home() {
         <div className="container-page py-20 relative z-10">
           <StaggerContainer className="grid md:grid-cols-3 gap-10">
             {[
-              { icon: ShieldCheck, title: "Verified Protocols", desc: "Cutoffs sourced directly from official TNEA seat allotment records with high fidelity." },
-              { icon: Sparkles, title: "Smart Analysis", desc: "Suggestion engine trained on a decade of admission patterns and shifting preferences." },
-              { icon: MessageSquare, title: "System Assistant", desc: "Always-on conversational agent for rules, seat matrices, and fee structures." },
+              { icon: ShieldCheck, title: "Verified Protocols", desc: "Cutoffs sourced directly from official TNEA seat allotment records with high accuracy." },
+              { icon: Sparkles, title: "Smart Analysis", desc: "Smart Predictor trained on a decade of admission patterns and shifting preferences." },
+              { icon: MessageSquare, title: "AI Chat Assistant", desc: "Always-on conversational agent for rules, seat matrices, and fee structures." },
             ].map((f) => (
               <StaggerItem key={f.title} className="flex gap-5">
                 <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-sm">

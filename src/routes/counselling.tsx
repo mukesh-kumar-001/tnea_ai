@@ -158,9 +158,9 @@ function Counselling() {
         <EngineeringBg variant="grid" className="absolute inset-0 opacity-40 dark:opacity-20" />
         <div className="container-page py-16 relative z-10">
           <AnimatedSection className="max-w-3xl">
-            <CoordinateMarker label="AI.CN" className="mb-4" />
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Smart College Suggestions</h1>
-            <p className="mt-4 text-lg text-muted-foreground text-pretty">Input your TNEA details. Our system generates precise Dream, Target, and Safe suggestions based on historical data.</p>
+            <CoordinateMarker label="PREDICTOR" className="mb-4" />
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Smart Predictor</h1>
+            <p className="mt-4 text-lg text-muted-foreground text-pretty">Enter your details to get Dream, Target, and Safe college suggestions based on historical data.</p>
           </AnimatedSection>
         </div>
       </section>
@@ -172,14 +172,14 @@ function Counselling() {
             <Card className="p-6 rounded-2xl border-border/60 bg-card/80 backdrop-blur shadow-sm">
               <div className="flex items-center gap-2 mb-6">
                 <div className="size-2 rounded-full bg-primary animate-pulse" />
-                <span className="technical-label">Your Details</span>
+                <span className="technical-label">Your Profile</span>
               </div>
               
               <div className="space-y-8 max-h-[65vh] overflow-y-auto pr-4 scrollbar-thin">
                 {/* Profile Data */}
                 <div>
                   <div className="flex items-center gap-2 text-sm font-bold border-b border-border/60 pb-2 mb-4 text-foreground/80">
-                    <Fingerprint className="size-4" /> Demographics
+                    <Fingerprint className="size-4" /> Basic Details
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -207,7 +207,7 @@ function Counselling() {
 
                   <div className="flex items-center justify-between border-b border-border/60 pb-2 mb-4 mt-4 text-foreground/80">
                     <div className="flex items-center gap-2 text-sm font-bold">
-                      <Fingerprint className="size-4" /> Academic Metrics
+                      <Fingerprint className="size-4" /> Marks & Rank
                     </div>
                     <div className="flex items-center gap-2">
                       <Label htmlFor="mode-toggle" className="text-xs font-semibold cursor-pointer">Rank</Label>
@@ -219,11 +219,11 @@ function Counselling() {
                   {inputMode === "rank" ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <Label className="technical-label block mb-2">Gen Rank</Label>
+                        <Label className="technical-label block mb-2">General Rank</Label>
                         <Input value={genRank} onChange={(e) => setGenRank(e.target.value)} className="h-10 font-mono" />
                       </div>
                       <div>
-                        <Label className="technical-label block mb-2">Comm Rank</Label>
+                        <Label className="technical-label block mb-2">Community Rank</Label>
                         <Input value={commRank} onChange={(e) => setCommRank(e.target.value)} className="h-10 font-mono" />
                       </div>
                     </div>
@@ -249,7 +249,7 @@ function Counselling() {
                   
                   <div className="space-y-5">
                     <div>
-                      <Label className="technical-label block mb-2">Target Branches</Label>
+                      <Label className="technical-label block mb-2">Preferred Branches</Label>
                       <div className="flex flex-wrap gap-2 max-h-[140px] overflow-y-auto pr-2 scrollbar-thin">
                         {branches.map((b) => (
                           <Badge key={b.code} onClick={() => setPrefBranches(toggleFrom(prefBranches, b.name))}
@@ -274,7 +274,7 @@ function Counselling() {
 
                     <div>
                       <div className="flex justify-between items-center mb-3">
-                        <Label className="technical-label">Max Annual Budget</Label>
+                        <Label className="technical-label">Max Annual Fees</Label>
                         <span className="font-mono text-xs font-bold bg-muted px-2 py-1 rounded">₹{budget[0].toLocaleString("en-IN")}</span>
                       </div>
                       <Slider min={20000} max={200000} step={5000} value={budget} onValueChange={(v) => setBudget(v as [number])} />
@@ -282,7 +282,7 @@ function Counselling() {
 
                     <div className="flex items-center justify-between bg-muted/30 p-3 rounded-xl border border-border/60">
                       <Label htmlFor="hostel-req" className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-                        <Building2 className="size-3.5" /> Hostel Required
+                        <Building2 className="size-3.5" /> Need Hostel?
                       </Label>
                       <Switch id="hostel-req" checked={hostel} onCheckedChange={setHostel} />
                     </div>
@@ -299,7 +299,7 @@ function Counselling() {
                 }} disabled={loading} className="w-full h-12 rounded-xl gap-2 font-bold shadow-glow relative overflow-hidden group">
                   <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
                   {loading ? <Loader2 className="size-4 animate-spin relative z-10" /> : <Activity className="size-4 relative z-10" />}
-                  <span className="relative z-10 tracking-wide uppercase text-xs">{loading ? "Analyzing..." : "Get Suggestions"}</span>
+                  <span className="relative z-10 tracking-wide uppercase text-xs">{loading ? "Finding Colleges..." : "Find Colleges"}</span>
                 </Button>
               </div>
             </Card>
@@ -325,7 +325,7 @@ function Counselling() {
                     </div>
                     <div className="font-extrabold text-2xl tracking-tight">Ready to Start</div>
                     <p className="text-muted-foreground mt-3 max-w-md text-sm leading-relaxed">
-                      Enter your details and click the button to see your college suggestions.
+                      Enter your details and click 'Find Colleges' to see your suggestions.
                     </p>
                   </Card>
                 </motion.div>
@@ -347,7 +347,7 @@ function Counselling() {
                       </svg>
                       <Activity className="size-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary" />
                     </div>
-                    <div className="font-bold text-lg font-mono">Analyzing Data...</div>
+                    <div className="font-bold text-lg font-mono">Finding Colleges...</div>
                     <div className="w-full bg-muted rounded-full h-1 mt-4 overflow-hidden">
                       <motion.div 
                         className="bg-primary h-full rounded-full"
@@ -356,7 +356,7 @@ function Counselling() {
                         transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
                       />
                     </div>
-                    <p className="text-xs text-muted-foreground mt-4 font-mono uppercase tracking-widest">Finding the best colleges for you...</p>
+                    <p className="text-xs text-muted-foreground mt-4 font-mono uppercase tracking-widest">Searching for the best matches...</p>
                   </Card>
                 </motion.div>
               )}
@@ -377,9 +377,9 @@ function Counselling() {
                     </Card>
                   ) : (
                     <>
-                      <Group icon={Trophy} title="Dream Allocation" description="Stretch probability — high value targets" list={groups.dream} tone="warning" delay={0} />
-                      <Group icon={Target} title="Target Allocation" description="High probability — realistic matches" list={groups.target} tone="primary" delay={0.2} />
-                      <Group icon={Shield} title="Safe Allocation" description="Near certainty — reliable fallbacks" list={groups.safe} tone="success" delay={0.4} />
+                      <Group icon={Trophy} title="Dream Colleges" description="Hard to get, but worth a try" list={groups.dream} tone="warning" delay={0} />
+                      <Group icon={Target} title="Target Colleges" description="Good chances of admission" list={groups.target} tone="primary" delay={0.2} />
+                      <Group icon={Shield} title="Safe Colleges" description="Very high chances of admission" list={groups.safe} tone="success" delay={0.4} />
                     </>
                   )}
                 </motion.div>
@@ -470,7 +470,7 @@ function Group({ icon: Icon, title, description, list, tone, delay }: {
                   
                   <div className="mt-4 flex flex-wrap gap-4 items-center">
                     <div className="flex items-center gap-2 bg-background border border-border/60 px-2.5 py-1 rounded-md">
-                      <span className="technical-label">Exp. Cutoff Rank:</span>
+                      <span className="technical-label">Expected Cutoff Rank:</span>
                       <strong className="text-foreground font-mono tabular-nums text-xs">{r.expectedCutoff.toLocaleString("en-IN")}</strong>
                     </div>
                   </div>

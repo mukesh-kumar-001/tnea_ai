@@ -49,7 +49,7 @@ export function useCascadingFilters({
     }
     
     // Sort by name
-    return result.sort((a, b) => a.name.localeCompare(b.name));
+    return [...result].sort((a, b) => (a.name || "").localeCompare(b.name || ""));
   }, [allColleges, selectedCollegeType, selectedDistrict, selectedBranchName]);
 
   const filteredBranches = useMemo(() => {

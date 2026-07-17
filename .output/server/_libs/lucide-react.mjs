@@ -352,6 +352,19 @@ var ChevronUp = createLucideIcon("chevron-up", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ChevronsUpDown = createLucideIcon("chevrons-up-down", [["path", {
+	d: "m7 15 5 5 5-5",
+	key: "1hf1tw"
+}], ["path", {
+	d: "m7 9 5-5 5 5",
+	key: "sgt6xg"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var CircleAlert = createLucideIcon("circle-alert", [
 	["circle", {
 		cx: "12",
@@ -1433,4 +1446,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Check as $, ListChecks as A, FingerprintPattern as B, Moon as C, Menu as D, MessageCircle as E, History as F, Database as G, FileCodeCorner as H, Heart as I, Compass as J, Crosshair as K, GripVertical as L, Layers as M, Info as N, MapPin as O, House as P, ChevronDown as Q, GraduationCap as R, Plus as S, MessageSquare as T, Ellipsis as U, FileSpreadsheet as V, Download as W, ChevronUp as X, CircleAlert as Y, ChevronRight as Z, Send as _, Trophy as a, Award as at, RotateCcw as b, Trash2 as c, ArrowLeft as ct, Sun as d, ChartLine as et, Star as f, Share2 as g, ShieldCheck as h, User as i, BadgeCheck as it, LayoutDashboard as j, LoaderCircle as k, Terminal as l, Activity as lt, Shield as m, Wallet as n, Building2 as nt, TriangleAlert as o, ArrowRight as ot, Sparkles as p, Cpu as q, Users as r, Bookmark as rt, TrendingUp as s, ArrowRightLeft as st, X as t, Calculator as tt, Target as u, Search as v, Minus as w, Printer as x, SearchX as y, Funnel as z };
+export { ChevronDown as $, ListChecks as A, FingerprintPattern as B, Moon as C, Menu as D, MessageCircle as E, History as F, Database as G, FileCodeCorner as H, Heart as I, Compass as J, Crosshair as K, GripVertical as L, Layers as M, Info as N, MapPin as O, House as P, ChevronRight as Q, GraduationCap as R, Plus as S, MessageSquare as T, Ellipsis as U, FileSpreadsheet as V, Download as W, ChevronsUpDown as X, CircleAlert as Y, ChevronUp as Z, Send as _, Trophy as a, BadgeCheck as at, RotateCcw as b, Trash2 as c, ArrowRightLeft as ct, Sun as d, Check as et, Star as f, Share2 as g, ShieldCheck as h, User as i, Bookmark as it, LayoutDashboard as j, LoaderCircle as k, Terminal as l, ArrowLeft as lt, Shield as m, Wallet as n, Calculator as nt, TriangleAlert as o, Award as ot, Sparkles as p, Cpu as q, Users as r, Building2 as rt, TrendingUp as s, ArrowRight as st, X as t, ChartLine as tt, Target as u, Activity as ut, Search as v, Minus as w, Printer as x, SearchX as y, Funnel as z };

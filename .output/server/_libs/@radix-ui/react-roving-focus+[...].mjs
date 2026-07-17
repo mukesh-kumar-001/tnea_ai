@@ -1,65 +1,12 @@
 import { o as __toESM } from "../../_runtime.mjs";
 import { u as require_react } from "../@floating-ui/react-dom+[...].mjs";
-import { n as Primitive, o as useComposedRefs, s as require_jsx_runtime } from "./react-arrow+[...].mjs";
+import { c as require_jsx_runtime, n as Primitive, s as useComposedRefs } from "./react-arrow+[...].mjs";
 import { t as composeEventHandlers } from "../radix-ui__primitive.mjs";
 import { n as createContextScope, t as createCollection } from "./react-collection+[...].mjs";
+import { f as useCallbackRef, h as useLayoutEffect2, m as useId, p as useControllableState } from "./react-dialog+[...].mjs";
 import { t as useDirection } from "../radix-ui__react-direction.mjs";
-import { n as useCallbackRef } from "./react-dismissable-layer+[...].mjs";
-import { n as useLayoutEffect2, t as useId } from "./react-id+[...].mjs";
-//#region node_modules/@radix-ui/react-use-controllable-state/dist/index.mjs
-var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
-var useInsertionEffect = import_react[" useInsertionEffect ".trim().toString()] || useLayoutEffect2;
-function useControllableState({ prop, defaultProp, onChange = () => {}, caller }) {
-	const [uncontrolledProp, setUncontrolledProp, onChangeRef] = useUncontrolledState({
-		defaultProp,
-		onChange
-	});
-	const isControlled = prop !== void 0;
-	const value = isControlled ? prop : uncontrolledProp;
-	{
-		const isControlledRef = import_react.useRef(prop !== void 0);
-		import_react.useEffect(() => {
-			const wasControlled = isControlledRef.current;
-			if (wasControlled !== isControlled) console.warn(`${caller} is changing from ${wasControlled ? "controlled" : "uncontrolled"} to ${isControlled ? "controlled" : "uncontrolled"}. Components should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled value for the lifetime of the component.`);
-			isControlledRef.current = isControlled;
-		}, [isControlled, caller]);
-	}
-	return [value, import_react.useCallback((nextValue) => {
-		if (isControlled) {
-			const value2 = isFunction(nextValue) ? nextValue(prop) : nextValue;
-			if (value2 !== prop) onChangeRef.current?.(value2);
-		} else setUncontrolledProp(nextValue);
-	}, [
-		isControlled,
-		prop,
-		setUncontrolledProp,
-		onChangeRef
-	])];
-}
-function useUncontrolledState({ defaultProp, onChange }) {
-	const [value, setValue] = import_react.useState(defaultProp);
-	const prevValueRef = import_react.useRef(value);
-	const onChangeRef = import_react.useRef(onChange);
-	useInsertionEffect(() => {
-		onChangeRef.current = onChange;
-	}, [onChange]);
-	import_react.useEffect(() => {
-		if (prevValueRef.current !== value) {
-			onChangeRef.current?.(value);
-			prevValueRef.current = value;
-		}
-	}, [value, prevValueRef]);
-	return [
-		value,
-		setValue,
-		onChangeRef
-	];
-}
-function isFunction(value) {
-	return typeof value === "function";
-}
-//#endregion
 //#region node_modules/@radix-ui/react-use-is-hydrated/dist/index.mjs
+var import_react = /* @__PURE__ */ __toESM(require_react(), 1);
 var _isHydrated = false;
 function useIsHydrated() {
 	const [isHydrated, setIsHydrated] = import_react.useState(_isHydrated);
@@ -276,4 +223,4 @@ function wrapArray(array, startIndex) {
 var Root = RovingFocusGroup;
 var Item = RovingFocusGroupItem;
 //#endregion
-export { useControllableState as i, Root as n, createRovingFocusGroupScope as r, Item as t };
+export { Root as n, createRovingFocusGroupScope as r, Item as t };

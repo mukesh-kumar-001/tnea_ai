@@ -119,11 +119,11 @@ function Detail() {
           <AnimatedSection direction="none">
             <Breadcrumb>
               <BreadcrumbList>
-                <BreadcrumbItem><BreadcrumbLink asChild><Link to="/" className="font-mono text-xs uppercase">SYS.ROOT</Link></BreadcrumbLink></BreadcrumbItem>
+                <BreadcrumbItem><BreadcrumbLink asChild><Link to="/" className="font-mono text-xs uppercase">HOME</Link></BreadcrumbLink></BreadcrumbItem>
                 <BreadcrumbSeparator />
-                <BreadcrumbItem><BreadcrumbLink asChild><Link to="/colleges" className="font-mono text-xs uppercase">DB.COLLEGES</Link></BreadcrumbLink></BreadcrumbItem>
+                <BreadcrumbItem><BreadcrumbLink asChild><Link to="/colleges" className="font-mono text-xs uppercase">COLLEGES</Link></BreadcrumbLink></BreadcrumbItem>
                 <BreadcrumbSeparator />
-                <BreadcrumbItem><BreadcrumbPage className="font-mono text-xs uppercase text-primary font-bold">CD:{college.shortName}</BreadcrumbPage></BreadcrumbItem>
+                <BreadcrumbItem><BreadcrumbPage className="font-mono text-xs uppercase text-primary font-bold">{college.shortName}</BreadcrumbPage></BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </AnimatedSection>
@@ -138,7 +138,7 @@ function Detail() {
             
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2.5 mb-3">
-                <Badge variant="secondary" className="font-mono text-[10px] bg-background/80 border-border/80">CD:{college.code}</Badge>
+                <Badge variant="secondary" className="font-mono text-[10px] bg-background/80 border-border/80">Code: {college.code}</Badge>
                 <Badge className="bg-success/15 text-success hover:bg-success/15 border border-success/20 text-[10px] font-bold">NAAC {college.naac}</Badge>
                 {college.nba && <Badge variant="outline" className="text-[10px] font-medium border-border/80">NBA Accredited</Badge>}
                 <Badge variant="outline" className="text-[10px] font-medium border-border/80">{college.type}</Badge>
@@ -182,7 +182,7 @@ function Detail() {
             <TabsContent value="overview" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
-                  <CoordinateMarker label="INF.01" className="mb-4" />
+                  <CoordinateMarker label="INFO" className="mb-4" />
                   <h2 className="text-xl font-bold mb-4">College Details</h2>
                   <p className="text-muted-foreground leading-relaxed text-base">{college.summary}</p>
                   
@@ -201,7 +201,7 @@ function Detail() {
             <TabsContent value="courses" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
-                  <CoordinateMarker label="CRS.02" className="mb-4" />
+                  <CoordinateMarker label="COURSES" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Courses Offered</h2>
                   <StaggerContainer className="grid sm:grid-cols-2 gap-4">
                     {college.branches.length > 0 ? (
@@ -230,7 +230,7 @@ function Detail() {
             <TabsContent value="placements" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
-                  <CoordinateMarker label="PLC.04" className="mb-4" />
+                  <CoordinateMarker label="PLACEMENTS" className="mb-4" />
                   <h2 className="text-xl font-bold mb-8">Placement Statistics</h2>
                   <div className="grid md:grid-cols-3 gap-6">
                     <StatCard icon={<GraduationCap className="size-6" />} label="Total Placement Rate" value={college.placementPercentage != null ? college.placementPercentage : "Not available"} suffix={college.placementPercentage != null ? "%" : ""} countUp={college.placementPercentage != null} className="h-full" />
@@ -244,7 +244,7 @@ function Detail() {
             <TabsContent value="fees" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
-                  <CoordinateMarker label="FEE.05" className="mb-4" />
+                  <CoordinateMarker label="FEES" className="mb-4" />
                   <h2 className="text-xl font-bold mb-8">Fee Structure</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-6 rounded-xl border border-border/60 bg-card relative overflow-hidden group">
@@ -268,7 +268,7 @@ function Detail() {
             <TabsContent value="scholarships" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
-                  <CoordinateMarker label="SCH.06" className="mb-4" />
+                  <CoordinateMarker label="SCHOLARSHIPS" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Financial Assistance & Scholarships</h2>
                   <StaggerContainer className="grid sm:grid-cols-2 gap-4">
                     {college.scholarships.length > 0 ? (
@@ -290,7 +290,7 @@ function Detail() {
             <TabsContent value="facilities" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
-                  <CoordinateMarker label="FAC.07" className="mb-4" />
+                  <CoordinateMarker label="FACILITIES" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Campus Infrastructure</h2>
                   <StaggerContainer className="flex flex-wrap gap-2.5">
                     {college.facilities.length > 0 ? (
@@ -310,7 +310,7 @@ function Detail() {
             <TabsContent value="recruiters" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
-                  <CoordinateMarker label="REC.08" className="mb-4" />
+                  <CoordinateMarker label="RECRUITERS" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6 flex items-center gap-2"><Users className="size-5 text-primary" /> Corporate Partners</h2>
                   <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {college.recruiters.map((r: string) => (
@@ -330,9 +330,9 @@ function Detail() {
                 <Card className="p-6 md:p-8 rounded-2xl border-primary/30 bg-gradient-to-br from-primary/10 via-background to-background relative overflow-hidden shadow-glow">
                   <EngineeringBg variant="dots" className="absolute inset-0 opacity-40 mix-blend-overlay" />
                   <div className="relative z-10">
-                    <CoordinateMarker label="AI.GEN" className="mb-4" />
+                    <CoordinateMarker label="AI SUMMARY" className="mb-4" />
                     <div className="flex items-center gap-2 text-primary font-bold mb-6 text-xl">
-                      <Sparkles className="size-5" /> AI Synthesis Report
+                      <Sparkles className="size-5" /> Smart College Summary
                     </div>
                     <p className="leading-relaxed text-base text-foreground/90 font-medium max-w-4xl">
                       {college.shortName} is a <strong className="text-foreground">{college.type.toLowerCase()}</strong> institution in <strong className="text-foreground">{college.district}</strong> with a{" "}
@@ -404,7 +404,7 @@ const CutoffTab = React.memo(({ college, community, setCommunity, branch, setBra
 
   return (
     <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur w-full overflow-hidden">
-      <CoordinateMarker label="CTF.03" className="mb-4" />
+      <CoordinateMarker label="CUTOFFS" className="mb-4" />
 
       <div className="grid md:grid-cols-2 gap-6 mb-8 bg-muted/20 p-4 rounded-xl border border-border/40">
         <div>

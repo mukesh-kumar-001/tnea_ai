@@ -1,7 +1,7 @@
 import { a as __toCommonJS, n as __esmMin, o as __toESM, r as __exportAll } from "../_runtime.mjs";
 import { R as init_performance, z as performance_default } from "./@monogrid/gainmap-js+[...].mjs";
 import { u as require_react } from "./@floating-ui/react-dom+[...].mjs";
-import { s as require_jsx_runtime } from "./@radix-ui/react-arrow+[...].mjs";
+import { c as require_jsx_runtime } from "./@radix-ui/react-arrow+[...].mjs";
 
 //#region node_modules/framer-motion/dist/es/context/LayoutGroupContext.mjs
 init_performance();

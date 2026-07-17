@@ -141,9 +141,9 @@ function Cutoffs() {
         <EngineeringBg variant="grid" className="absolute inset-0 opacity-40 dark:opacity-20" />
         <div className="container-page py-16 relative z-10">
           <AnimatedSection className="max-w-3xl">
-            <CoordinateMarker label="DB.HIST" className="mb-4" />
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Historical Cutoff Analytics</h1>
-            <p className="mt-4 text-lg text-muted-foreground text-pretty">Visualize cutoff trajectories across different colleges, branches, and communities to identify allocation trends.</p>
+            <CoordinateMarker label="HISTORY" className="mb-4" />
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Cutoff Trends</h1>
+            <p className="mt-4 text-lg text-muted-foreground text-pretty">See how cutoffs have changed over the years for different colleges and branches.</p>
           </AnimatedSection>
         </div>
       </section>
@@ -154,7 +154,7 @@ function Cutoffs() {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2">
                 <Database className="size-4 text-primary" />
-                <span className="technical-label">Query Parameters</span>
+                <span className="technical-label">Filters</span>
               </div>
               <button 
                 onClick={() => { setCollegeCode("Any"); setBranchCode("Any"); setCommunity("Any"); }}
@@ -166,7 +166,7 @@ function Cutoffs() {
             
             <div className="grid md:grid-cols-3 gap-6">
               <div>
-                <Label className="technical-label block mb-2">Institution</Label>
+                <Label className="technical-label block mb-2">College</Label>
                 <SearchableSelect 
                   value={collegeCode} 
                   onValueChange={setCollegeCode} 
@@ -221,7 +221,7 @@ function Cutoffs() {
                   <LineChartIcon className="size-6" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold tracking-tight">Trajectory Analysis</h2>
+                  <h2 className="text-xl font-bold tracking-tight">Trend Analysis</h2>
                   <div className="text-sm text-muted-foreground mt-1 flex flex-col md:flex-row md:items-center gap-1.5 font-medium">
                     <span className="text-foreground">{selectedCollege?.shortName || "Any College"}</span>
                     <span className="hidden md:inline text-border">/</span>
@@ -248,7 +248,7 @@ function Cutoffs() {
             {loadingCutoffs ? (
               <div className="h-[400px] flex flex-col items-center justify-center text-center text-muted-foreground bg-muted/20 rounded-xl border border-dashed border-border/60">
                 <Loader2 className="size-6 animate-spin mb-3 text-primary" />
-                <div className="technical-label">Querying Database...</div>
+                <div className="technical-label">Loading Data...</div>
               </div>
             ) : data.length === 0 ? (
               <div className="h-[400px] flex flex-col items-center justify-center text-center text-muted-foreground bg-muted/20 rounded-xl border border-dashed border-border/60">

@@ -149,14 +149,14 @@ function ChoiceFilling() {
         <div className="container-page py-12 md:py-16 relative z-10">
           <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <CoordinateMarker label="SEQ.BUILD" className="mb-4" />
-              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">Sequence Builder</h1>
-              <p className="mt-4 text-lg text-muted-foreground text-pretty">Compile, arrange, and optimize your choice filling sequence with precision tools before official submission.</p>
+              <CoordinateMarker label="CHOICES" className="mb-4" />
+              <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-balance">My Choice List</h1>
+              <p className="mt-4 text-lg text-muted-foreground text-pretty">Create and organize your college choices easily before the official submission.</p>
             </div>
             
             <div className="flex flex-wrap gap-3 shrink-0">
               <Button variant="outline" onClick={optimize} disabled={choices.length < 2} className="rounded-xl gap-2 font-medium shadow-sm bg-background">
-                <Sparkles className="size-4" /> AI Optimize
+                <Sparkles className="size-4" /> Smart Sort
               </Button>
               <Button variant="outline" onClick={exportCsv} disabled={choices.length === 0} className="rounded-xl gap-2 font-medium shadow-sm bg-background">
                 <FileSpreadsheet className="size-4" /> Export CSV
@@ -181,7 +181,7 @@ function ChoiceFilling() {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <Terminal className="size-4 text-primary" />
-                  <span className="technical-label">Search Filters</span>
+                  <span className="technical-label">Search & Add</span>
                 </div>
                 <button 
                   onClick={() => { setCollegeType("any"); setDistrict("any"); setCollegeCode("any"); setBranchCode("any"); }}
@@ -259,7 +259,7 @@ function ChoiceFilling() {
               <EngineeringDivider className="my-6" />
               
               <div className="flex items-center justify-between p-3 rounded-lg bg-muted/40 border border-border/60">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Sequence Length</span>
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Total Choices</span>
                 <span className="font-mono text-sm font-bold bg-background px-2 py-0.5 rounded border border-border/60">
                   {String(choices.length).padStart(2, '0')}
                 </span>
@@ -284,7 +284,7 @@ function ChoiceFilling() {
                     </div>
                     <div className="font-extrabold text-2xl tracking-tight">Your List is Empty</div>
                     <p className="text-muted-foreground mt-3 max-w-sm text-sm leading-relaxed">
-                      Use the parameter input panel to append institutions and programs to your sequence array.
+                      Use the search panel to add colleges and branches to your choice list.
                     </p>
                   </Card>
                 </motion.div>

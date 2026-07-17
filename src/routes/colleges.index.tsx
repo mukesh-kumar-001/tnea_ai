@@ -122,9 +122,9 @@ function Explorer() {
         <EngineeringBg variant="grid" className="absolute inset-0 opacity-40 dark:opacity-20" />
         <div className="container-page py-16 md:py-20 relative z-10">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <CoordinateMarker label="DB.QUERY" className="justify-center mb-4" />
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-balance">College Explorer</h1>
-            <p className="mt-4 text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Query the complete Tamil Nadu engineering college database with precise filters for placement, fees, and accreditation.</p>
+            <CoordinateMarker label="SEARCH" className="justify-center mb-4" />
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-balance">Search Colleges</h1>
+            <p className="mt-4 text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">Find the perfect engineering college in Tamil Nadu with filters for placement, fees, and NAAC grade.</p>
           </AnimatedSection>
           
           <AnimatedSection delay={0.2} className="mt-10 relative max-w-2xl mx-auto">
@@ -152,7 +152,7 @@ function Explorer() {
 
       <section className="container-page py-10">
         <div className="flex items-center justify-between lg:hidden mb-6">
-          <h2 className="font-bold text-lg">College Directory</h2>
+          <h2 className="font-bold text-lg">College List</h2>
           <Button variant="outline" size="sm" onClick={() => document.getElementById("mobile-filters")?.classList.toggle("hidden")} className="gap-2">
             <Filter className="size-4" /> Filters
           </Button>
@@ -165,7 +165,7 @@ function Explorer() {
             <div className="p-5 border-b border-border/60 bg-muted/20 sticky top-0 z-20 backdrop-blur-md">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 font-bold text-sm">
-                  <Filter className="size-4 text-primary" /> FILTER PARAMETERS
+                  <Filter className="size-4 text-primary" /> FILTERS
                 </div>
                 <Button variant="ghost" size="sm" onClick={clearAll} className="text-[10px] uppercase font-bold tracking-wider h-7 text-muted-foreground hover:text-foreground">
                   Reset
