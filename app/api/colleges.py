@@ -62,6 +62,24 @@ def serialize_college_light(c):
         "branches": branches_data,
     }
 
+@colleges_bp.route('/db_stats', methods=['GET'])
+def db_stats():
+    from app.models.college import College, Facility, HostelInformation
+    from app.models.branch import Branch, CollegeBranch
+    from app.models.cutoff import YearlyCutoff, SeatMatrix
+    from app.models.fee_placement import FeeStructure, PlacementStatistic
+    return jsonify({
+        "colleges": College.query.count(),
+        "facilities": Facility.query.count(),
+        "hostels": HostelInformation.query.count(),
+        "branches": Branch.query.count(),
+        "college_branches": CollegeBranch.query.count(),
+        "yearly_cutoffs": YearlyCutoff.query.count(),
+        "seat_matrix": SeatMatrix.query.count(),
+        "fees": FeeStructure.query.count(),
+        "placements": PlacementStatistic.query.count(),
+    })
+
 @colleges_bp.route('/', methods=['GET'])
 def list_colleges():
     # Pagination
