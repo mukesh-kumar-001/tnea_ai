@@ -292,7 +292,7 @@ function CompareColleges() {
                 {compareRow("Facilities", c => (
                   <div className="flex flex-wrap gap-1.5">
                     {c.facilities && c.facilities.length > 0 ? (
-                      c.facilities.map(f => <Badge key={f} variant="secondary" className="text-[10px] font-normal">{f}</Badge>)
+                      (c.facilities || []).map(f => <Badge key={f} variant="secondary" className="text-[10px] font-normal">{f}</Badge>)
                     ) : (
                       <span className="text-xs text-muted-foreground font-medium">Not available</span>
                     )}
@@ -301,7 +301,7 @@ function CompareColleges() {
 
                 {compareRow("Programs Offered", c => (
                   <div className="flex flex-wrap gap-2 max-h-[250px] overflow-y-auto pr-2 scrollbar-thin content-start items-start">
-                    {c.branches.map(b => (
+                    {(c.branches || []).map(b => (
                       <Badge key={b} variant="secondary" className="text-sm py-1.5 px-3 h-auto whitespace-normal text-left break-words">
                         {b}
                       </Badge>

@@ -60,10 +60,10 @@ const CollegeCard = React.memo(({ c }: { c: any }) => {
           </div>
 
           <div className="mt-5 flex flex-wrap gap-1.5">
-            {c.branches.slice(0, 4).map((b: string) => (
+            {(c.branches || []).slice(0, 4).map((b: string) => (
               <Badge key={b} variant="secondary" className="font-normal text-[10px] bg-muted/40">{b}</Badge>
             ))}
-            {c.branches.length > 4 && <Badge variant="outline" className="text-[10px] border-dashed border-border/80">+{c.branches.length - 4} more</Badge>}
+            {c.branches && c.branches.length > 4 && <Badge variant="outline" className="text-[10px] border-dashed border-border/80">+{c.branches.length - 4} more</Badge>}
           </div>
         </div>
         

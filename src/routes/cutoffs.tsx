@@ -31,9 +31,11 @@ function Cutoffs() {
   const [branchCode, setBranchCode] = useState<string>("Any");
   const [community, setCommunity] = useState<string>("Any");
 
-  // Fetch all data for the selected college to allow instant in-memory filtering
+  // Fetch data using backend filters for college, branch, and community
   const { data: cutoffsResponse, isLoading: loadingCutoffs } = useCutoffs({
     college_code: collegeCode === "Any" ? "" : collegeCode,
+    branch_code: branchCode === "Any" ? "" : branchCode,
+    category: community === "Any" ? "" : community,
     per_page: 5000 
   });
 
@@ -52,13 +54,13 @@ function Cutoffs() {
     
     if (cutoffsResponse?.data) {
       cutoffsResponse.data.forEach(r => {
-        if (!branchMap.has(r.branch_code)) {
-          branchMap.set(r.branch_code, { code: r.branch_code, name: r.branch_name });
+        if (r && r.branch_code && !branchMap.has(r.branch_code)) {
+          branchMap.set(r.branch_code, { code: r.branch_code, name: r.branch_name || "Unknown Branch" });
         }
       });
     }
     
-    return Array.from(branchMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+    return Array.from(branchMap.values()).sort((a, b) => (a.name || "").localeCompare(b.name || ""));
   }, [baseFilteredBranches, cutoffsResponse, collegeCode]);
 
   useEffect(() => {
@@ -78,6 +80,7 @@ function Cutoffs() {
     
     // Instant in-memory filtering
     const filtered = cutoffsResponse.data.filter(r => {
+      if (!r) return false;
       const matchBranch = branchCode === "Any" || r.branch_code === branchCode;
       const matchCategory = community === "Any" || r.category === community;
       return matchBranch && matchCategory;
@@ -85,11 +88,13 @@ function Cutoffs() {
     
     const yearMap = new Map<number, number[]>();
     for (const r of filtered) {
-      if (!yearMap.has(r.year)) {
-        yearMap.set(r.year, []);
-      }
-      if (r.cutoff_mark) {
-        yearMap.get(r.year)!.push(r.cutoff_mark);
+      if (r && r.year != null) {
+        if (!yearMap.has(r.year)) {
+          yearMap.set(r.year, []);
+        }
+        if (r.cutoff_mark != null) {
+          yearMap.get(r.year)!.push(r.cutoff_mark);
+        }
       }
     }
     

@@ -37,15 +37,24 @@ function Detail() {
   const [community, setCommunity] = useState("");
   const [branch, setBranch] = useState("");
   const { data: allColleges = [], isLoading: loadingColleges, error: fetchError } = useAllColleges();
-  const { data: cutoffsResponse, isLoading: loadingCutoffs } = useCutoffs({ college_code: code, category: community || "OC", per_page: 500 });
+
+  const matchedCollege = useMemo(() => {
+    if (!allColleges.length) return null;
+    return allColleges.find((x) => x.code === code || String(x.id) === code);
+  }, [allColleges, code]);
+
+  const { data: cutoffsResponse, isLoading: loadingCutoffs } = useCutoffs({ 
+    college_code: matchedCollege ? matchedCollege.code : "", 
+    category: community || "OC", 
+    per_page: 500 
+  });
 
   const loading = loadingColleges;
   const error = fetchError ? (fetchError instanceof Error ? fetchError.message : String(fetchError)) : null;
 
   const college = useMemo(() => {
-    if (!allColleges.length) return null;
-    const c = allColleges.find((x) => x.code === code);
-    if (!c) return null;
+    if (!matchedCollege) return null;
+    const c = matchedCollege;
 
     // Inject live cutoffs into the mock structure, filtering out invalid cutoffs > 200
     const liveCutoffs = (cutoffsResponse?.data || []).map((ct) => ({
@@ -64,7 +73,7 @@ function Detail() {
       branches,
       cutoffs: liveCutoffs.length > 0 ? liveCutoffs : c.cutoffs
     };
-  }, [allColleges, code, cutoffsResponse]);
+  }, [matchedCollege, cutoffsResponse]);
 
   // Render loading state instantly while the page shifts
   if (loading) {
@@ -204,7 +213,7 @@ function Detail() {
                   <CoordinateMarker label="COURSES" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Courses Offered</h2>
                   <StaggerContainer className="grid sm:grid-cols-2 gap-4">
-                    {college.branches.length > 0 ? (
+                    {college.branches && college.branches.length > 0 ? (
                       college.branches.map((b: string) => (
                         <StaggerItem key={b}>
                           <div className="p-4 border border-border/60 rounded-xl hover:border-primary/40 hover:bg-muted/30 transition-all group card-hover-lift bg-card">
@@ -271,7 +280,7 @@ function Detail() {
                   <CoordinateMarker label="SCHOLARSHIPS" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Financial Assistance & Scholarships</h2>
                   <StaggerContainer className="grid sm:grid-cols-2 gap-4">
-                    {college.scholarships.length > 0 ? (
+                    {college.scholarships && college.scholarships.length > 0 ? (
                       college.scholarships.map((s: string) => (
                         <StaggerItem key={s}>
                           <div className="p-4 border border-border/60 rounded-xl text-sm hover:border-primary/40 hover:bg-muted/30 transition-colors bg-card font-medium flex items-center gap-3">
@@ -293,7 +302,7 @@ function Detail() {
                   <CoordinateMarker label="FACILITIES" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Campus Infrastructure</h2>
                   <StaggerContainer className="flex flex-wrap gap-2.5">
-                    {college.facilities.length > 0 ? (
+                    {college.facilities && college.facilities.length > 0 ? (
                       college.facilities.map((f: string) => (
                         <StaggerItem key={f}>
                           <Badge variant="secondary" className="py-2 px-4 text-sm bg-muted/50 border border-border/60 hover:bg-muted font-medium">{f}</Badge>
@@ -313,13 +322,17 @@ function Detail() {
                   <CoordinateMarker label="RECRUITERS" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6 flex items-center gap-2"><Users className="size-5 text-primary" /> Corporate Partners</h2>
                   <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    {college.recruiters.map((r: string) => (
-                      <StaggerItem key={r}>
-                        <div className="p-4 h-full border border-border/60 rounded-xl flex items-center justify-center text-center font-bold text-sm hover:border-primary/40 hover:bg-muted/30 transition-colors bg-card card-hover-lift">
-                          {r}
-                        </div>
-                      </StaggerItem>
-                    ))}
+                    {college.recruiters && college.recruiters.length > 0 ? (
+                      college.recruiters.map((r: string) => (
+                        <StaggerItem key={r}>
+                          <div className="p-4 h-full border border-border/60 rounded-xl flex items-center justify-center text-center font-bold text-sm hover:border-primary/40 hover:bg-muted/30 transition-colors bg-card card-hover-lift">
+                            {r}
+                          </div>
+                        </StaggerItem>
+                      ))
+                    ) : (
+                      <div className="text-muted-foreground p-4 col-span-full">Not available</div>
+                    )}
                   </StaggerContainer>
                 </Card>
               </AnimatedSection>
