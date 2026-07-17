@@ -55,9 +55,9 @@ function Detail() {
       cutoff: (ct.cutoff_mark && ct.cutoff_mark <= 200) ? ct.cutoff_mark : null
     }));
 
-    // Generate branches list from cutoffs if missing
+    // Combine branches list from cutoffs and static list
     const liveBranches = Array.from(new Set(liveCutoffs.map(ct => ct.branch)));
-    const branches = liveBranches.length > 0 ? liveBranches : c.branches;
+    const branches = Array.from(new Set([...c.branches, ...liveBranches]));
 
     return {
       ...c,
@@ -99,7 +99,7 @@ function Detail() {
             <div className="grid size-16 place-items-center rounded-2xl bg-destructive/10 text-destructive mb-6 border border-destructive/20 shadow-sm">
               <AlertTriangle className="size-6" />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight">System Error: College Not Found</h1>
+            <h1 className="text-2xl font-bold tracking-tight">College Not Found</h1>
             <p className="mt-3 text-muted-foreground max-w-sm">The requested college code [{code}] does not match any entry in the active database.</p>
             <Link to="/colleges" className="inline-flex items-center gap-2 mt-8 text-sm font-semibold hover:text-primary transition-colors bg-muted/50 px-4 py-2 rounded-lg border border-border/80">
               <ArrowLeft className="size-4" /> Back to Database
@@ -151,10 +151,10 @@ function Detail() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2} className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-            <StatCard icon={<GraduationCap className="size-5" />} label="Placement" value={college.placementPercentage} suffix="%" countUp />
-            <StatCard icon={<Award className="size-5" />} label="Highest Package" value={`₹${college.highestPackage}L`} countUp={false} />
-            <StatCard icon={<Star className="size-5" />} label="Avg Package" value={`₹${college.averagePackage}L`} countUp={false} />
-            <StatCard icon={<Wallet className="size-5" />} label="Fees / Yr" value={`₹${(college.fees / 1000).toFixed(0)}k`} countUp={false} />
+            <StatCard icon={<GraduationCap className="size-5" />} label="Placement" value={college.placementPercentage != null ? college.placementPercentage : "Not available"} suffix={college.placementPercentage != null ? "%" : ""} countUp={college.placementPercentage != null} />
+            <StatCard icon={<Award className="size-5" />} label="Highest Package" value={college.highestPackage != null ? `₹${college.highestPackage}L` : "Not available"} countUp={false} />
+            <StatCard icon={<Star className="size-5" />} label="Avg Package" value={college.averagePackage != null ? `₹${college.averagePackage}L` : "Not available"} countUp={false} />
+            <StatCard icon={<Wallet className="size-5" />} label="Fees / Yr" value={college.fees != null ? `₹${(college.fees / 1000).toFixed(0)}k` : "Not available"} countUp={false} />
           </AnimatedSection>
         </div>
       </section>
@@ -183,7 +183,7 @@ function Detail() {
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
                   <CoordinateMarker label="INF.01" className="mb-4" />
-                  <h2 className="text-xl font-bold mb-4">Institution Profile</h2>
+                  <h2 className="text-xl font-bold mb-4">College Details</h2>
                   <p className="text-muted-foreground leading-relaxed text-base">{college.summary}</p>
                   
                   <EngineeringDivider className="my-8" />
@@ -202,16 +202,20 @@ function Detail() {
               <AnimatedSection direction="none">
                 <Card className="p-6 md:p-8 rounded-2xl border-border/60 bg-card/60 backdrop-blur">
                   <CoordinateMarker label="CRS.02" className="mb-4" />
-                  <h2 className="text-xl font-bold mb-6">Program Offerings</h2>
+                  <h2 className="text-xl font-bold mb-6">Courses Offered</h2>
                   <StaggerContainer className="grid sm:grid-cols-2 gap-4">
-                    {college.branches.map((b: string) => (
-                      <StaggerItem key={b}>
-                        <div className="p-4 border border-border/60 rounded-xl hover:border-primary/40 hover:bg-muted/30 transition-all group card-hover-lift bg-card">
-                          <div className="font-bold text-sm text-foreground group-hover:text-primary transition-colors">{b}</div>
-                          <div className="text-[11px] font-mono text-muted-foreground mt-2 uppercase tracking-wide">B.E. / B.Tech · 4 Years</div>
-                        </div>
-                      </StaggerItem>
-                    ))}
+                    {college.branches.length > 0 ? (
+                      college.branches.map((b: string) => (
+                        <StaggerItem key={b}>
+                          <div className="p-4 border border-border/60 rounded-xl hover:border-primary/40 hover:bg-muted/30 transition-all group card-hover-lift bg-card">
+                            <div className="font-bold text-sm text-foreground group-hover:text-primary transition-colors">{b}</div>
+                            <div className="text-[11px] font-mono text-muted-foreground mt-2 uppercase tracking-wide">B.E. / B.Tech · 4 Years</div>
+                          </div>
+                        </StaggerItem>
+                      ))
+                    ) : (
+                      <div className="text-muted-foreground p-4">Not available</div>
+                    )}
                   </StaggerContainer>
                 </Card>
               </AnimatedSection>
@@ -229,9 +233,9 @@ function Detail() {
                   <CoordinateMarker label="PLC.04" className="mb-4" />
                   <h2 className="text-xl font-bold mb-8">Placement Statistics</h2>
                   <div className="grid md:grid-cols-3 gap-6">
-                    <StatCard icon={<GraduationCap className="size-6" />} label="Total Placement Rate" value={college.placementPercentage} suffix="%" countUp className="h-full" />
-                    <StatCard icon={<Award className="size-6" />} label="Highest Package Offered" value={`₹${college.highestPackage}LPA`} className="h-full" countUp={false} />
-                    <StatCard icon={<Star className="size-6" />} label="Average Package" value={`₹${college.averagePackage}LPA`} className="h-full" countUp={false} />
+                    <StatCard icon={<GraduationCap className="size-6" />} label="Total Placement Rate" value={college.placementPercentage != null ? college.placementPercentage : "Not available"} suffix={college.placementPercentage != null ? "%" : ""} countUp={college.placementPercentage != null} className="h-full" />
+                    <StatCard icon={<Award className="size-6" />} label="Highest Package Offered" value={college.highestPackage != null ? `₹${college.highestPackage}LPA` : "Not available"} className="h-full" countUp={false} />
+                    <StatCard icon={<Star className="size-6" />} label="Average Package" value={college.averagePackage != null ? `₹${college.averagePackage}LPA` : "Not available"} className="h-full" countUp={false} />
                   </div>
                 </Card>
               </AnimatedSection>
@@ -246,15 +250,15 @@ function Detail() {
                     <div className="p-6 rounded-xl border border-border/60 bg-card relative overflow-hidden group">
                       <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity"><Wallet className="size-20" /></div>
                       <div className="technical-label mb-2">Annual Tuition Fees</div>
-                      <div className="text-4xl font-extrabold tracking-tight font-mono">₹{college.fees.toLocaleString("en-IN")}</div>
-                      <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-widest">Base fee structure</div>
+                      <div className="text-4xl font-extrabold tracking-tight font-mono">{college.fees != null ? `₹${college.fees.toLocaleString("en-IN")}` : "Not available"}</div>
+                      <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-widest">{college.fees != null ? "Base fee structure" : "Fee data not provided"}</div>
                     </div>
                     
                     <div className="p-6 rounded-xl border border-border/60 bg-card relative overflow-hidden group">
                       <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity"><Home className="size-20" /></div>
                       <div className="technical-label mb-2 flex items-center gap-1.5"><Home className="size-3.5" /> Hostel Accommodation</div>
-                      <div className="text-4xl font-extrabold tracking-tight font-mono">{college.hostel ? `₹${(college.hostelFees ?? 0).toLocaleString("en-IN")}` : "N/A"}</div>
-                      <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-widest">{college.hostel ? "Per year (mess charges extra)" : "Hostel facility not available"}</div>
+                      <div className="text-4xl font-extrabold tracking-tight font-mono text-balance">{college.hostel && college.hostelFees != null ? `₹${college.hostelFees.toLocaleString("en-IN")}` : (college.hostel ? "Available" : "Not available")}</div>
+                      <div className="mt-4 text-xs font-medium text-muted-foreground uppercase tracking-widest">{college.hostel ? (college.hostelFees != null ? "Per year (mess charges extra)" : "Hostel facility available, fees not specified") : "Hostel facility not available"}</div>
                     </div>
                   </div>
                 </Card>
@@ -267,13 +271,17 @@ function Detail() {
                   <CoordinateMarker label="SCH.06" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Financial Assistance & Scholarships</h2>
                   <StaggerContainer className="grid sm:grid-cols-2 gap-4">
-                    {college.scholarships.map((s: string) => (
-                      <StaggerItem key={s}>
-                        <div className="p-4 border border-border/60 rounded-xl text-sm hover:border-primary/40 hover:bg-muted/30 transition-colors bg-card font-medium flex items-center gap-3">
-                          <div className="size-1.5 rounded-full bg-primary/60 shrink-0" /> {s}
-                        </div>
-                      </StaggerItem>
-                    ))}
+                    {college.scholarships.length > 0 ? (
+                      college.scholarships.map((s: string) => (
+                        <StaggerItem key={s}>
+                          <div className="p-4 border border-border/60 rounded-xl text-sm hover:border-primary/40 hover:bg-muted/30 transition-colors bg-card font-medium flex items-center gap-3">
+                            <div className="size-1.5 rounded-full bg-primary/60 shrink-0" /> {s}
+                          </div>
+                        </StaggerItem>
+                      ))
+                    ) : (
+                      <div className="text-muted-foreground p-4">Not available</div>
+                    )}
                   </StaggerContainer>
                 </Card>
               </AnimatedSection>
@@ -285,11 +293,15 @@ function Detail() {
                   <CoordinateMarker label="FAC.07" className="mb-4" />
                   <h2 className="text-xl font-bold mb-6">Campus Infrastructure</h2>
                   <StaggerContainer className="flex flex-wrap gap-2.5">
-                    {college.facilities.map((f: string) => (
-                      <StaggerItem key={f}>
-                        <Badge variant="secondary" className="py-2 px-4 text-sm bg-muted/50 border border-border/60 hover:bg-muted font-medium">{f}</Badge>
-                      </StaggerItem>
-                    ))}
+                    {college.facilities.length > 0 ? (
+                      college.facilities.map((f: string) => (
+                        <StaggerItem key={f}>
+                          <Badge variant="secondary" className="py-2 px-4 text-sm bg-muted/50 border border-border/60 hover:bg-muted font-medium">{f}</Badge>
+                        </StaggerItem>
+                      ))
+                    ) : (
+                      <div className="text-muted-foreground p-4">Not available</div>
+                    )}
                   </StaggerContainer>
                 </Card>
               </AnimatedSection>
@@ -409,7 +421,7 @@ const CutoffTab = React.memo(({ college, community, setCommunity, branch, setBra
           />
         </div>
         <div>
-          <Label className="technical-label block mb-2">Program Branch</Label>
+          <Label className="technical-label block mb-2">Course / Branch</Label>
           <SearchableSelect 
             value={branch} 
             onValueChange={setBranch}
@@ -426,14 +438,14 @@ const CutoffTab = React.memo(({ college, community, setCommunity, branch, setBra
 
       {!community || !branch ? (
         <div className="h-[400px] flex items-center justify-center border border-dashed border-border/60 rounded-xl bg-muted/20 text-muted-foreground text-sm font-medium">
-          Please select both a Community Category and a Program Branch to view the cutoff trajectory.
+          Please select both a Community Category and a Course / Branch to view the cutoff trajectory.
         </div>
       ) : (
         <>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
-              <h2 className="text-xl font-bold">Cutoff Trajectory ({community})</h2>
-              <p className="text-sm text-muted-foreground mt-1">Historical closing cutoffs across selected branches.</p>
+              <h2 className="text-xl font-bold">Cutoff Trends ({community})</h2>
+              <p className="text-sm text-muted-foreground mt-1">See how cutoffs have changed over the years.</p>
             </div>
             <div className="flex items-center gap-3 bg-muted/40 p-2 rounded-lg border border-border/60">
               <div className="technical-label">Y-Axis Range:</div>

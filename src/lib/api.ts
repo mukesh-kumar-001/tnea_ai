@@ -106,7 +106,16 @@ export const fetchRecommendations = async (payload: any) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
   });
-  if (!res.ok) throw new Error("Failed to fetch recommendations");
+  if (!res.ok) {
+    let errorMsg = "Failed to fetch recommendations";
+    try {
+      const errData = await res.json();
+      if (errData.error) errorMsg = errData.error;
+    } catch (e) {
+      // Ignore JSON parse errors for 500s
+    }
+    throw new Error(errorMsg);
+  }
   return await res.json();
 };
 

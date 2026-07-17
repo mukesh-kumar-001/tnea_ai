@@ -171,7 +171,7 @@ function RankPredictor() {
                           <TrendingUp className="size-6 opacity-80" />
                         </div>
                       </div>
-                      <div className="font-extrabold text-2xl tracking-tight">System Standby</div>
+                      <div className="font-extrabold text-2xl tracking-tight">Ready to Start</div>
                       <p className="text-muted-foreground mt-3 max-w-sm text-sm leading-relaxed">
                         Input your cutoff and community on the left to estimate your rank.
                       </p>

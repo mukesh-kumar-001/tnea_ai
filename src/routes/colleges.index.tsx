@@ -53,10 +53,10 @@ const CollegeCard = React.memo(({ c }: { c: any }) => {
           <EngineeringDivider className="my-4" />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <InlineStat label="Placement" value={`${c.placementPercentage}%`} />
-            <InlineStat label="Avg Package" value={`₹${c.averagePackage}L`} />
-            <InlineStat label="Highest" value={`₹${c.highestPackage}L`} />
-            <InlineStat label="Fees / Yr" value={`₹${(c.fees / 1000).toFixed(0)}k`} />
+            <InlineStat label="Placement" value={c.placementPercentage != null ? `${c.placementPercentage}%` : "Not available"} />
+            <InlineStat label="Avg Package" value={c.averagePackage != null ? `₹${c.averagePackage}L` : "Not available"} />
+            <InlineStat label="Highest" value={c.highestPackage != null ? `₹${c.highestPackage}L` : "Not available"} />
+            <InlineStat label="Fees / Yr" value={c.fees != null ? `₹${(c.fees / 1000).toFixed(0)}k` : "Not available"} />
           </div>
 
           <div className="mt-5 flex flex-wrap gap-1.5">
@@ -105,8 +105,8 @@ function Explorer() {
       if (nba && !c.nba) return false;
       if (branch !== ANY && !c.branches.includes(branch)) return false;
       if (hostel && !c.hostel) return false;
-      if (c.fees > maxFees[0]) return false;
-      if (c.placementPercentage < minPlacement[0]) return false;
+      if (maxFees[0] < 200000 && c.fees != null && c.fees > maxFees[0]) return false;
+      if (minPlacement[0] > 0 && c.placementPercentage != null && c.placementPercentage < minPlacement[0]) return false;
       return true;
     });
   }, [colleges, q, district, type, naac, nba, branch, hostel, maxFees, minPlacement]);

@@ -31,12 +31,35 @@ function Cutoffs() {
   const [branchCode, setBranchCode] = useState<string>("Any");
   const [community, setCommunity] = useState<string>("Any");
 
-  const { filteredColleges, filteredBranches } = useCascadingFilters({
+  // Fetch all data for the selected college to allow instant in-memory filtering
+  const { data: cutoffsResponse, isLoading: loadingCutoffs } = useCutoffs({
+    college_code: collegeCode === "Any" ? "" : collegeCode,
+    per_page: 5000 
+  });
+
+  const { filteredColleges, filteredBranches: baseFilteredBranches } = useCascadingFilters({
     allColleges: colleges,
     allBranches: branches,
     selectedCollegeCode: collegeCode === "Any" ? "" : collegeCode,
     selectedBranchName: branchCode === "Any" ? "" : branches.find(b => b.code === branchCode)?.name
   });
+
+  // Merge branches from cutoffsResponse to ensure historical branches are selectable
+  const filteredBranches = useMemo(() => {
+    if (collegeCode === "Any") return baseFilteredBranches;
+    
+    const branchMap = new Map(baseFilteredBranches.map(b => [b.code, b]));
+    
+    if (cutoffsResponse?.data) {
+      cutoffsResponse.data.forEach(r => {
+        if (!branchMap.has(r.branch_code)) {
+          branchMap.set(r.branch_code, { code: r.branch_code, name: r.branch_name });
+        }
+      });
+    }
+    
+    return Array.from(branchMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [baseFilteredBranches, cutoffsResponse, collegeCode]);
 
   useEffect(() => {
     if (collegeCode !== "Any" && filteredColleges.length > 0 && !filteredColleges.find(c => c.code === collegeCode)) {
@@ -49,12 +72,6 @@ function Cutoffs() {
       setBranchCode("Any");
     }
   }, [filteredBranches, branchCode]);
-
-  // Fetch all data for the selected college to allow instant in-memory filtering
-  const { data: cutoffsResponse, isLoading: loadingCutoffs } = useCutoffs({
-    college_code: collegeCode === "Any" ? "" : collegeCode,
-    per_page: 5000 
-  });
 
   const data = useMemo(() => {
     if (!cutoffsResponse?.data) return [];
@@ -78,7 +95,7 @@ function Cutoffs() {
     
     return Array.from(yearMap.entries())
       .map(([year, cutoffs]) => ({ 
-        year, 
+        year: Number(year), 
         cutoff: cutoffs.length ? cutoffs.reduce((a,b) => a+b, 0) / cutoffs.length : 0 
       }))
       .filter(d => d.cutoff > 0)
@@ -164,7 +181,7 @@ function Cutoffs() {
               </div>
               
               <div>
-                <Label className="technical-label block mb-2">Program Branch</Label>
+                <Label className="technical-label block mb-2">Course / Branch</Label>
                 <SearchableSelect 
                   value={branchCode} 
                   onValueChange={setBranchCode} 

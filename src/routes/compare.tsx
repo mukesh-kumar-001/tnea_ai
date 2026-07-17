@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AppShell } from "@/components/app-shell";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SearchableSelect } from "@/components/ui/searchable-select";
-import { useAllColleges } from "@/lib/api";
+import { useAllColleges, useBranches } from "@/lib/api";
 import { type MockCollege } from "@/lib/mock-data";
+import { useCascadingFilters } from "@/hooks/use-cascading-filters";
 import { Plus, X, ArrowRightLeft, Download, Check, Minus, Printer, Share2 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { AnimatedSection } from "@/components/animated-section";
@@ -25,8 +26,40 @@ export const Route = createFileRoute("/compare")({
 
 function CompareColleges() {
   const { data: colleges = [] } = useAllColleges();
+  const { data: branches = [] } = useBranches();
+  
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [collegeToAdd, setCollegeToAdd] = useState("");
+
+  const [collegeType, setCollegeType] = useState("");
+  const [district, setDistrict] = useState("");
+  const [branchCode, setBranchCode] = useState("");
+
+  const { availableTypes, availableDistricts, filteredColleges, filteredBranches } = useCascadingFilters({
+    allColleges: colleges,
+    allBranches: branches,
+    selectedCollegeType: collegeType,
+    selectedDistrict: district,
+    selectedBranchName: branches.find(b => b.code === branchCode)?.name
+  });
+
+  useEffect(() => {
+    if (district && district !== "any" && !availableDistricts.includes(district)) {
+      setDistrict("");
+    }
+  }, [availableDistricts, district]);
+
+  useEffect(() => {
+    if (collegeToAdd && collegeToAdd !== "Any" && !filteredColleges.some(c => c.code === collegeToAdd)) {
+      setCollegeToAdd("");
+    }
+  }, [filteredColleges, collegeToAdd]);
+
+  useEffect(() => {
+    if (branchCode && branchCode !== "any" && !filteredBranches.some(b => b.code === branchCode)) {
+      setBranchCode("");
+    }
+  }, [filteredBranches, branchCode]);
 
   const selectedColleges = selectedIds
     .map(id => colleges.find(c => c.code === id))
@@ -104,14 +137,44 @@ function CompareColleges() {
       <section className="container-page py-8">
         <AnimatedSection>
           <Card className="p-6 mb-8 rounded-2xl border-border/60 bg-card/80 backdrop-blur shadow-sm print:hidden">
+            <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
+              <div className="flex-1 w-full">
+                <SearchableSelect 
+                  value={collegeType || "any"} 
+                  onValueChange={(v) => setCollegeType(v === "any" ? "" : v)} 
+                  options={[{ value: "any", label: "Any Type" }, ...availableTypes.map(t => ({ value: t, label: t }))]}
+                  placeholder="Filter by Type"
+                  searchPlaceholder="Search types..."
+                />
+              </div>
+              <div className="flex-1 w-full">
+                <SearchableSelect 
+                  value={district || "any"} 
+                  onValueChange={(v) => setDistrict(v === "any" ? "" : v)} 
+                  options={[{ value: "any", label: "Any District" }, ...availableDistricts.map(d => ({ value: d, label: d }))]}
+                  placeholder="Filter by District"
+                  searchPlaceholder="Search districts..."
+                />
+              </div>
+              <div className="flex-1 w-full">
+                <SearchableSelect 
+                  value={branchCode || "any"} 
+                  onValueChange={(v) => setBranchCode(v === "any" ? "" : v)} 
+                  options={[{ value: "any", label: "Any Branch" }, ...filteredBranches.map(b => ({ value: b.code, label: `[${b.code}] ${b.name}` }))]}
+                  placeholder="Filter by Branch"
+                  searchPlaceholder="Search branches..."
+                />
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <div className="flex-1 w-full">
                 <SearchableSelect 
                   value={collegeToAdd} 
                   onValueChange={setCollegeToAdd}
                   options={[
-                    { value: "Any", label: "Any College" },
-                    ...colleges.map((c) => ({ value: c.code, label: `[${c.code}] ${c.name}` }))
+                    { value: "Any", label: "Select an institution..." },
+                    ...filteredColleges.map((c) => ({ value: c.code, label: `[${c.code}] ${c.name}` }))
                   ]}
                   placeholder="Select an institution to add to comparison..."
                   searchPlaceholder="Search institutions..."
@@ -166,44 +229,64 @@ function CompareColleges() {
 
                 {/* Data Rows */}
                 {compareRow("Institution Type", c => (
-                  <Badge variant={c.type === "Government" ? "default" : "outline"} className="text-xs">{c.type}</Badge>
+                  <Badge variant={c.type === "Government" ? "default" : "outline"} className="text-xs">{c.type || "Not available"}</Badge>
                 ))}
                 
                 {compareRow("Status", c => (
                   <div className="flex items-center gap-2">
-                    {c.autonomous ? <span className="text-success font-semibold flex items-center gap-1"><Check className="size-4" /> Autonomous</span> : <span className="text-muted-foreground font-medium flex items-center gap-1"><Minus className="size-4" /> Affiliated</span>}
+                    {c.autonomous === true ? <span className="text-success font-semibold flex items-center gap-1"><Check className="size-4" /> Autonomous</span> : c.autonomous === false ? <span className="text-muted-foreground font-medium flex items-center gap-1"><Minus className="size-4" /> Affiliated</span> : <span className="text-muted-foreground font-medium text-sm">Not available</span>}
                   </div>
                 ))}
                 
                 {compareRow("NAAC Grade", c => (
-                  <span className="font-mono font-bold">{c.naac || "N/A"}</span>
+                  <span className="font-mono font-bold">{c.naac && c.naac !== "Not Accredited" ? c.naac : <span className="text-muted-foreground font-medium text-sm">Not available</span>}</span>
                 ))}
                 
                 {compareRow("Placement %", c => (
                   <div className="flex items-center gap-2">
-                    <span className="font-mono font-bold text-primary text-lg">{c.placementPercentage}%</span>
+                    {c.placementPercentage != null && c.placementPercentage > 0 ? (
+                      <span className="font-mono font-bold text-primary text-lg">{c.placementPercentage}%</span>
+                    ) : (
+                      <span className="text-muted-foreground font-medium text-sm">Not available</span>
+                    )}
                   </div>
                 ), true)}
                 
                 {compareRow("Avg Package", c => (
-                  <span className="font-mono font-bold">₹{c.averagePackage} LPA</span>
+                  c.averagePackage != null && c.averagePackage > 0 ? (
+                    <span className="font-mono font-bold">₹{c.averagePackage} LPA</span>
+                  ) : (
+                    <span className="text-muted-foreground font-medium text-sm">Not available</span>
+                  )
                 ), true)}
                 
                 {compareRow("Highest Package", c => (
-                  <span className="font-mono font-bold">₹{c.highestPackage} LPA</span>
+                  c.highestPackage != null && c.highestPackage > 0 ? (
+                    <span className="font-mono font-bold">₹{c.highestPackage} LPA</span>
+                  ) : (
+                    <span className="text-muted-foreground font-medium text-sm">Not available</span>
+                  )
                 ))}
                 
                 {compareRow("Annual Fees", c => (
-                  <span className="font-mono font-bold">₹{(c.fees / 1000).toFixed(0)}k / year</span>
+                  c.fees != null && c.fees > 0 ? (
+                    <span className="font-mono font-bold">₹{(c.fees / 1000).toFixed(0)}k / year</span>
+                  ) : (
+                    <span className="text-muted-foreground font-medium text-sm">Not available</span>
+                  )
                 ), true)}
                 
-                {compareRow("Hostel Availability", c => (
-                  c.hostel ? (
+                {compareRow("Hostel", c => (
+                  c.hostel === true ? (
                     <div className="text-sm">
                       <div className="text-success font-semibold flex items-center gap-1 mb-1"><Check className="size-4" /> Available</div>
-                      <div className="font-mono text-xs text-muted-foreground">₹{(c.hostelFees / 1000).toFixed(0)}k / year</div>
+                      {c.hostelFees != null && c.hostelFees > 0 && <div className="font-mono text-xs text-muted-foreground">₹{(c.hostelFees / 1000).toFixed(0)}k / year</div>}
                     </div>
-                  ) : <span className="text-muted-foreground font-medium flex items-center gap-1"><Minus className="size-4" /> Not Available</span>
+                  ) : c.hostel === false ? (
+                    <span className="text-muted-foreground font-medium flex items-center gap-1"><Minus className="size-4" /> Not Available</span>
+                  ) : (
+                    <span className="text-muted-foreground font-medium text-sm">Not available</span>
+                  )
                 ))}
                 
                 {compareRow("Facilities", c => (
@@ -211,7 +294,7 @@ function CompareColleges() {
                     {c.facilities && c.facilities.length > 0 ? (
                       c.facilities.map(f => <Badge key={f} variant="secondary" className="text-[10px] font-normal">{f}</Badge>)
                     ) : (
-                      <span className="text-xs text-muted-foreground">Standard</span>
+                      <span className="text-xs text-muted-foreground font-medium">Not available</span>
                     )}
                   </div>
                 ))}

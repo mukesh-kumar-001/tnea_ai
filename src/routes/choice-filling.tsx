@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { SearchableSelect } from "@/components/ui/searchable-select";
 import { useCascadingFilters } from "@/hooks/use-cascading-filters";
 import { useAllColleges, useBranches } from "@/lib/api";
-import { GripVertical, Trash2, Plus, Sparkles, Download, ListChecks, ChevronUp, ChevronDown, Layers, Terminal, AlertCircle, FileSpreadsheet } from "lucide-react";
+import { GripVertical, Trash2, Plus, Sparkles, Download, ListChecks, ChevronUp, ChevronDown, Layers, Terminal, AlertCircle, FileSpreadsheet, MapPin } from "lucide-react";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "motion/react";
 import { AnimatedSection } from "@/components/animated-section";
@@ -23,24 +23,44 @@ export const Route = createFileRoute("/choice-filling")({
   component: ChoiceFilling,
 });
 
-interface Choice { id: string; code: string; college: string; branch: string; }
+interface Choice { id: string; code: string; college: string; branch: string; district: string; type: string; }
 
 function ChoiceFilling() {
   const { data: colleges = [], isLoading: loadingColleges } = useAllColleges();
   const { data: branches = [], isLoading: loadingBranches } = useBranches();
 
   const [choices, setChoices] = useState<Choice[]>([]);
+  const [collegeType, setCollegeType] = useState("");
+  const [district, setDistrict] = useState("");
   const [collegeCode, setCollegeCode] = useState("");
   const [branchCode, setBranchCode] = useState("");
 
-  const { filteredColleges, filteredBranches } = useCascadingFilters({
+  const { availableTypes, availableDistricts, filteredColleges, filteredBranches } = useCascadingFilters({
     allColleges: colleges,
     allBranches: branches,
+    selectedCollegeType: collegeType,
+    selectedDistrict: district,
     selectedCollegeCode: collegeCode,
     selectedBranchName: branches.find(b => b.code === branchCode)?.name
   });
 
-  // Removed buggy useEffects that caused infinite loops by auto-selecting items
+  useEffect(() => {
+    if (district && district !== "any" && !availableDistricts.includes(district)) {
+      setDistrict("");
+    }
+  }, [availableDistricts, district]);
+
+  useEffect(() => {
+    if (collegeCode && collegeCode !== "any" && !filteredColleges.some(c => c.code === collegeCode)) {
+      setCollegeCode("");
+    }
+  }, [filteredColleges, collegeCode]);
+
+  useEffect(() => {
+    if (branchCode && branchCode !== "any" && !filteredBranches.some(b => b.code === branchCode)) {
+      setBranchCode("");
+    }
+  }, [filteredBranches, branchCode]);
 
   const college = colleges.find((c) => c.code === collegeCode);
   const selectedBranch = branches.find((b) => b.code === branchCode);
@@ -61,7 +81,11 @@ function ChoiceFilling() {
     }
     setChoices([...choices, {
       id: `${college.code}-${selectedBranch.code}-${Date.now()}`,
-      code: college.code, college: college.shortName, branch: selectedBranch.name,
+      code: college.code, 
+      college: college.name, // Use full name for export and display instead of shortName
+      branch: selectedBranch.name,
+      district: college.district || "Unknown",
+      type: college.type || "Unknown"
     }]);
     toast.success("Added to sequence", {
       description: `[${college.code}] ${selectedBranch.name}`,
@@ -96,8 +120,15 @@ function ChoiceFilling() {
 
   const exportCsv = () => {
     if (choices.length === 0) return;
-    const headers = ["Order", "College Code", "College Name", "Branch"];
-    const rows = choices.map((c, i) => [i + 1, c.code, `"${c.college}"`, `"${c.branch}"`].join(","));
+    const headers = ["Choice Number", "College Code", "College Name", "Branch", "District", "College Type"];
+    const rows = choices.map((c, i) => [
+      i + 1, 
+      c.code, 
+      `"${c.college}"`, 
+      `"${c.branch}"`,
+      `"${c.district}"`,
+      `"${c.type}"`
+    ].join(","));
     const csv = [headers.join(","), ...rows].join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
@@ -150,10 +181,10 @@ function ChoiceFilling() {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <Terminal className="size-4 text-primary" />
-                  <span className="technical-label">Parameter Input</span>
+                  <span className="technical-label">Search Filters</span>
                 </div>
                 <button 
-                  onClick={() => { setCollegeCode("any"); setBranchCode("any"); }}
+                  onClick={() => { setCollegeType("any"); setDistrict("any"); setCollegeCode("any"); setBranchCode("any"); }}
                   className="text-xs font-semibold text-primary hover:underline uppercase tracking-widest"
                 >
                   Clear Filters
@@ -162,7 +193,35 @@ function ChoiceFilling() {
               
               <div className="space-y-5">
                 <div>
-                  <label className="technical-label block mb-2">Target Institution</label>
+                  <label className="technical-label block mb-2">College Type</label>
+                  <SearchableSelect 
+                    value={collegeType || "any"} 
+                    onValueChange={(v) => setCollegeType(v === "any" ? "" : v)} 
+                    disabled={loadingColleges}
+                    options={[
+                      { value: "any", label: "Any Type" },
+                      ...availableTypes.map((t) => ({ value: t, label: t }))
+                    ]}
+                    placeholder="Select college type"
+                    searchPlaceholder="Search types..."
+                  />
+                </div>
+                <div>
+                  <label className="technical-label block mb-2">District</label>
+                  <SearchableSelect 
+                    value={district || "any"} 
+                    onValueChange={(v) => setDistrict(v === "any" ? "" : v)} 
+                    disabled={loadingColleges}
+                    options={[
+                      { value: "any", label: "Any District" },
+                      ...availableDistricts.map((d) => ({ value: d, label: d }))
+                    ]}
+                    placeholder="Select district"
+                    searchPlaceholder="Search districts..."
+                  />
+                </div>
+                <div>
+                  <label className="technical-label block mb-2">Target College</label>
                   <SearchableSelect 
                     value={collegeCode || "any"} 
                     onValueChange={(v) => setCollegeCode(v === "any" ? "" : v)} 
@@ -176,14 +235,14 @@ function ChoiceFilling() {
                   />
                 </div>
                 <div>
-                  <label className="technical-label block mb-2">Target Program Branch</label>
+                  <label className="technical-label block mb-2">Target Course / Branch</label>
                   <SearchableSelect 
                     value={branchCode || "any"} 
                     onValueChange={(v) => setBranchCode(v === "any" ? "" : v)} 
                     disabled={loadingBranches}
                     options={[
                       { value: "any", label: "Any Course" },
-                      ...filteredBranches.map((b) => ({ value: b.code, label: b.name }))
+                      ...filteredBranches.map((b) => ({ value: b.code, label: `[${b.code}] ${b.name}` }))
                     ]}
                     placeholder="Select course"
                     searchPlaceholder="Search courses..."
@@ -193,7 +252,7 @@ function ChoiceFilling() {
                 <Button onClick={add} disabled={!collegeCode || collegeCode === "any" || !branchCode || branchCode === "any"} className="w-full rounded-xl gap-2 h-12 mt-2 font-bold group shadow-glow relative overflow-hidden">
                   <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
                   <Plus className="size-4 relative z-10" /> 
-                  <span className="relative z-10 tracking-wider uppercase text-xs">Append to Sequence</span>
+                  <span className="relative z-10 tracking-wider uppercase text-xs">Add to List</span>
                 </Button>
               </div>
 
@@ -223,7 +282,7 @@ function ChoiceFilling() {
                     <div className="grid size-20 place-items-center rounded-2xl bg-muted/50 text-muted-foreground mb-6 shadow-sm border border-border/60">
                       <Layers className="size-8 opacity-60" />
                     </div>
-                    <div className="font-extrabold text-2xl tracking-tight">Sequence Empty</div>
+                    <div className="font-extrabold text-2xl tracking-tight">Your List is Empty</div>
                     <p className="text-muted-foreground mt-3 max-w-sm text-sm leading-relaxed">
                       Use the parameter input panel to append institutions and programs to your sequence array.
                     </p>
@@ -233,7 +292,7 @@ function ChoiceFilling() {
                 <motion.div key="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                   <div className="flex items-center gap-2 mb-4 print:hidden">
                     <ListChecks className="size-4 text-primary" />
-                    <span className="technical-label">Active Sequence Array</span>
+                    <span className="technical-label">Your Choice List</span>
                   </div>
                   
                   <div className="space-y-3 print:space-y-1">
@@ -261,6 +320,8 @@ function ChoiceFilling() {
                             <div className="flex-1 min-w-0 py-1">
                               <div className="flex flex-wrap items-center gap-2 mb-1">
                                 <Badge variant="secondary" className="font-mono text-[10px] bg-background border-border/80 print:border-gray-300 print:text-black">CD:{c.code}</Badge>
+                                <Badge variant="outline" className="text-[10px] print:border-gray-300 print:text-black">{c.type}</Badge>
+                                <span className="text-xs text-muted-foreground flex items-center gap-1 print:text-gray-600"><MapPin className="size-3" /> {c.district}</span>
                                 <span className="font-bold text-base truncate group-hover:text-primary transition-colors print:text-black">{c.college}</span>
                               </div>
                               <div className="text-xs font-medium text-muted-foreground mt-0.5 print:text-gray-700">{c.branch}</div>
